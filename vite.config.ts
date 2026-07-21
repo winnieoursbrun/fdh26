@@ -18,10 +18,10 @@ export default defineConfig({
       injectRegister: null,
       includeAssets: ['favicon.svg', 'map.svg'],
       manifest: {
-        name: "Fête de l'Humain 2026",
+        name: "Fête de l'Humanité 2026 (non officiel)",
         short_name: 'FDH26',
         description:
-          "Programme de la Fête de l'Humain — 11, 12 et 13 septembre 2026 au Plessis-Pâté",
+          "Application non officielle pour suivre la Fête de l'Humanité — programme, plan du site et timeline de favoris, 11-13 septembre 2026 au Plessis-Pâté",
         lang: 'fr',
         display: 'standalone',
         orientation: 'portrait',

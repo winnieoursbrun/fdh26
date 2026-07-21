@@ -134,7 +134,7 @@ export function GroupPanel({
       try {
         await navigator.share({
           title: 'Rejoins notre groupe FDH26',
-          text: `Rejoins notre groupe sur l'appli de la Fête de l'Humain avec le code ${group?.code}`,
+          text: `Rejoins notre groupe sur l'appli de la Fête de l'Humanité avec le code ${group?.code}`,
           url: link,
         })
         return

@@ -16,7 +16,7 @@ function SlideContent({ slide }: { slide: RecapSlide }) {
     case 'intro':
       return (
         <div className="recap-panel">
-          <span className="recap-eyebrow">Fête de l'Humain 2026</span>
+          <span className="recap-eyebrow">Fête de l'Humanité 2026</span>
           <h2 className="recap-headline">
             Ton festival
             <br />

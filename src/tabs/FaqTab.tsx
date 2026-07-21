@@ -8,6 +8,13 @@ const faq = faqData as FaqItem[]
 
 const APP_FAQ: FaqItem[] = [
   {
+    id: 'app-non-officielle',
+    question: 'Cette application est-elle officielle ?',
+    category: "L'application",
+    answer:
+      "Non. C'est une appli non officielle, créée par un fan pour s'organiser pendant le festival — elle n'est ni développée ni approuvée par l'organisation de la Fête de l'Humanité. Les infos pratiques et le line-up viennent d'articles de presse et peuvent être incomplets ou datés : en cas de doute, référence-toi toujours à fete.humanite.fr.",
+  },
+  {
     id: 'app-hors-ligne',
     question: "L'appli fonctionne-t-elle sans connexion ?",
     category: "L'application",

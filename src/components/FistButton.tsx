@@ -5,7 +5,7 @@ interface FistButtonProps {
 }
 
 // Signature de l'app : le favori est un poing qui se lève, clin d'œil au
-// geste de solidarité de la Fête de l'Humain.
+// geste de solidarité de la Fête de l'Humanité.
 export function FistButton({ active, title, onToggle }: FistButtonProps) {
   return (
     <button

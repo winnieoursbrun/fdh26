@@ -173,7 +173,7 @@ export default function App() {
       <header className="app-header">
         <div className="app-header-text">
           <h1 className="wordmark" onClick={unlockRecap}>
-            Fête <span className="wordmark-accent">de l'Humain</span>
+            Fête <span className="wordmark-accent">de l'Humanité</span>
           </h1>
           <p className="app-sub">11 – 13 septembre 2026 · Le Plessis-Pâté</p>
         </div>
