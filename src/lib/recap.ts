@@ -4,6 +4,10 @@ import type { FestEvent } from '../types'
 // Lundi 14 septembre 2026, 9h — le lendemain de la fin du festival (dimanche 13 septembre).
 export const RECAP_READY_AT = new Date(2026, 8, 14, 9, 0)
 
+// Mémorise que le récap a déjà été ouvert automatiquement une fois : après ça,
+// il ne s'ouvre plus tout seul et reste accessible via le bouton du header.
+export const RECAP_SEEN_KEY = 'fdh26-recap-seen'
+
 export function isRecapReady(now: Date = new Date()): boolean {
   return now.getTime() >= RECAP_READY_AT.getTime()
 }
