@@ -12,7 +12,7 @@ import { PrepTab } from './tabs/PrepTab'
 import { ProgramTab } from './tabs/ProgramTab'
 import { TimelineTab } from './tabs/TimelineTab'
 import { RecapScreen } from './components/RecapScreen'
-import { isRecapReady } from './lib/recap'
+import { isRecapReady, RECAP_SEEN_KEY } from './lib/recap'
 import eventsData from './data/events.json'
 import type { FestEvent } from './types'
 
@@ -127,7 +127,17 @@ export default function App() {
   const groupApi = useGroup(favorites)
   const install = useInstallPrompt()
   const showInstall = install.canPrompt || install.needsIosHelp
-  const [showRecap, setShowRecap] = useState(() => isRecapReady())
+  // Le récap n'est disponible qu'une fois le festival terminé, et il ne s'ouvre
+  // en plein écran qu'une seule fois automatiquement. Ensuite il reste
+  // accessible via le bouton « Ton récap » dans le header.
+  const recapReady = isRecapReady()
+  const [showRecap, setShowRecap] = useState(
+    () => recapReady && localStorage.getItem(RECAP_SEEN_KEY) !== 'true',
+  )
+  const closeRecap = useCallback(() => {
+    setShowRecap(false)
+    localStorage.setItem(RECAP_SEEN_KEY, 'true')
+  }, [])
   useRecapReminder(reminders.status)
   const unlockRecap = useSecretTap(() => setShowRecap(true))
 
@@ -177,39 +187,64 @@ export default function App() {
           </h1>
           <p className="app-sub">11 – 13 septembre 2026 · Le Plessis-Pâté</p>
         </div>
-        {showInstall && (
-          <button
-            type="button"
-            className="install-btn"
-            onClick={() => {
-              if (install.canPrompt) {
-                void install.promptInstall()
-              } else {
-                setIosHelpOpen(true)
-              }
-            }}
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M12 3v10m0 0 4-4m-4 4-4-4"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M4.5 16v3.5h15V16"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            Installer
-          </button>
-        )}
+        <div className="app-header-actions">
+          {recapReady && (
+            <button
+              type="button"
+              className="recap-btn"
+              title="Ton récap du festival est disponible ici"
+              onClick={() => setShowRecap(true)}
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 3.5l1.9 4.2 4.6.5-3.4 3.1.9 4.5L12 13.6 8 15.8l.9-4.5L5.5 8.2l4.6-.5L12 3.5Z"
+                  fill="currentColor"
+                  stroke="currentColor"
+                  strokeWidth="1.4"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M18.5 16.5l.6 1.6 1.6.6-1.6.6-.6 1.6-.6-1.6-1.6-.6 1.6-.6.6-1.6Z"
+                  fill="currentColor"
+                />
+              </svg>
+              Ton récap
+            </button>
+          )}
+          {showInstall && (
+            <button
+              type="button"
+              className="install-btn"
+              onClick={() => {
+                if (install.canPrompt) {
+                  void install.promptInstall()
+                } else {
+                  setIosHelpOpen(true)
+                }
+              }}
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 3v10m0 0 4-4m-4 4-4-4"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M4.5 16v3.5h15V16"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              Installer
+            </button>
+          )}
+        </div>
         {import.meta.env.DEV && (
           <button
             type="button"
@@ -228,7 +263,7 @@ export default function App() {
       </header>
 
       {showRecap && (
-        <RecapScreen favoriteEvents={favoriteEvents} onClose={() => setShowRecap(false)} />
+        <RecapScreen favoriteEvents={favoriteEvents} onClose={closeRecap} />
       )}
 
       {iosHelpOpen && (

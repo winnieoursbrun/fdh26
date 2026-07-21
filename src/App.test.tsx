@@ -151,6 +151,52 @@ describe('App — badge favoris et auto-scroll de la timeline', () => {
   })
 })
 
+describe('App — récap de fin de festival', () => {
+  beforeEach(() => {
+    localStorage.clear()
+    history.replaceState(null, '', '/')
+    vi.useFakeTimers({ toFake: ['Date'] })
+  })
+
+  afterEach(() => {
+    vi.useRealTimers()
+    vi.restoreAllMocks()
+  })
+
+  it('ne montre ni le récap ni le bouton avant la fin du festival', () => {
+    vi.setSystemTime(new Date(2026, 8, 13, 12, 0))
+    render(<App />)
+    expect(screen.queryByRole('dialog', { name: /Récap de ton festival/ })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /Ton récap/ })).not.toBeInTheDocument()
+  })
+
+  it('ouvre le récap automatiquement une seule fois après la fin du festival', () => {
+    vi.setSystemTime(new Date(2026, 8, 15, 10, 0))
+    const { unmount } = render(<App />)
+
+    expect(screen.getByRole('dialog', { name: /Récap de ton festival/ })).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: /Fermer le récap/ }))
+    expect(screen.queryByRole('dialog', { name: /Récap de ton festival/ })).not.toBeInTheDocument()
+    expect(localStorage.getItem('fdh26-recap-seen')).toBe('true')
+
+    unmount()
+    render(<App />)
+    expect(screen.queryByRole('dialog', { name: /Récap de ton festival/ })).not.toBeInTheDocument()
+  })
+
+  it('reste accessible via le bouton « Ton récap » une fois déjà vu', () => {
+    vi.setSystemTime(new Date(2026, 8, 15, 10, 0))
+    localStorage.setItem('fdh26-recap-seen', 'true')
+    render(<App />)
+
+    expect(screen.queryByRole('dialog', { name: /Récap de ton festival/ })).not.toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: /Ton récap/ }))
+    expect(screen.getByRole('dialog', { name: /Récap de ton festival/ })).toBeInTheDocument()
+  })
+})
+
 describe('App — installation PWA', () => {
   beforeEach(() => {
     localStorage.clear()

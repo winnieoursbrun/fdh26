@@ -834,7 +834,7 @@ export function TimelineTab({
         </svg>
         <h2>Ta timeline est vide</h2>
         <p>
-          Ouvre le parapluie d'un concert, d'un atelier ou d'une conférence dans le
+          Lève le poing d'un concert, d'un atelier ou d'une conférence dans le
           Programme pour le retrouver ici, dans l'ordre du week-end.
         </p>
       </section>
@@ -1203,7 +1203,7 @@ Expected: build sans erreur, preview accessible sur `http://localhost:4173/pdj/`
 - [ ] **Step 2: Parcours "premier favori"**
 
 Dans un navigateur desktop (Chrome ou Firefox, qui supportent `Notification` sans installation) :
-1. Ouvrir l'onglet Programme, ajouter un favori (ouvrir le parapluie) sur un événement dont l'heure de début est dans moins de 20 minutes (modifier temporairement `src/data/events.json` en local si besoin pour ce test, sans committer ce changement).
+1. Ouvrir l'onglet Programme, ajouter un favori (lever le poing) sur un événement dont l'heure de début est dans moins de 20 minutes (modifier temporairement `src/data/events.json` en local si besoin pour ce test, sans committer ce changement).
 2. Aller sur l'onglet Timeline → la bannière "Envie d'un rappel..." doit apparaître.
 3. Cliquer "Activer les rappels" → le navigateur doit proposer sa popup native de permission de notification.
 4. Accepter → la bannière disparaît.
