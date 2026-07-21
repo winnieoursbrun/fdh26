@@ -1,0 +1,110 @@
+[
+  {
+    "id": "journee-creme-solaire",
+    "category": "Pour la journée",
+    "label": "Crème solaire",
+    "hint": "si si, ça tape en Normandie"
+  },
+  {
+    "id": "journee-lunettes",
+    "category": "Pour la journée",
+    "label": "Lunettes de soleil",
+    "hint": null
+  },
+  {
+    "id": "journee-casquette-bob",
+    "category": "Pour la journée",
+    "label": "Casquette / bob",
+    "hint": null
+  },
+  {
+    "id": "journee-baskets",
+    "category": "Pour la journée",
+    "label": "Baskets confortables",
+    "hint": null
+  },
+  {
+    "id": "journee-gourde",
+    "category": "Pour la journée",
+    "label": "Gourde",
+    "hint": "pas en verre"
+  },
+  {
+    "id": "journee-cendrier",
+    "category": "Pour la journée",
+    "label": "Un cendrier de poche",
+    "hint": null
+  },
+  {
+    "id": "soir-pulls",
+    "category": "Pour le soir",
+    "label": "Pulls / polaires",
+    "hint": "les nuits peuvent être fraîches"
+  },
+  {
+    "id": "soir-bouchons",
+    "category": "Pour le soir",
+    "label": "Des bouchons d'oreille",
+    "hint": null
+  },
+  {
+    "id": "soir-frontale",
+    "category": "Pour le soir",
+    "label": "Une frontale",
+    "hint": null
+  },
+  {
+    "id": "camping-batterie",
+    "category": "Pour ceux qui campent",
+    "label": "Batterie portable",
+    "hint": null
+  },
+  {
+    "id": "camping-hygiene",
+    "category": "Pour ceux qui campent",
+    "label": "Produits d'hygiène écofriendly",
+    "hint": null
+  },
+  {
+    "id": "camping-serviette",
+    "category": "Pour ceux qui campent",
+    "label": "Une serviette et des tongs",
+    "hint": "pour la douche"
+  },
+  {
+    "id": "camping-duvet",
+    "category": "Pour ceux qui campent",
+    "label": "Un duvet bien chaud",
+    "hint": null
+  },
+  {
+    "id": "camping-tente",
+    "category": "Pour ceux qui campent",
+    "label": "Une tente étanche…",
+    "hint": null
+  },
+  {
+    "id": "camping-chaussettes",
+    "category": "Pour ceux qui campent",
+    "label": "Des chaussettes",
+    "hint": "si elles sont trouées, tu pourras les rapiécer au village !"
+  },
+  {
+    "id": "pluie-casquette",
+    "category": "S'il pleut (on sait jamais !)",
+    "label": "Casquette / bob",
+    "hint": null
+  },
+  {
+    "id": "pluie-kway",
+    "category": "S'il pleut (on sait jamais !)",
+    "label": "K-way",
+    "hint": null
+  },
+  {
+    "id": "pluie-bottes",
+    "category": "S'il pleut (on sait jamais !)",
+    "label": "Des bottes",
+    "hint": null
+  }
+]
