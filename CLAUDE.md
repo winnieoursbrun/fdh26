@@ -1,6 +1,6 @@
 # PDJ26 — Programme des Pluies de Juillet
 
-PWA mobile-only (React + Vite + TS) du programme du festival Les Pluies de Juillet 2026 (17–19 juillet, Champrepus). Déployée sur GitHub Pages : https://winnieoursbrun.github.io/pdj/
+PWA mobile-only (React + Vite + TS) du programme du festival Les Pluies de Juillet 2026 (17–19 juillet, Champrepus). Déployée sur GitHub Pages : https://winnieoursbrun.github.io/fdh26/
 
 ## Commandes
 

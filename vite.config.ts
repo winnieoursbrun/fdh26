@@ -5,7 +5,7 @@ import { sentryVitePlugin } from '@sentry/vite-plugin'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/pdj/',
+  base: '/fdh26/',
   build: {
     sourcemap: true,
   },
