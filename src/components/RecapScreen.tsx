@@ -8,7 +8,7 @@ interface RecapScreenProps {
   onClose: () => void
 }
 
-const SLIDE_THEMES = ['pink', 'yellow', 'sky', 'green', 'peri', 'violet', 'poppy']
+const SLIDE_THEMES = ['red', 'yellow', 'sky', 'green', 'peri', 'violet', 'poppy']
 const SWIPE_THRESHOLD_PX = 40
 
 function SlideContent({ slide }: { slide: RecapSlide }) {
@@ -16,7 +16,7 @@ function SlideContent({ slide }: { slide: RecapSlide }) {
     case 'intro':
       return (
         <div className="recap-panel">
-          <span className="recap-eyebrow">Les Pluies de Juillet 2026</span>
+          <span className="recap-eyebrow">Fête de l'Humain 2026</span>
           <h2 className="recap-headline">
             Ton festival
             <br />

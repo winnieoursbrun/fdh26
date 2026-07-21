@@ -30,7 +30,7 @@ afterEach(() => {
 
 describe('useRecapReminder', () => {
   it('ne programme rien tant que le statut n\'est pas "enabled"', () => {
-    vi.setSystemTime(new Date(2026, 6, 20, 8, 0))
+    vi.setSystemTime(new Date(2026, 8, 14, 8, 0))
     renderHook(() => useRecapReminder('disabled'))
 
     act(() => {
@@ -40,7 +40,7 @@ describe('useRecapReminder', () => {
   })
 
   it('déclenche la notification à l\'heure prévue quand le statut est "enabled"', () => {
-    vi.setSystemTime(new Date(2026, 6, 20, 8, 59))
+    vi.setSystemTime(new Date(2026, 8, 14, 8, 59))
     renderHook(() => useRecapReminder('enabled'))
 
     expect(MockNotification.instances).toHaveLength(0)
@@ -49,19 +49,19 @@ describe('useRecapReminder', () => {
     })
     expect(MockNotification.instances).toHaveLength(1)
     expect(MockNotification.instances[0].title).toBe('Ton récap du festival est prêt !')
-    expect(localStorage.getItem('pdj26-recap-notified')).toBe('true')
+    expect(localStorage.getItem('fdh26-recap-notified')).toBe('true')
   })
 
   it('rattrape immédiatement si l\'heure prévue est déjà passée', () => {
-    vi.setSystemTime(new Date(2026, 6, 21, 10, 0))
+    vi.setSystemTime(new Date(2026, 8, 15, 10, 0))
     renderHook(() => useRecapReminder('enabled'))
 
     expect(MockNotification.instances).toHaveLength(1)
   })
 
   it('ne redéclenche pas si déjà notifié', () => {
-    localStorage.setItem('pdj26-recap-notified', 'true')
-    vi.setSystemTime(new Date(2026, 6, 21, 10, 0))
+    localStorage.setItem('fdh26-recap-notified', 'true')
+    vi.setSystemTime(new Date(2026, 8, 15, 10, 0))
     renderHook(() => useRecapReminder('enabled'))
 
     expect(MockNotification.instances).toHaveLength(0)

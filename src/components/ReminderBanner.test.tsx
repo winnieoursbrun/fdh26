@@ -32,7 +32,7 @@ describe('ReminderBanner', () => {
   })
 
   it('ne se réaffiche plus une fois l’incitation vue', () => {
-    localStorage.setItem('pdj26-reminders-prompted', 'true')
+    localStorage.setItem('fdh26-reminders-prompted', 'true')
     renderBanner('default', 3)
     expect(screen.queryByText(BANNER_TEXT)).not.toBeInTheDocument()
   })
@@ -42,7 +42,7 @@ describe('ReminderBanner', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Activer les rappels' }))
 
     expect(enable).toHaveBeenCalledOnce()
-    expect(localStorage.getItem('pdj26-reminders-prompted')).toBe('true')
+    expect(localStorage.getItem('fdh26-reminders-prompted')).toBe('true')
     expect(screen.queryByText(BANNER_TEXT)).not.toBeInTheDocument()
   })
 
@@ -51,7 +51,7 @@ describe('ReminderBanner', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Fermer' }))
 
     expect(enable).not.toHaveBeenCalled()
-    expect(localStorage.getItem('pdj26-reminders-prompted')).toBe('true')
+    expect(localStorage.getItem('fdh26-reminders-prompted')).toBe('true')
     expect(screen.queryByText(BANNER_TEXT)).not.toBeInTheDocument()
   })
 })

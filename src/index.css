@@ -8,13 +8,13 @@
   --ink: #141414;
   --line: #141414;
   --muted: #6b6455;
-  --pink: #f49bc1;
+  --red: #c8202f;
   --yellow: #ffd02e;
-  --sky: #7ec8e6;
+  --sky: #5f9fd9;
   --green: #5fb763;
   --green-light: #7cc576;
   --peri: #5f6fbf;
-  --poppy: #e8432e;
+  --poppy: #e8703a;
   --violet: #9b6fbf;
   --on-dark: #fbf8f0;
   --sticker: 3px 3px 0 var(--line);
@@ -171,7 +171,7 @@ p {
 .ios-sheet-close {
   width: 100%;
   padding: 11px;
-  background: var(--pink);
+  background: var(--red);
   color: #141414;
   border: 2px solid var(--line);
   border-radius: 999px;
@@ -188,7 +188,7 @@ p {
   line-height: 0.95;
   letter-spacing: -0.02em;
   text-transform: uppercase;
-  color: var(--pink);
+  color: var(--red);
   text-shadow:
     -1.5px -1.5px 0 var(--line),
     1.5px -1.5px 0 var(--line),
@@ -273,7 +273,7 @@ p {
   height: 18px;
   padding: 0 4px;
   border-radius: 999px;
-  background: var(--pink);
+  background: var(--red);
   color: #141414;
   border: 1.5px solid var(--line);
   font-size: 0.68rem;
@@ -284,7 +284,7 @@ p {
 
 /* ---------- Couleurs par catégorie ---------- */
 .cat-concert {
-  --cat: var(--pink);
+  --cat: var(--red);
   --cat-ink: #141414;
 }
 .cat-spectacle {
@@ -369,7 +369,7 @@ p {
 }
 
 .day-btn.day-ven.is-active {
-  background: var(--pink);
+  background: var(--red);
 }
 .day-btn.day-sam.is-active {
   background: var(--yellow);
@@ -410,7 +410,7 @@ p {
 }
 
 .chip-concert {
-  --cat: var(--pink);
+  --cat: var(--red);
   --cat-ink: #141414;
 }
 .chip-spectacle {
@@ -587,8 +587,8 @@ p {
   margin-top: 0;
 }
 
-/* ---------- Parapluie favori ---------- */
-.umbrella {
+/* ---------- Poing levé favori ---------- */
+.fist-btn {
   flex-shrink: 0;
   width: 44px;
   height: 44px;
@@ -601,20 +601,20 @@ p {
   transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.umbrella svg {
+.fist-btn svg {
   width: 24px;
   height: 24px;
 }
 
-.umbrella .canopy {
+.fist-btn .fist-head {
   fill: currentColor;
 }
 
-.umbrella .stem {
+.fist-btn .fist-arm {
   stroke: currentColor;
 }
 
-.umbrella.is-open {
+.fist-btn.is-raised {
   background: var(--yellow);
   color: #141414;
   box-shadow: var(--sticker-sm);
@@ -622,10 +622,10 @@ p {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .umbrella {
+  .fist-btn {
     transition: none;
   }
-  .umbrella.is-open {
+  .fist-btn.is-raised {
     transform: none;
   }
 }
@@ -649,7 +649,7 @@ p {
 }
 
 .tl-day-title.day-ven {
-  background: var(--pink);
+  background: var(--red);
 }
 .tl-day-title.day-sam {
   background: var(--yellow);
@@ -712,10 +712,10 @@ p {
   color: var(--muted);
 }
 
-.timeline-empty .empty-umbrella {
+.timeline-empty .empty-fist {
   width: 72px;
   height: 72px;
-  fill: var(--pink);
+  fill: var(--red);
   color: var(--ink);
   margin-bottom: 12px;
 }
@@ -762,6 +762,14 @@ p {
   padding: 6px 0;
   border-top: 1.5px solid var(--line);
   background: var(--card);
+}
+
+.map-disclaimer {
+  margin-top: 8px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-align: center;
 }
 
 .address-card {
@@ -842,7 +850,7 @@ p {
 }
 
 .legend-programmation summary::before {
-  background: var(--pink);
+  background: var(--red);
 }
 .legend-accueil summary::before {
   background: var(--sky);
@@ -1170,7 +1178,7 @@ p {
 }
 
 .toggle-switch.is-on {
-  background: var(--pink);
+  background: var(--red);
 }
 
 .toggle-switch:disabled {
@@ -1262,7 +1270,7 @@ p {
   padding: 8px 16px;
   border: 2px solid var(--line);
   border-radius: 999px;
-  background: var(--pink);
+  background: var(--red);
   color: #141414;
   font-family: var(--display);
   font-size: 0.88rem;
@@ -1476,8 +1484,8 @@ p {
   height: auto;
 }
 
-.recap-theme-pink {
-  --recap-bg: var(--pink);
+.recap-theme-red {
+  --recap-bg: var(--red);
   --recap-ink: #141414;
   --recap-track: rgba(20, 20, 20, 0.18);
 }
@@ -1733,4 +1741,60 @@ p {
   background: var(--yellow);
   color: #141414;
   box-shadow: var(--sticker-sm);
+}
+
+/* ---------- Programme pas encore publié : line-up & actus ---------- */
+.program-notice {
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--sticker-sm);
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.lineup-group summary::before {
+  background: var(--red);
+}
+
+.lineup-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 14px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.lineup-chip {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 6px 12px;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.lineup-genre {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.news-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.news-card .card-desc {
+  margin-top: 0;
 }

@@ -20,10 +20,10 @@ import { isEventOngoing } from '../lib/schedule'
 import type { FestEvent } from '../types'
 import eventsData from '../data/events.json'
 
-const GROUP_KEY = 'pdj26-group'
-const SK_KEY = 'pdj26-group-sk'
-const MEMBERS_KEY = 'pdj26-group-members'
-const AT_KEY = 'pdj26-group-at'
+const GROUP_KEY = 'fdh26-group'
+const SK_KEY = 'fdh26-group-sk'
+const MEMBERS_KEY = 'fdh26-group-members'
+const AT_KEY = 'fdh26-group-at'
 const PUBLISH_DEBOUNCE_MS = 2000
 const PRESENCE_TICK_MS = 60_000
 

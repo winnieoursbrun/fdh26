@@ -19,13 +19,13 @@ describe('useTickets', () => {
 
   it('relit les billets depuis localStorage', () => {
     const stored = [{ id: '1', label: 'Festival', value: 'QR-1' }]
-    localStorage.setItem('pdj26-tickets', JSON.stringify(stored))
+    localStorage.setItem('fdh26-tickets', JSON.stringify(stored))
     const { result } = renderHook(() => useTickets())
     expect(result.current.tickets).toEqual(stored)
   })
 
   it('retombe sur une liste vide si le stockage est corrompu', () => {
-    localStorage.setItem('pdj26-tickets', '{oops')
+    localStorage.setItem('fdh26-tickets', '{oops')
     const { result } = renderHook(() => useTickets())
     expect(result.current.tickets).toEqual([])
   })
@@ -37,12 +37,12 @@ describe('useTickets', () => {
 
     const expected = [{ id: '0-0-0-0-0', label: 'Festival', value: 'QR-FESTIVAL' }]
     expect(result.current.tickets).toEqual(expected)
-    expect(JSON.parse(localStorage.getItem('pdj26-tickets') ?? '[]')).toEqual(expected)
+    expect(JSON.parse(localStorage.getItem('fdh26-tickets') ?? '[]')).toEqual(expected)
   })
 
   it('renomme le billet ciblé sans toucher les autres', () => {
     localStorage.setItem(
-      'pdj26-tickets',
+      'fdh26-tickets',
       JSON.stringify([
         { id: '1', label: 'Festival', value: 'QR-1' },
         { id: '2', label: 'Camping', value: 'QR-2' },
@@ -52,12 +52,12 @@ describe('useTickets', () => {
     act(() => result.current.rename('2', 'Camping 2 nuits'))
 
     expect(result.current.tickets.map((t) => t.label)).toEqual(['Festival', 'Camping 2 nuits'])
-    expect(JSON.parse(localStorage.getItem('pdj26-tickets')!)[1].label).toBe('Camping 2 nuits')
+    expect(JSON.parse(localStorage.getItem('fdh26-tickets')!)[1].label).toBe('Camping 2 nuits')
   })
 
   it('supprime le billet ciblé et persiste', () => {
     localStorage.setItem(
-      'pdj26-tickets',
+      'fdh26-tickets',
       JSON.stringify([
         { id: '1', label: 'Festival', value: 'QR-1' },
         { id: '2', label: 'Camping', value: 'QR-2' },
@@ -67,7 +67,7 @@ describe('useTickets', () => {
     act(() => result.current.remove('1'))
 
     expect(result.current.tickets.map((t) => t.id)).toEqual(['2'])
-    expect(JSON.parse(localStorage.getItem('pdj26-tickets')!)).toHaveLength(1)
+    expect(JSON.parse(localStorage.getItem('fdh26-tickets')!)).toHaveLength(1)
   })
 })
 

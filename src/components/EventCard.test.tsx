@@ -100,13 +100,13 @@ describe('EventCard — favori et copains', () => {
     expect(onToggleFavorite).toHaveBeenCalledWith(event.id)
   })
 
-  it('reflète l’état favori sur le parapluie', () => {
+  it('reflète l’état favori sur le poing levé', () => {
     renderCard({ title: 'MIOSSEC' }, true)
-    const umbrella = screen.getByRole('button', {
+    const fist = screen.getByRole('button', {
       name: 'Retirer « MIOSSEC » de ma timeline',
     })
-    expect(umbrella).toHaveAttribute('aria-pressed', 'true')
-    expect(umbrella).toHaveClass('is-open')
+    expect(fist).toHaveAttribute('aria-pressed', 'true')
+    expect(fist).toHaveClass('is-raised')
   })
 
   it('affiche les chips des copains quand ils sont fournis', () => {

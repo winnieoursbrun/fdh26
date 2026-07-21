@@ -1,8 +1,8 @@
 import { byTime, CATEGORY_LABEL } from './schedule'
 import type { FestEvent } from '../types'
 
-// Lundi 20 juillet 2026, 9h — le lendemain de la fin du festival (dimanche 19 juillet).
-export const RECAP_READY_AT = new Date(2026, 6, 20, 9, 0)
+// Lundi 14 septembre 2026, 9h — le lendemain de la fin du festival (dimanche 13 septembre).
+export const RECAP_READY_AT = new Date(2026, 8, 14, 9, 0)
 
 export function isRecapReady(now: Date = new Date()): boolean {
   return now.getTime() >= RECAP_READY_AT.getTime()

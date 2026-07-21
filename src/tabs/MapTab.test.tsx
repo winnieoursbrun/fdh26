@@ -27,7 +27,7 @@ describe('MapTab', () => {
   it('affiche le plan du site avec son texte alternatif', () => {
     render(<MapTab />)
     expect(
-      screen.getByRole('img', { name: /Plan du site du festival avec 23 points/ }),
+      screen.getByRole('img', { name: /Plan schématique et indicatif du site avec 14 points/ }),
     ).toBeInTheDocument()
   })
 
@@ -57,10 +57,11 @@ describe('MapTab', () => {
 
   it('affiche la carte adresse avec le lien itinéraire', () => {
     render(<MapTab />)
-    const link = screen.getByRole('link', { name: /290 Route des Diligences/ })
-    expect(link).toHaveAttribute('href', expect.stringContaining(encodeURIComponent(
-      '290 Route des Diligences, 50800 Champrepus',
-    )))
+    const link = screen.getByRole('link', { name: /Base aérienne 217/ })
+    expect(link).toHaveAttribute(
+      'href',
+      expect.stringContaining(encodeURIComponent('Base aérienne 217, 91220 Le Plessis-Pâté')),
+    )
   })
 
   it('affiche la carte « Mes billets »', () => {

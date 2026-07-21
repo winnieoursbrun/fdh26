@@ -3,7 +3,7 @@ import * as Sentry from '@sentry/react'
 import { RECAP_READY_AT } from '../lib/recap'
 import type { ReminderStatus } from './useReminders'
 
-const NOTIFIED_KEY = 'pdj26-recap-notified'
+const NOTIFIED_KEY = 'fdh26-recap-notified'
 
 function fireRecapReady() {
   const notification = new Notification('Ton récap du festival est prêt !', {

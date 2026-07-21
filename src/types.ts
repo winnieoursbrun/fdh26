@@ -47,3 +47,17 @@ export interface PackingItem {
   label: string
   hint: string | null
 }
+
+export interface LineupArtist {
+  id: string
+  name: string
+  wave: number | null
+  genre: string | null
+}
+
+export interface NewsItem {
+  id: string
+  date: string
+  title: string
+  summary: string
+}

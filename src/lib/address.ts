@@ -1,4 +1,4 @@
-export const ADDRESS = '290 Route des Diligences, 50800 Champrepus'
+export const ADDRESS = 'Base aérienne 217, 91220 Le Plessis-Pâté'
 
 // Safari iOS n'a pas de sélecteur d'appli pour geo: — Apple Plans y est la seule
 // option qui fonctionne. Partout ailleurs, geo: laisse le téléphone proposer

@@ -1,5 +1,5 @@
-const KEY_SALT = 'pdj26-group-v1'
-const TAG_SALT = 'pdj26-tag-v1'
+const KEY_SALT = 'fdh26-group-v1'
+const TAG_SALT = 'fdh26-tag-v1'
 const PBKDF2_ITERATIONS = 100_000
 
 // Mots sans accent ni ambiguïté, faciles à dicter à voix haute.

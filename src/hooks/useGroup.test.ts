@@ -4,12 +4,41 @@ import { decryptState, deriveGroupKeys, encryptState, type MemberState } from '.
 import { publishState } from '../lib/nostr'
 import { useGroup } from './useGroup'
 
-// Ids réels stables du programme (voir events.json), qui se chevauchent
-// le vendredi à 17h30 : LARZAC ! (17:00 – 18:30) et la nocturne (17:00 – 21:30).
-const LARZAC = 'larzac-ven-1700'
-const NOCTURNE = 'nocturne-exposantes-ven-1700'
-const DURING_BOTH = new Date(2026, 6, 17, 17, 30)
-const AFTER_FESTIVAL = new Date(2026, 6, 21, 12, 0)
+vi.mock('../data/events.json', () => ({
+  default: [
+    {
+      id: 'ouverture-ven-1700',
+      title: "Discours d'ouverture",
+      artist: null,
+      day: 'ven',
+      start: '17:00',
+      end: '18:30',
+      venue: 'La Grande Scène',
+      category: 'conference',
+      subtype: null,
+      description: null,
+    },
+    {
+      id: 'village-ven-1700',
+      title: 'Nocturne du Village du Monde',
+      artist: null,
+      day: 'ven',
+      start: '17:00',
+      end: '21:30',
+      venue: 'Le Village du Monde',
+      category: 'atelier',
+      subtype: null,
+      description: null,
+    },
+  ],
+}))
+
+// Fixture stable, qui se chevauche le vendredi à 17h30 : l'ouverture
+// (17:00 – 18:30) et la nocturne du village (17:00 – 21:30).
+const LARZAC = 'ouverture-ven-1700'
+const NOCTURNE = 'village-ven-1700'
+const DURING_BOTH = new Date(2026, 8, 11, 17, 30)
+const AFTER_FESTIVAL = new Date(2026, 8, 15, 12, 0)
 
 const subscriptions: {
   tag: string
@@ -68,7 +97,7 @@ describe('useGroup', () => {
     })
     expect(code).toMatch(/^[A-Z]+-\d{2}$/)
     expect(result.current.group).toEqual({ code, name: 'Léa' })
-    expect(JSON.parse(localStorage.getItem('pdj26-group') ?? '{}')).toMatchObject({
+    expect(JSON.parse(localStorage.getItem('fdh26-group') ?? '{}')).toMatchObject({
       code,
       name: 'Léa',
     })
@@ -155,7 +184,7 @@ describe('useGroup', () => {
     await waitFor(() => expect(result.current.others).toHaveLength(0))
     expect(result.current.friendsByEvent.get('ev-1')).toBeUndefined()
     expect(
-      JSON.parse(localStorage.getItem('pdj26-group-members') ?? '{}'),
+      JSON.parse(localStorage.getItem('fdh26-group-members') ?? '{}'),
     ).not.toHaveProperty('friend-pk')
   })
 
@@ -223,8 +252,8 @@ describe('useGroup', () => {
     })
     expect(result.current.group).toBeNull()
     expect(result.current.others).toHaveLength(0)
-    expect(localStorage.getItem('pdj26-group')).toBeNull()
-    expect(localStorage.getItem('pdj26-group-members')).toBeNull()
+    expect(localStorage.getItem('fdh26-group')).toBeNull()
+    expect(localStorage.getItem('fdh26-group-members')).toBeNull()
   })
 })
 
@@ -251,19 +280,19 @@ describe('useGroup — présence « j’y suis »', () => {
       result.current.checkIn(LARZAC)
     })
     expect(result.current.myEventId).toBe(LARZAC)
-    expect(localStorage.getItem('pdj26-group-at')).toBe(LARZAC)
+    expect(localStorage.getItem('fdh26-group-at')).toBe(LARZAC)
 
     act(() => {
       result.current.checkIn(NOCTURNE)
     })
     expect(result.current.myEventId).toBe(NOCTURNE)
-    expect(localStorage.getItem('pdj26-group-at')).toBe(NOCTURNE)
+    expect(localStorage.getItem('fdh26-group-at')).toBe(NOCTURNE)
 
     act(() => {
       result.current.checkIn(null)
     })
     expect(result.current.myEventId).toBeNull()
-    expect(localStorage.getItem('pdj26-group-at')).toBeNull()
+    expect(localStorage.getItem('fdh26-group-at')).toBeNull()
   })
 
   it('une présence sur un événement terminé est purgée immédiatement', () => {
@@ -276,18 +305,18 @@ describe('useGroup — présence « j’y suis »', () => {
       result.current.checkIn(LARZAC)
     })
     expect(result.current.myEventId).toBeNull()
-    expect(localStorage.getItem('pdj26-group-at')).toBeNull()
+    expect(localStorage.getItem('fdh26-group-at')).toBeNull()
   })
 
   it('recharge ma présence depuis le stockage tant que l’événement est en cours', () => {
-    localStorage.setItem('pdj26-group-at', LARZAC)
+    localStorage.setItem('fdh26-group-at', LARZAC)
     const { result } = renderHook(() => useGroup(new Set()))
     expect(result.current.myEventId).toBe(LARZAC)
   })
 
   it('ignore une présence stockée dont l’événement est passé', () => {
     vi.setSystemTime(AFTER_FESTIVAL)
-    localStorage.setItem('pdj26-group-at', LARZAC)
+    localStorage.setItem('fdh26-group-at', LARZAC)
     const { result } = renderHook(() => useGroup(new Set()))
     expect(result.current.myEventId).toBeNull()
   })
@@ -336,6 +365,6 @@ describe('useGroup — présence « j’y suis »', () => {
       result.current.leave()
     })
     expect(result.current.myEventId).toBeNull()
-    expect(localStorage.getItem('pdj26-group-at')).toBeNull()
+    expect(localStorage.getItem('fdh26-group-at')).toBeNull()
   })
 })

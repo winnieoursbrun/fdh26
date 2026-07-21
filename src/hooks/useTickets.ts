@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react'
 import jsQR from 'jsqr'
 
-const STORAGE_KEY = 'pdj26-tickets'
+const STORAGE_KEY = 'fdh26-tickets'
 const MAX_DECODE_DIMENSION = 1600
 
 export interface Ticket {

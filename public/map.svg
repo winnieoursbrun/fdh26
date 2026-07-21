@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 640" font-family="system-ui, sans-serif">
+  <defs>
+    <style>
+      .zone { stroke: #141414; stroke-width: 3; }
+      .prog { fill: #f6c9ce; }
+      .accueil { fill: #cfe4f5; }
+      .bienetre { fill: #cdeccd; }
+      .vente { fill: #fff0b3; }
+      .label { fill: #141414; font-weight: 800; text-anchor: start; }
+      .sub { fill: #141414; font-weight: 600; text-anchor: start; }
+      .num { fill: #141414; font-weight: 800; font-size: 14px; text-anchor: middle; dominant-baseline: middle; }
+      .badge { fill: #ffd02e; stroke: #141414; stroke-width: 2.2; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="640" fill="#f2ede2" />
+
+  <text x="400" y="34" text-anchor="middle" font-size="16" font-weight="800" fill="#6b6455" letter-spacing="1">
+    PLAN SCHÉMATIQUE — INDICATIF, EN ATTENTE DU PLAN OFFICIEL
+  </text>
+
+  <rect class="zone prog" x="24" y="56" width="230" height="130" rx="14" />
+  <text class="label" x="58" y="128" font-size="20">Grande Scène</text>
+  <circle class="badge" cx="41" cy="73" r="13" /><text class="num" x="41" y="74">1</text>
+
+  <rect class="zone prog" x="270" y="56" width="230" height="130" rx="14" />
+  <text class="label" x="304" y="117" font-size="20">Scène Rap &amp;</text>
+  <text class="sub" x="304" y="137" font-size="12">Musiques Urbaines</text>
+  <circle class="badge" cx="287" cy="73" r="13" /><text class="num" x="287" y="74">2</text>
+
+  <rect class="zone prog" x="516" y="56" width="260" height="130" rx="14" />
+  <text class="label" x="550" y="117" font-size="20">Scène Chanson &amp;</text>
+  <text class="sub" x="550" y="137" font-size="12">Musiques du Monde</text>
+  <circle class="badge" cx="533" cy="73" r="13" /><text class="num" x="533" y="74">3</text>
+
+  <rect class="zone prog" x="24" y="204" width="230" height="110" rx="14" />
+  <text class="label" x="58" y="255" font-size="20">L'Agora</text>
+  <text class="sub" x="58" y="275" font-size="12">des Idées</text>
+  <circle class="badge" cx="41" cy="221" r="13" /><text class="num" x="41" y="222">4</text>
+
+  <rect class="zone prog" x="270" y="204" width="250" height="110" rx="14" />
+  <text class="label" x="304" y="255" font-size="18">Village du Monde</text>
+  <text class="sub" x="304" y="275" font-size="12">Stands associatifs</text>
+  <circle class="badge" cx="287" cy="221" r="13" /><text class="num" x="287" y="222">5</text>
+
+  <rect class="zone prog" x="536" y="204" width="240" height="110" rx="14" />
+  <text class="label" x="570" y="266" font-size="18">Village du Livre</text>
+  <circle class="badge" cx="553" cy="221" r="13" /><text class="num" x="553" y="222">6</text>
+
+  <rect class="zone accueil" x="24" y="340" width="180" height="100" rx="14" />
+  <text class="label" x="58" y="397" font-size="20">Entrée</text>
+  <circle class="badge" cx="41" cy="357" r="13" /><text class="num" x="41" y="358">7</text>
+
+  <rect class="zone accueil" x="220" y="340" width="180" height="100" rx="14" />
+  <text class="label" x="254" y="397" font-size="18">Billetterie</text>
+  <circle class="badge" cx="237" cy="357" r="13" /><text class="num" x="237" y="358">8</text>
+
+  <rect class="zone accueil" x="416" y="340" width="180" height="100" rx="14" />
+  <text class="label" x="450" y="397" font-size="18">Camping</text>
+  <circle class="badge" cx="433" cy="357" r="13" /><text class="num" x="433" y="358">9</text>
+
+  <rect class="zone accueil" x="612" y="340" width="164" height="100" rx="14" />
+  <text class="label" x="646" y="397" font-size="14">Navettes &amp; vélos</text>
+  <circle class="badge" cx="629" cy="357" r="13" /><text class="num" x="629" y="358">10</text>
+
+  <rect class="zone accueil" x="24" y="464" width="180" height="100" rx="14" />
+  <text class="label" x="58" y="510" font-size="16">Toilettes &amp;</text>
+  <text class="sub" x="58" y="530" font-size="12">douches</text>
+  <circle class="badge" cx="41" cy="481" r="13" /><text class="num" x="41" y="482">11</text>
+
+  <rect class="zone bienetre" x="220" y="464" width="180" height="100" rx="14" />
+  <text class="label" x="254" y="510" font-size="15">Accessibilité</text>
+  <text class="sub" x="254" y="530" font-size="12">&amp; Écoute</text>
+  <circle class="badge" cx="237" cy="481" r="13" /><text class="num" x="237" y="482">12</text>
+
+  <rect class="zone vente" x="416" y="464" width="180" height="100" rx="14" />
+  <text class="label" x="450" y="521" font-size="16">Restauration</text>
+  <circle class="badge" cx="433" cy="481" r="13" /><text class="num" x="433" y="482">13</text>
+
+  <rect class="zone vente" x="612" y="464" width="164" height="100" rx="14" />
+  <text class="label" x="646" y="521" font-size="20">Bar</text>
+  <circle class="badge" cx="629" cy="481" r="13" /><text class="num" x="629" y="482">14</text>
+
+  <text x="400" y="600" text-anchor="middle" font-size="14" font-weight="600" fill="#6b6455">
+    Positions approximatives — se référer au plan officiel affiché sur place
+  </text>
+</svg>

@@ -1,19 +1,20 @@
 import type { Category, Day, FestEvent } from '../types'
 
 export const DAYS: { key: Day; label: string; date: string }[] = [
-  { key: 'ven', label: 'Ven', date: '17' },
-  { key: 'sam', label: 'Sam', date: '18' },
-  { key: 'dim', label: 'Dim', date: '19' },
+  { key: 'ven', label: 'Ven', date: '11' },
+  { key: 'sam', label: 'Sam', date: '12' },
+  { key: 'dim', label: 'Dim', date: '13' },
 ]
 
 export const DAY_LONG: Record<Day, string> = {
-  ven: 'Vendredi 17 juillet',
-  sam: 'Samedi 18 juillet',
-  dim: 'Dimanche 19 juillet',
+  ven: 'Vendredi 11 septembre',
+  sam: 'Samedi 12 septembre',
+  dim: 'Dimanche 13 septembre',
 }
 
-// Ouverture des portes, vendredi 17 juillet à 16h30 (voir la FAQ "Horaires").
-export const FESTIVAL_START = new Date(2026, 6, 17, 16, 30)
+// Horaire d'ouverture non encore publié par l'organisation : estimation à ajuster
+// dès que la grille officielle sort (voir la FAQ "Programmation").
+export const FESTIVAL_START = new Date(2026, 8, 11, 14, 0)
 
 export const CATEGORIES: { key: Category; label: string }[] = [
   { key: 'concert', label: 'Concerts' },
@@ -60,7 +61,7 @@ export function eventStartDate(e: FestEvent): Date {
   }
   const [hours, minutes] = e.start.split(':').map(Number)
   const date = hours < 5 ? Number(dayInfo.date) + 1 : Number(dayInfo.date)
-  return new Date(2026, 6, date, hours, minutes)
+  return new Date(2026, 8, date, hours, minutes)
 }
 
 // Fenêtre de présence par défaut pour les événements sans horaire de fin publié.

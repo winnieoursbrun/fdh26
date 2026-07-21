@@ -80,8 +80,8 @@ describe('eventStartDate', () => {
     const result = eventStartDate(event)
 
     expect(result.getFullYear()).toBe(2026)
-    expect(result.getMonth()).toBe(6) // juillet = index 6
-    expect(result.getDate()).toBe(18)
+    expect(result.getMonth()).toBe(8) // septembre = index 8
+    expect(result.getDate()).toBe(12)
     expect(result.getHours()).toBe(21)
     expect(result.getMinutes()).toBe(0)
   })
@@ -90,7 +90,7 @@ describe('eventStartDate', () => {
     const event = makeEvent({ day: 'ven', start: '00:40' })
     const result = eventStartDate(event)
 
-    expect(result.getDate()).toBe(18) // nuit de vendredi 17 -> samedi 18
+    expect(result.getDate()).toBe(12) // nuit de vendredi 11 -> samedi 12
     expect(result.getHours()).toBe(0)
     expect(result.getMinutes()).toBe(40)
   })
@@ -130,7 +130,7 @@ describe('isAllDay', () => {
 describe('eventEndDate', () => {
   it('retourne la fin le même jour pour un créneau normal', () => {
     const end = eventEndDate(makeEvent({ day: 'sam', start: '21:00', end: '22:30' }))
-    expect(end.getDate()).toBe(18)
+    expect(end.getDate()).toBe(12)
     expect(end.getHours()).toBe(22)
     expect(end.getMinutes()).toBe(30)
   })
@@ -142,21 +142,21 @@ describe('eventEndDate', () => {
 
   it('ajoute un jour quand la fin déborde après minuit', () => {
     const end = eventEndDate(makeEvent({ day: 'ven', start: '23:00', end: '01:00' }))
-    expect(end.getDate()).toBe(18) // nuit de vendredi 17 -> samedi 18
+    expect(end.getDate()).toBe(12) // nuit de vendredi 11 -> samedi 12
     expect(end.getHours()).toBe(1)
   })
 
   it('ajoute un jour quand la fin est égale au début', () => {
     const end = eventEndDate(makeEvent({ day: 'ven', start: '21:00', end: '21:00' }))
-    expect(end.getDate()).toBe(18)
+    expect(end.getDate()).toBe(12)
   })
 
   it('garde début et fin le lendemain calendaire pour un créneau démarrant après minuit', () => {
     const event = makeEvent({ day: 'ven', start: '00:40', end: '01:40' })
     const start = eventStartDate(event)
     const end = eventEndDate(event)
-    expect(start.getDate()).toBe(18)
-    expect(end.getDate()).toBe(18)
+    expect(start.getDate()).toBe(12)
+    expect(end.getDate()).toBe(12)
     expect(end.getHours()).toBe(1)
     expect(end.getMinutes()).toBe(40)
   })
@@ -166,30 +166,30 @@ describe('isEventOngoing', () => {
   const event = makeEvent({ day: 'sam', start: '21:00', end: '22:30' })
 
   it('est vrai pendant l’événement', () => {
-    expect(isEventOngoing(event, new Date(2026, 6, 18, 21, 0).getTime())).toBe(true)
-    expect(isEventOngoing(event, new Date(2026, 6, 18, 22, 0).getTime())).toBe(true)
+    expect(isEventOngoing(event, new Date(2026, 8, 12, 21, 0).getTime())).toBe(true)
+    expect(isEventOngoing(event, new Date(2026, 8, 12, 22, 0).getTime())).toBe(true)
   })
 
   it('s’active 15 minutes avant le début', () => {
-    expect(isEventOngoing(event, new Date(2026, 6, 18, 20, 45).getTime())).toBe(true)
-    expect(isEventOngoing(event, new Date(2026, 6, 18, 20, 44).getTime())).toBe(false)
+    expect(isEventOngoing(event, new Date(2026, 8, 12, 20, 45).getTime())).toBe(true)
+    expect(isEventOngoing(event, new Date(2026, 8, 12, 20, 44).getTime())).toBe(false)
   })
 
   it('reste actif 15 minutes après la fin', () => {
-    expect(isEventOngoing(event, new Date(2026, 6, 18, 22, 44).getTime())).toBe(true)
-    expect(isEventOngoing(event, new Date(2026, 6, 18, 22, 45).getTime())).toBe(false)
+    expect(isEventOngoing(event, new Date(2026, 8, 12, 22, 44).getTime())).toBe(true)
+    expect(isEventOngoing(event, new Date(2026, 8, 12, 22, 45).getTime())).toBe(false)
   })
 
   it('donne une fenêtre d’une heure (plus la marge) aux événements sans horaire de fin', () => {
     const openEnded = makeEvent({ day: 'sam', start: '23:00', end: null })
-    expect(isEventOngoing(openEnded, new Date(2026, 6, 18, 23, 30).getTime())).toBe(true)
-    expect(isEventOngoing(openEnded, new Date(2026, 6, 19, 0, 14).getTime())).toBe(true)
-    expect(isEventOngoing(openEnded, new Date(2026, 6, 19, 0, 15).getTime())).toBe(false)
+    expect(isEventOngoing(openEnded, new Date(2026, 8, 12, 23, 30).getTime())).toBe(true)
+    expect(isEventOngoing(openEnded, new Date(2026, 8, 13, 0, 14).getTime())).toBe(true)
+    expect(isEventOngoing(openEnded, new Date(2026, 8, 13, 0, 15).getTime())).toBe(false)
   })
 
   it('suit la bascule après minuit du jour de grille', () => {
     const night = makeEvent({ day: 'ven', start: '00:40', end: '01:40' })
-    expect(isEventOngoing(night, new Date(2026, 6, 18, 1, 0).getTime())).toBe(true)
-    expect(isEventOngoing(night, new Date(2026, 6, 17, 1, 0).getTime())).toBe(false)
+    expect(isEventOngoing(night, new Date(2026, 8, 12, 1, 0).getTime())).toBe(true)
+    expect(isEventOngoing(night, new Date(2026, 8, 11, 1, 0).getTime())).toBe(false)
   })
 })

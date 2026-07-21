@@ -26,7 +26,7 @@ function makeDay(overrides: Partial<DayWeather> = {}): DayWeather {
 }
 
 function seedCache(days: DayWeather[], fetchedAt: number) {
-  localStorage.setItem('pdj26-weather', JSON.stringify({ days, fetchedAt }))
+  localStorage.setItem('fdh26-weather', JSON.stringify({ days, fetchedAt }))
 }
 
 describe('useWeather', () => {
@@ -58,7 +58,7 @@ describe('useWeather', () => {
     expect(result.current).toEqual({ status: 'stale', days: cached })
 
     await waitFor(() => expect(result.current).toEqual({ status: 'ok', days: fresh }))
-    expect(JSON.parse(localStorage.getItem('pdj26-weather')!).days).toEqual(fresh)
+    expect(JSON.parse(localStorage.getItem('fdh26-weather')!).days).toEqual(fresh)
   })
 
   it('ne tente pas de fetch hors ligne', () => {

@@ -19,17 +19,17 @@ describe('usePackingList', () => {
       result.current.toggle('journee-gourde')
     })
     expect(result.current.checked.has('journee-gourde')).toBe(true)
-    expect(JSON.parse(localStorage.getItem('pdj26-packing') ?? '[]')).toEqual(['journee-gourde'])
+    expect(JSON.parse(localStorage.getItem('fdh26-packing') ?? '[]')).toEqual(['journee-gourde'])
 
     act(() => {
       result.current.toggle('journee-gourde')
     })
     expect(result.current.checked.has('journee-gourde')).toBe(false)
-    expect(JSON.parse(localStorage.getItem('pdj26-packing') ?? '[]')).toEqual([])
+    expect(JSON.parse(localStorage.getItem('fdh26-packing') ?? '[]')).toEqual([])
   })
 
   it('recharge l\'état coché depuis localStorage', () => {
-    localStorage.setItem('pdj26-packing', JSON.stringify(['soir-frontale']))
+    localStorage.setItem('fdh26-packing', JSON.stringify(['soir-frontale']))
     const { result } = renderHook(() => usePackingList())
     expect(result.current.checked.has('soir-frontale')).toBe(true)
   })

@@ -133,8 +133,8 @@ export function GroupPanel({
     if (navigator.share) {
       try {
         await navigator.share({
-          title: 'Rejoins notre groupe PDJ26',
-          text: `Rejoins notre groupe sur l'appli des Pluies de Juillet avec le code ${group?.code}`,
+          title: 'Rejoins notre groupe FDH26',
+          text: `Rejoins notre groupe sur l'appli de la Fête de l'Humain avec le code ${group?.code}`,
           url: link,
         })
         return

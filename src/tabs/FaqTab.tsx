@@ -33,7 +33,7 @@ const APP_FAQ: FaqItem[] = [
     question: 'Le programme peut-il encore changer ?',
     category: "L'application",
     answer:
-      "En cas de changement de dernière minute, consulte www.lespluiesdejuillet.org pour les infos les plus à jour.",
+      'En cas de changement de dernière minute, consulte fete.humanite.fr pour les infos les plus à jour.',
   },
 ]
 

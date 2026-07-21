@@ -23,14 +23,18 @@ export function MapTab() {
             contentClass="map-content"
           >
             <img
-              src={`${import.meta.env.BASE_URL}map.png`}
-              alt="Plan du site du festival avec 23 points numérotés, détaillés dans la légende ci-dessous"
+              src={`${import.meta.env.BASE_URL}map.svg`}
+              alt="Plan schématique et indicatif du site avec 14 points numérotés, détaillés dans la légende ci-dessous — en attente du plan officiel du festival"
               draggable={false}
             />
           </TransformComponent>
         </TransformWrapper>
         <p className="map-hint">Pince ou double-tape pour zoomer</p>
       </div>
+      <p className="map-disclaimer">
+        Plan schématique et indicatif, en attendant la publication du plan
+        officiel par l'organisation.
+      </p>
 
       <AddressCard />
 

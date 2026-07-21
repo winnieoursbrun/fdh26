@@ -25,6 +25,35 @@ vi.mock('react-zoom-pan-pinch', () => ({
   TransformComponent: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
 }))
 
+vi.mock('./data/events.json', () => ({
+  default: [
+    {
+      id: 'ouverture-ven-1700',
+      title: "Discours d'ouverture",
+      artist: null,
+      day: 'ven',
+      start: '17:00',
+      end: '18:30',
+      venue: 'La Grande Scène',
+      category: 'conference',
+      subtype: null,
+      description: null,
+    },
+    {
+      id: 'massilia-ven-2135',
+      title: 'MASSILIA',
+      artist: 'Massilia Sound System',
+      day: 'ven',
+      start: '21:35',
+      end: '22:35',
+      venue: 'La Grande Scène',
+      category: 'concert',
+      subtype: null,
+      description: null,
+    },
+  ],
+}))
+
 function tabButton(label: string) {
   return within(screen.getByRole('navigation', { name: 'Navigation principale' })).getByRole(
     'button',
@@ -95,8 +124,8 @@ describe('App — badge favoris et auto-scroll de la timeline', () => {
 
   it('affiche le nombre de favoris en badge sur « Ma timeline »', () => {
     localStorage.setItem(
-      'pdj26-favorites',
-      JSON.stringify(['larzac-ven-1700', 'miossec-ven-2135']),
+      'fdh26-favorites',
+      JSON.stringify(['ouverture-ven-1700', 'massilia-ven-2135']),
     )
     render(<App />)
     expect(within(tabButton('Ma timeline')).getByText('2')).toHaveClass('tabbar-badge')
@@ -109,8 +138,8 @@ describe('App — badge favoris et auto-scroll de la timeline', () => {
 
   it('redéclenche l’auto-scroll à chaque clic sur « Ma timeline », même déjà actif', () => {
     vi.useFakeTimers({ toFake: ['Date'] })
-    vi.setSystemTime(new Date(2026, 6, 17, 18, 0))
-    localStorage.setItem('pdj26-favorites', JSON.stringify(['larzac-ven-1700']))
+    vi.setSystemTime(new Date(2026, 8, 11, 18, 0))
+    localStorage.setItem('fdh26-favorites', JSON.stringify(['ouverture-ven-1700']))
     const spy = vi.spyOn(Element.prototype, 'scrollIntoView')
 
     render(<App />)

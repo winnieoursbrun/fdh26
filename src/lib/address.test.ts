@@ -30,7 +30,7 @@ describe('MAPS_HREF', () => {
 
   it('encode correctement l’adresse du site', async () => {
     const { ADDRESS, MAPS_HREF } = await loadAddress('Mozilla/5.0 (Linux; Android 14)')
-    expect(ADDRESS).toBe('290 Route des Diligences, 50800 Champrepus')
-    expect(MAPS_HREF).toContain('290%20Route%20des%20Diligences%2C%2050800%20Champrepus')
+    expect(ADDRESS).toBe('Base aérienne 217, 91220 Le Plessis-Pâté')
+    expect(MAPS_HREF).toContain(encodeURIComponent('Base aérienne 217, 91220 Le Plessis-Pâté'))
   })
 })

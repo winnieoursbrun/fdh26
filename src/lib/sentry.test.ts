@@ -20,7 +20,7 @@ describe('getDeviceId', () => {
   it('génère un id et le persiste dans localStorage', () => {
     const id = getDeviceId()
     expect(id).toBeTruthy()
-    expect(localStorage.getItem('pdj26-device-id')).toBe(id)
+    expect(localStorage.getItem('fdh26-device-id')).toBe(id)
   })
 
   it('renvoie le même id à chaque appel', () => {
@@ -28,7 +28,7 @@ describe('getDeviceId', () => {
   })
 
   it('réutilise un id existant', () => {
-    localStorage.setItem('pdj26-device-id', 'deja-la')
+    localStorage.setItem('fdh26-device-id', 'deja-la')
     expect(getDeviceId()).toBe('deja-la')
   })
 })

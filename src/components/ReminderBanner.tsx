@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import type { ReminderStatus } from '../hooks/useReminders'
 
-const PROMPTED_KEY = 'pdj26-reminders-prompted'
+const PROMPTED_KEY = 'fdh26-reminders-prompted'
 
 interface ReminderBannerProps {
   status: ReminderStatus

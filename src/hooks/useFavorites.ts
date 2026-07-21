@@ -3,7 +3,7 @@ import * as Sentry from '@sentry/react'
 import eventsData from '../data/events.json'
 import type { FestEvent } from '../types'
 
-const STORAGE_KEY = 'pdj26-favorites'
+const STORAGE_KEY = 'fdh26-favorites'
 
 const eventsById = new Map((eventsData as FestEvent[]).map((event) => [event.id, event]))
 

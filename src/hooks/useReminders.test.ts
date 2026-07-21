@@ -45,7 +45,7 @@ describe('useReminders status', () => {
     })
 
     expect(result.current.status).toBe('enabled')
-    expect(localStorage.getItem('pdj26-reminders-enabled')).toBe('true')
+    expect(localStorage.getItem('fdh26-reminders-enabled')).toBe('true')
   })
 
   it('envoie une notification de confirmation quand enable() active les rappels', async () => {
@@ -105,7 +105,7 @@ describe('useReminders status', () => {
 
   it('passe de "enabled" à "disabled" via disable()', () => {
     MockNotification.permission = 'granted'
-    localStorage.setItem('pdj26-reminders-enabled', 'true')
+    localStorage.setItem('fdh26-reminders-enabled', 'true')
     const { result } = renderHook(() => useReminders())
     expect(result.current.status).toBe('enabled')
 
@@ -114,7 +114,7 @@ describe('useReminders status', () => {
     })
 
     expect(result.current.status).toBe('disabled')
-    expect(localStorage.getItem('pdj26-reminders-enabled')).toBe('false')
+    expect(localStorage.getItem('fdh26-reminders-enabled')).toBe('false')
   })
 
   it('vaut "unsupported" quand l\'API Notification est absente', () => {
@@ -143,7 +143,7 @@ describe('useReminders scheduling', () => {
 
   beforeEach(() => {
     MockNotification.permission = 'granted'
-    localStorage.setItem('pdj26-reminders-enabled', 'true')
+    localStorage.setItem('fdh26-reminders-enabled', 'true')
     vi.useFakeTimers()
   })
 
@@ -152,7 +152,7 @@ describe('useReminders scheduling', () => {
   })
 
   it('déclenche une notification 15 minutes avant le début d\'un favori', () => {
-    vi.setSystemTime(new Date(2026, 6, 18, 20, 44))
+    vi.setSystemTime(new Date(2026, 8, 12, 20, 44))
     renderHook(({ events }) => useReminders(events), {
       initialProps: { events: [makeEvent()] },
     })
@@ -166,7 +166,7 @@ describe('useReminders scheduling', () => {
   })
 
   it('rattrape immédiatement si la fenêtre de rappel est déjà entamée', () => {
-    vi.setSystemTime(new Date(2026, 6, 18, 20, 50)) // 10 min avant, fenêtre déjà ouverte
+    vi.setSystemTime(new Date(2026, 8, 12, 20, 50)) // 10 min avant, fenêtre déjà ouverte
     renderHook(({ events }) => useReminders(events), {
       initialProps: { events: [makeEvent()] },
     })
@@ -175,7 +175,7 @@ describe('useReminders scheduling', () => {
   })
 
   it('ne déclenche rien si l\'événement a déjà commencé', () => {
-    vi.setSystemTime(new Date(2026, 6, 18, 21, 30))
+    vi.setSystemTime(new Date(2026, 8, 12, 21, 30))
     renderHook(({ events }) => useReminders(events), {
       initialProps: { events: [makeEvent()] },
     })
@@ -187,7 +187,7 @@ describe('useReminders scheduling', () => {
   })
 
   it('ne redéclenche pas le même événement lors d\'un nouveau visibilitychange', () => {
-    vi.setSystemTime(new Date(2026, 6, 18, 20, 50))
+    vi.setSystemTime(new Date(2026, 8, 12, 20, 50))
     renderHook(({ events }) => useReminders(events), {
       initialProps: { events: [makeEvent()] },
     })
@@ -200,7 +200,7 @@ describe('useReminders scheduling', () => {
   })
 
   it('annule le rappel en attente si le favori est retiré', () => {
-    vi.setSystemTime(new Date(2026, 6, 18, 20, 44))
+    vi.setSystemTime(new Date(2026, 8, 12, 20, 44))
     const { rerender } = renderHook(({ events }) => useReminders(events), {
       initialProps: { events: [makeEvent()] },
     })
@@ -214,8 +214,8 @@ describe('useReminders scheduling', () => {
 
   it('ne programme rien tant que le statut n\'est pas "enabled"', () => {
     MockNotification.permission = 'default'
-    localStorage.removeItem('pdj26-reminders-enabled')
-    vi.setSystemTime(new Date(2026, 6, 18, 20, 59))
+    localStorage.removeItem('fdh26-reminders-enabled')
+    vi.setSystemTime(new Date(2026, 8, 12, 20, 59))
     renderHook(({ events }) => useReminders(events), {
       initialProps: { events: [makeEvent()] },
     })
@@ -228,9 +228,9 @@ describe('useReminders scheduling', () => {
 
   it('la transition de statut vers "enabled" via enable() déclenche la programmation', async () => {
     MockNotification.permission = 'default'
-    localStorage.removeItem('pdj26-reminders-enabled')
+    localStorage.removeItem('fdh26-reminders-enabled')
     MockNotification.requestPermission.mockResolvedValue('granted' as NotificationPermission)
-    vi.setSystemTime(new Date(2026, 6, 18, 20, 44))
+    vi.setSystemTime(new Date(2026, 8, 12, 20, 44))
 
     const { result } = renderHook(({ events }) => useReminders(events), {
       initialProps: { events: [makeEvent()] },
@@ -253,7 +253,7 @@ describe('useReminders scheduling', () => {
   })
 
   it('annule le rappel en attente si disable() est appelé', () => {
-    vi.setSystemTime(new Date(2026, 6, 18, 20, 44))
+    vi.setSystemTime(new Date(2026, 8, 12, 20, 44))
     const { result } = renderHook(({ events }) => useReminders(events), {
       initialProps: { events: [makeEvent()] },
     })

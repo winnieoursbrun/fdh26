@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import * as Sentry from '@sentry/react'
 import { fetchFestivalWeather, type DayWeather } from '../lib/weather'
 
-const STORAGE_KEY = 'pdj26-weather'
+const STORAGE_KEY = 'fdh26-weather'
 const STALE_AFTER_MS = 3 * 60 * 60 * 1000
 
 type WeatherState = {

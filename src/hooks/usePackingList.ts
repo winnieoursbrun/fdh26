@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react'
 
-const STORAGE_KEY = 'pdj26-packing'
+const STORAGE_KEY = 'fdh26-packing'
 
 function load(): Set<string> {
   try {

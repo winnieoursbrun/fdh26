@@ -3,7 +3,7 @@
     "id": "journee-creme-solaire",
     "category": "Pour la journée",
     "label": "Crème solaire",
-    "hint": "si si, ça tape en Normandie"
+    "hint": "le soleil de septembre tape encore"
   },
   {
     "id": "journee-lunettes",
@@ -87,7 +87,7 @@
     "id": "camping-chaussettes",
     "category": "Pour ceux qui campent",
     "label": "Des chaussettes",
-    "hint": "si elles sont trouées, tu pourras les rapiécer au village !"
+    "hint": null
   },
   {
     "id": "pluie-casquette",

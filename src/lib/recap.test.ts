@@ -20,15 +20,15 @@ function makeEvent(overrides: Partial<FestEvent>): FestEvent {
 
 describe('isRecapReady', () => {
   it('est faux avant lundi 9h', () => {
-    expect(isRecapReady(new Date(2026, 6, 20, 8, 59))).toBe(false)
+    expect(isRecapReady(new Date(2026, 8, 14, 8, 59))).toBe(false)
   })
 
   it('est vrai à partir de lundi 9h', () => {
-    expect(isRecapReady(new Date(2026, 6, 20, 9, 0))).toBe(true)
+    expect(isRecapReady(new Date(2026, 8, 14, 9, 0))).toBe(true)
   })
 
   it('est vrai bien après', () => {
-    expect(isRecapReady(new Date(2026, 6, 25, 12, 0))).toBe(true)
+    expect(isRecapReady(new Date(2026, 8, 19, 12, 0))).toBe(true)
   })
 })
 

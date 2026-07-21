@@ -9,7 +9,7 @@ import {
   isAllDay,
   isEventOngoing,
 } from '../lib/schedule'
-import { UmbrellaButton } from '../components/Umbrella'
+import { FistButton } from '../components/FistButton'
 import { ReminderBanner } from '../components/ReminderBanner'
 import { GroupPanel } from '../components/GroupPanel'
 import { FriendChips, PresenceButton } from '../components/GroupBadges'
@@ -19,7 +19,7 @@ import { useNow } from '../hooks/useNow'
 import eventsData from '../data/events.json'
 
 const events = eventsData as FestEvent[]
-const SHOW_FRIENDS_KEY = 'pdj26-show-friends-favorites'
+const SHOW_FRIENDS_KEY = 'fdh26-show-friends-favorites'
 
 function loadShowFriends(): boolean {
   return localStorage.getItem(SHOW_FRIENDS_KEY) !== 'false'
@@ -89,19 +89,19 @@ export function TimelineTab({
     return (
       <section className="timeline-empty" aria-label="Ma timeline">
         {groupPanel}
-        <svg viewBox="0 0 24 24" className="empty-umbrella" aria-hidden="true">
-          <path d="M12 2.5c-5.5 0-9.5 4-9.8 8.7 0 .3.3.55.6.4 1-.5 2.4-.8 3.4-.1.4.3.9.3 1.3 0 1.2-.9 2.6-.9 3.8 0 .4.3.9.3 1.3 0 1.2-.9 2.6-.9 3.8 0 .4.3.9.3 1.3 0 1-.7 2.4-.4 3.4.1.3.15.6-.1.6-.4C21.5 6.5 17.5 2.5 12 2.5Z" />
+        <svg viewBox="0 0 24 24" className="empty-fist" aria-hidden="true">
+          <path d="M12 3a5 5 0 0 1 5 5 5 5 0 0 1-1.2 3.3c1.4.3 2.4 1.6 2.4 3.1a3.2 3.2 0 0 1-3.2 3.2h-1.6a5 5 0 0 1-5-5V8a5 5 0 0 1 3.6-4.8Z" />
           <path
-            d="M12 12v6.5a1.6 1.6 0 0 1-3.2 0"
+            d="M12 17.5v3.5"
             fill="none"
             stroke="currentColor"
-            strokeWidth="1.8"
+            strokeWidth="2"
             strokeLinecap="round"
           />
         </svg>
         <h2>Ta timeline est vide</h2>
         <p>
-          Ouvre le parapluie d'un concert, d'un atelier ou d'une conférence dans le
+          Lève le poing sur un concert, un débat ou une conférence dans le
           Programme pour le retrouver ici, dans l'ordre du week-end.
         </p>
       </section>
@@ -161,7 +161,7 @@ export function TimelineTab({
                       </div>
                     )}
                   </div>
-                  <UmbrellaButton
+                  <FistButton
                     active={isMine}
                     title={e.title}
                     onToggle={() => onToggleFavorite(e.id)}

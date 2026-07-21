@@ -173,9 +173,9 @@ export default function App() {
       <header className="app-header">
         <div className="app-header-text">
           <h1 className="wordmark" onClick={unlockRecap}>
-            Les pluies <span className="wordmark-accent">de juillet</span>
+            Fête <span className="wordmark-accent">de l'Humain</span>
           </h1>
-          <p className="app-sub">17 – 19 juillet 2026 · Champrepus</p>
+          <p className="app-sub">11 – 13 septembre 2026 · Le Plessis-Pâté</p>
         </div>
         {showInstall && (
           <button

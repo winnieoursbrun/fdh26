@@ -14,15 +14,15 @@ describe('describeWeatherCode', () => {
 
 describe('isFestivalOver', () => {
   it('est faux pendant le festival', () => {
-    expect(isFestivalOver(new Date(2026, 6, 18, 12, 0))).toBe(false)
+    expect(isFestivalOver(new Date(2026, 8, 12, 12, 0))).toBe(false)
   })
 
   it('est faux juste avant la fin du dernier jour', () => {
-    expect(isFestivalOver(new Date(2026, 6, 19, 23, 0))).toBe(false)
+    expect(isFestivalOver(new Date(2026, 8, 13, 23, 0))).toBe(false)
   })
 
   it('est vrai après la fin du dernier jour', () => {
-    expect(isFestivalOver(new Date(2026, 6, 20, 0, 0))).toBe(true)
+    expect(isFestivalOver(new Date(2026, 8, 14, 0, 0))).toBe(true)
   })
 })
 

@@ -16,12 +16,12 @@ export default defineConfig({
       // On enregistre le SW nous-mêmes via virtual:pwa-register (src/registerSW.ts)
       // pour catcher les échecs de register() au lieu de laisser une unhandled rejection.
       injectRegister: null,
-      includeAssets: ['favicon.svg', 'map.png'],
+      includeAssets: ['favicon.svg', 'map.svg'],
       manifest: {
-        name: 'Les Pluies de Juillet 2026',
-        short_name: 'PDJ26',
+        name: "Fête de l'Humain 2026",
+        short_name: 'FDH26',
         description:
-          'Programme du festival Les Pluies de Juillet — 17, 18 et 19 juillet 2026 à Champrepus',
+          "Programme de la Fête de l'Humain — 11, 12 et 13 septembre 2026 au Plessis-Pâté",
         lang: 'fr',
         display: 'standalone',
         orientation: 'portrait',
@@ -63,7 +63,7 @@ export default defineConfig({
       ? [
           sentryVitePlugin({
             org: 'winnietech',
-            project: 'pdj-react',
+            project: 'fdh-react',
             authToken: process.env.SENTRY_AUTH_TOKEN,
             sourcemaps: {
               filesToDeleteAfterUpload: ['./dist/**/*.map'],

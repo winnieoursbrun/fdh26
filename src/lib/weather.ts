@@ -1,12 +1,12 @@
 import { DAYS } from './schedule'
 
-// Coordonnées approximatives de Champrepus (Manche) — suffisant pour une prévision
-// météo (pas de variation notable à cette échelle). À affiner si besoin via un
-// service de géocodage.
-const LATITUDE = 48.83
-const LONGITUDE = -1.25
+// Coordonnées approximatives du Plessis-Pâté (Essonne) — suffisant pour une
+// prévision météo (pas de variation notable à cette échelle). À affiner si
+// besoin via un service de géocodage.
+const LATITUDE = 48.53
+const LONGITUDE = 2.4
 
-export const FESTIVAL_DATES = DAYS.map((d) => `2026-07-${d.date}`)
+export const FESTIVAL_DATES = DAYS.map((d) => `2026-09-${d.date}`)
 
 export type DayWeather = {
   date: string

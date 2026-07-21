@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import type { FestEvent } from '../types'
 import { CATEGORY_LABEL, formatRange } from '../lib/schedule'
-import { UmbrellaButton } from './Umbrella'
+import { FistButton } from './FistButton'
 import { FriendChips, PresenceButton } from './GroupBadges'
 import type { FriendPresence } from '../hooks/useGroup'
 
@@ -38,7 +38,7 @@ export function EventCard({
           {event.artist && <p className="card-artist">{event.artist}</p>}
           <p className="card-venue">{event.venue}</p>
         </div>
-        <UmbrellaButton
+        <FistButton
           active={isFavorite}
           title={event.title}
           onToggle={() => onToggleFavorite(event.id)}

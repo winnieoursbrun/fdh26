@@ -1,104 +1,62 @@
 [
   {
+    "id": "dates-lieu",
+    "category": "Dates & lieu",
+    "question": "Quelles sont les dates et le lieu de la Fête de l'Humain 2026 ?",
+    "answer": "La 91ᵉ édition se déroule du vendredi 11 au dimanche 13 septembre 2026, sur la Base aérienne 217, au Plessis-Pâté (Essonne)."
+  },
+  {
+    "id": "programmation-disponibilite",
+    "category": "Dates & lieu",
+    "question": "Le programme est-il déjà disponible ?",
+    "answer": "Pas encore : plus d'une trentaine d'artistes sont déjà annoncés (onglet Programme), mais la grille horaire détaillée par scène et par jour n'a pas encore été publiée par l'organisation. Cette fiche sera mise à jour dès sa sortie officielle."
+  },
+  {
     "id": "acces-en-train-et-navette",
     "category": "Accès & transport",
     "question": "Comment venir au festival en train ?",
-    "answer": "Le festival se déroule au 290 route des Diligences, 50800 Champrepus. En train, les gares les plus proches sont celles de Villedieu-les-Poêles et de Foligny. Des navettes gratuites sont prévues depuis la gare jusqu'au festival, adaptées aux horaires de train (horaires disponibles en ligne sur le site du festival)."
+    "answer": "La gare la plus proche est celle de Brétigny-sur-Orge (RER C). Des navettes gratuites relient Paris et la gare de Brétigny-sur-Orge jusqu'au site du festival, au Plessis-Pâté."
   },
   {
     "id": "acces-covoiturage",
     "category": "Accès & transport",
     "question": "Y a-t-il une solution de covoiturage pour venir au festival ?",
-    "answer": "Oui, une plateforme de covoiturage dédiée est disponible sur le site internet du festival."
+    "answer": "Une plateforme de covoiturage est généralement mise en avant par le festival les semaines précédant l'événement — à vérifier sur le site officiel à l'approche de la date."
   },
   {
-    "id": "acces-transhumance-a-velo",
-    "category": "Accès & transport",
-    "question": "Comment fonctionne la Transhumance à vélo ?",
-    "answer": "La Transhumance à vélo permet de rejoindre le festival depuis Argentan, Caen, Rennes, Granville, Vire, Coutances, Avranches, Cherbourg, Villedieu-les-Poêles et Foligny. Cette année, les trajets se font en autonomie : tous les itinéraires sont disponibles en ligne (hébergés sur la plateforme La Trace) et un tableau de contacts est mis à disposition sur le site du festival pour organiser des départs communs. Rendez-vous est donné le vendredi entre 15h00 et 16h15 à la mairie de Champrepus pour accueillir les cyclistes et arriver en groupe au festival. Sur place, les cyclistes peuvent laisser leur vélo au parking, recharger la batterie de leur vélo à assistance électrique, effectuer de petites réparations grâce à l'atelier d'autoréparation ambulant, et échanger avec d'autres cyclistes dans un lieu dédié."
-  },
-  {
-    "id": "acces-stand-autoreparation-velo",
-    "category": "Accès & transport",
-    "question": "Y a-t-il un stand pour réparer son vélo sur place ?",
-    "answer": "Oui, un stand de parking vélo et d'autoréparation est installé à l'entrée du festival (repère 17 sur le plan). C'est aussi le point de rendez-vous pour la balade à vélo du samedi (10h30-13h00), une balade découverte du bocage normand d'une vingtaine de kilomètres organisée par l'équipe de la transhumance, accessible au plus grand nombre, avec retour sur site vers 13h00."
-  },
-  {
-    "id": "tarifs-grille-complete",
+    "id": "tarifs-pass-3-jours",
     "category": "Tarifs & billetterie",
-    "question": "Quels sont les tarifs du festival ?",
-    "answer": "La grille tarifaire évolue selon trois périodes d'achat et propose 5 formules (soirée vendredi, journée samedi, journée et soirée samedi, journée dimanche, pass 3 jours) :\n- Early Birds 1 (du 18 février au 1er avril) : Soirée vendredi 30€ / Journée samedi 10€ / Journée et soirée samedi 35€ / Journée dimanche 10€ / Pass 3 jours 70€.\n- Early Birds 2 (du 1er avril au 1er juillet) : Soirée vendredi 35€ / Journée samedi 15€ / Journée et soirée samedi 40€ / Journée dimanche 15€ / Pass 3 jours 75€.\n- Dernière chance (du 1er au 19 juillet) : Soirée vendredi 40€ / Journée samedi 20€ / Journée et soirée samedi 45€ / Journée dimanche 20€ / Pass 3 jours 80€.\n- Tarif réduit (toutes périodes confondues) : Soirée vendredi 27€ / Journée samedi 8€ / Journée et soirée samedi 27€ / Journée dimanche 8€ / Pass 3 jours 62€."
+    "question": "Combien coûte le pass 3 jours ?",
+    "answer": "La billetterie ouvre par paliers successifs, du moins cher au plus cher : le premier palier (55 €) est déjà épuisé, le suivant (60 €) prend le relais. Les tarifs augmentent à chaque palier, donc mieux vaut acheter tôt."
   },
   {
-    "id": "tarifs-reduit-et-gratuite",
+    "id": "tarifs-enfants-ados",
     "category": "Tarifs & billetterie",
-    "question": "Qui a droit au tarif réduit ou à la gratuité ?",
-    "answer": "Le tarif réduit s'applique aux moins de 18 ans, aux demandeur·euses d'emploi, aux bénéficiaires du RSA et aux étudiant·es. L'entrée est gratuite pour les enfants de moins de 12 ans."
+    "question": "Quel est le tarif pour les enfants et les ados ?",
+    "answer": "Le pass 3 jours est à 1 € symbolique pour les enfants de 0 à 11 ans, et à 6 € pour les 12-15 ans."
   },
   {
-    "id": "tarifs-camping-supplement",
+    "id": "tarifs-pass-culture",
     "category": "Tarifs & billetterie",
-    "question": "Le camping est-il inclus dans le billet ?",
-    "answer": "Non, le camping est proposé en supplément pour +5€, en plus du prix du billet ou du pass choisi."
+    "question": "Peut-on payer sa place avec le Pass Culture ?",
+    "answer": "Oui, le pass 3 jours est disponible à l'achat via le Pass Culture."
   },
   {
-    "id": "paiement-sur-place",
-    "category": "Paiement sur place",
-    "question": "Peut-on payer en espèces sur le site du festival ?",
-    "answer": "À la billetterie, le paiement se fait par CB ou en espèces. En revanche, à l'intérieur du festival (bar, restauration, boutique...), seuls la CB ou le système cashless sont acceptés : il n'y a pas de paiement en liquide possible une fois entré sur le site."
-  },
-  {
-    "id": "horaires-ouverture",
-    "category": "Horaires",
-    "question": "Quels sont les horaires d'ouverture du festival ?",
-    "answer": "Vendredi : 16h30 - 03h00. Samedi en journée : 10h00 - 18h30, puis en soirée : 19h15 - 03h00. Dimanche : 10h00 - 18h30."
-  },
-  {
-    "id": "camping-regles",
+    "id": "camping-disponibilite",
     "category": "Camping",
-    "question": "Quelles sont les règles à respecter sur le camping ?",
-    "answer": "L'accès au camping coûte +5€ en supplément du billet. Sur le camping, il est interdit d'avoir du verre, d'utiliser un réchaud ou de faire du feu, et les animaux ne sont pas autorisés (sauf chiens guides ou d'assistance)."
+    "question": "Peut-on camper sur place ?",
+    "answer": "Un grand camping officiel est prévu sur le site, mais sa billetterie est déjà complète pour 2026. D'autres solutions d'hébergement existent dans les environs, en Essonne."
   },
   {
-    "id": "accessibilite-bracelet-psh",
-    "category": "Accessibilité & sécurité",
-    "question": "Qu'est-ce que le bracelet PSH et comment l'obtenir ?",
-    "answer": "Il est possible de demander à l'accueil un bracelet PSH (bleu, pour Personne en Situation de Handicap) qui permet d'accéder à des espaces dédiés (chaises réservées, tables, coin détente, toilettes, douches, estrade), d'avoir la priorité sur toutes les attentes (toilettes, bar...) ainsi qu'une priorité sur les espaces assis, et d'être pris en charge de manière adaptée par les bénévoles en cas de problème."
+    "id": "programmation-scenes",
+    "category": "Programmation",
+    "question": "Combien de scènes et d'artistes sont prévus ?",
+    "answer": "Une trentaine d'artistes sont déjà annoncés, répartis a priori sur plusieurs scènes (rap, chanson, rock, électro, reggae, musiques du monde…), sur les 3 jours du festival."
   },
   {
-    "id": "accessibilite-equipe-benevole-gilets-roses",
-    "category": "Accessibilité & sécurité",
-    "question": "Qui sont les bénévoles en gilets roses et que font-ils ?",
-    "answer": "Une équipe de bénévoles dédiée à l'accessibilité est présente au Lieu Sûr et en maraude sur le site, disponible sur les heures d'ouverture du festival et reconnaissable à ses gilets roses. Ces bénévoles peuvent aider à l'installation des tentes sur le camping, aider à porter des plateaux repas, aider à repérer les différents espaces du festival, accueillir et renseigner, signaler des besoins spécifiques aux autres équipes, ou encore accompagner au Lieu Sûr en cas de problème."
-  },
-  {
-    "id": "accessibilite-pmr",
-    "category": "Accessibilité & sécurité",
-    "question": "Le site est-il accessible aux personnes à mobilité réduite (PMR) ?",
-    "answer": "Oui, des installations PMR sont présentes sur l'ensemble du site du festival."
-  },
-  {
-    "id": "securite-lieu-sur",
-    "category": "Accessibilité & sécurité",
-    "question": "Qu'est-ce que le Lieu Sûr et à quoi sert-il ?",
-    "answer": "Le Lieu Sûr est un espace bienveillant créé par le festival pour lutter contre toutes les discriminations, dominations et inégalités, et pour accueillir toute personne qui en ressent le besoin (victime ou témoin de violence, mal-être, situation de handicap, questions diverses...). On y retrouve l'équipe accessibilité ainsi que l'association La Bascule, qui propose des ressources en accès libre sur la santé sexuelle, la sexualité, le consentement et les effets des substances psychoactives, ainsi qu'une écoute attentive, un accueil bienveillant et inconditionnel, sans jugement, pour toute personne qui en a besoin."
-  },
-  {
-    "id": "restauration-stands",
-    "category": "Restauration",
-    "question": "Que peut-on manger sur place et combien y a-t-il de stands ?",
-    "answer": "6 stands de restauration sont disponibles : crêpes, galettes, truffades, salades, plats végétaliens, frites, saucisses... Le tout privilégiant le bio et le local."
-  },
-  {
-    "id": "famille-protections-auditives",
-    "category": "En famille",
-    "question": "Y a-t-il des protections auditives pour rendre les concerts accessibles aux enfants ?",
-    "answer": "Oui, des casques de protection auditive sont disponibles pour les plus petits, à récupérer au Lieu Sûr."
-  },
-  {
-    "id": "famille-espace-familles",
-    "category": "En famille",
-    "question": "Quelles animations sont proposées à l'Espace Familles ?",
-    "answer": "L'Espace Familles, animé en partenariat avec Amstramgram, propose notamment : la Découverte du cirque le samedi de 10h30 à 12h30 (aérien, portés, jonglerie, équilibre, avec Le Toucan dans le vent), la Grande Plaidoirie des Enfants le samedi de 13h30 à 15h30 (débats en famille façon tribunal, déguisé·es en avocat·es), la Balade naturaliste décalée le dimanche de 10h30 à 12h00 (spectacle itinérant burlesque avec Jong&Cie), et un Atelier de sensibilisation pour les enfants de 5 à 10 ans le dimanche de 15h00 à 16h30 (stands de jeux, chamboule-tout de l'alimentation durable, memory du cycle de l'eau, fresque artistique du bocage). En dehors de ces ateliers, l'Espace Familles est animé en continu par l'association Amstramgram, de 10h00 à 18h30 le samedi et de 10h00 à 18h00 le dimanche."
+    "id": "sourcing-donnees",
+    "category": "Programmation",
+    "question": "D'où viennent les informations de cette fiche ?",
+    "answer": "Le site officiel fete.humanite.fr n'a pas pu être consulté directement au moment de la création de cette app : ces infos viennent d'articles de presse (JDS, Tsugi, MyFestival…) et peuvent être incomplètes ou évoluer. Vérifie toujours les infos définitives sur le site officiel du festival."
   }
 ]

@@ -7,6 +7,71 @@ import type { FriendPresence, GroupApi } from '../hooks/useGroup'
 import type { FestEvent } from '../types'
 import eventsData from '../data/events.json'
 
+vi.mock('../data/events.json', () => ({
+  default: [
+    {
+      id: 'ouverture-ven-1700',
+      title: "Discours d'ouverture",
+      artist: null,
+      day: 'ven',
+      start: '17:00',
+      end: '18:30',
+      venue: 'La Grande Scène',
+      category: 'conference',
+      subtype: null,
+      description: null,
+    },
+    {
+      id: 'village-ven-1700',
+      title: 'Nocturne du Village du Monde',
+      artist: null,
+      day: 'ven',
+      start: '17:00',
+      end: '21:30',
+      venue: 'Le Village du Monde',
+      category: 'atelier',
+      subtype: null,
+      description: null,
+    },
+    {
+      id: 'massilia-ven-2135',
+      title: 'MASSILIA',
+      artist: 'Massilia Sound System',
+      day: 'ven',
+      start: '21:35',
+      end: '22:35',
+      venue: 'La Grande Scène',
+      category: 'concert',
+      subtype: null,
+      description: null,
+    },
+    {
+      id: 'nocturne-ven-0040',
+      title: 'DJ Set Nocturne',
+      artist: null,
+      day: 'ven',
+      start: '00:40',
+      end: '01:40',
+      venue: 'Le Bar',
+      category: 'concert',
+      subtype: null,
+      description: null,
+    },
+    {
+      id: 'village-sam-1000',
+      title: 'Le Village du Monde',
+      artist: null,
+      day: 'sam',
+      start: '10:00',
+      end: '18:30',
+      venue: 'Le Village du Monde',
+      category: 'atelier',
+      subtype: null,
+      description: null,
+    },
+  ],
+}))
+
 const events = eventsData as FestEvent[]
 
 let weatherDays: DayWeather[] = []
@@ -58,13 +123,13 @@ describe('ProgramTab — choix du jour', () => {
   })
 
   it('rouvre sur le jour persisté', () => {
-    localStorage.setItem('pdj26-program-day', 'sam')
+    localStorage.setItem('fdh26-program-day', 'sam')
     renderTab()
     expect(screen.getByRole('tab', { name: /Sam/ })).toHaveAttribute('aria-selected', 'true')
   })
 
   it('retombe sur vendredi si la valeur stockée est invalide', () => {
-    localStorage.setItem('pdj26-program-day', 'lundi')
+    localStorage.setItem('fdh26-program-day', 'lundi')
     renderTab()
     expect(screen.getByRole('tab', { name: /Ven/ })).toHaveAttribute('aria-selected', 'true')
   })
@@ -73,13 +138,13 @@ describe('ProgramTab — choix du jour', () => {
     renderTab()
     fireEvent.click(screen.getByRole('tab', { name: /Dim/ }))
     expect(screen.getByRole('tab', { name: /Dim/ })).toHaveAttribute('aria-selected', 'true')
-    expect(localStorage.getItem('pdj26-program-day')).toBe('dim')
+    expect(localStorage.getItem('fdh26-program-day')).toBe('dim')
   })
 
   it('affiche la pastille météo du jour quand un forecast existe', () => {
     weatherDays = [
       {
-        date: '2026-07-17',
+        date: '2026-09-11',
         weatherCode: 0,
         tempMax: 24.6,
         tempMin: 14,
@@ -191,14 +256,14 @@ describe('ProgramTab — favoris', () => {
 })
 
 describe('ProgramTab — présence « j’y suis »', () => {
-  // MIOSSEC, vendredi 21:35 – 22:35 (id réel du programme)
-  const MIOSSEC = 'miossec-ven-2135'
+  // MASSILIA, vendredi 21:35 – 22:35 (fixture ci-dessus)
+  const MASSILIA = 'massilia-ven-2135'
 
   beforeEach(() => {
     localStorage.clear()
     weatherDays = []
     vi.useFakeTimers({ toFake: ['Date'] })
-    vi.setSystemTime(new Date(2026, 6, 17, 22, 0))
+    vi.setSystemTime(new Date(2026, 8, 11, 22, 0))
   })
 
   afterEach(() => {
@@ -210,10 +275,10 @@ describe('ProgramTab — présence « j’y suis »', () => {
     renderTab({ groupApi })
 
     const btn = screen.getByRole('button', {
-      name: 'Dire à mon groupe que je suis à « MIOSSEC »',
+      name: 'Dire à mon groupe que je suis à « MASSILIA »',
     })
     fireEvent.click(btn)
-    expect(groupApi.checkIn).toHaveBeenCalledWith(MIOSSEC)
+    expect(groupApi.checkIn).toHaveBeenCalledWith(MASSILIA)
   })
 
   it('ne propose rien hors groupe', () => {

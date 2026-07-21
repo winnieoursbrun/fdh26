@@ -1,6 +1,6 @@
 import * as Sentry from '@sentry/react'
 
-const DEVICE_ID_KEY = 'pdj26-device-id'
+const DEVICE_ID_KEY = 'fdh26-device-id'
 
 // Identifiant anonyme stable par appareil (UUID aléatoire, aucune donnée
 // personnelle) : attaché via Sentry.setUser, il permet de compter les

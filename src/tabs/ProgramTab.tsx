@@ -5,12 +5,13 @@ import { describeWeatherCode } from '../lib/weather'
 import { useWeather } from '../hooks/useWeather'
 import { useNow } from '../hooks/useNow'
 import { EventCard } from '../components/EventCard'
+import { ProgramComingSoon } from '../components/ProgramComingSoon'
 import type { GroupApi } from '../hooks/useGroup'
 import eventsData from '../data/events.json'
 
 const events = eventsData as FestEvent[]
 
-const DAY_STORAGE_KEY = 'pdj26-program-day'
+const DAY_STORAGE_KEY = 'fdh26-program-day'
 
 function loadStoredDay(): Day {
   const stored = localStorage.getItem(DAY_STORAGE_KEY)
@@ -23,7 +24,7 @@ interface ProgramTabProps {
   groupApi: GroupApi
 }
 
-export function ProgramTab({ favorites, onToggleFavorite, groupApi }: ProgramTabProps) {
+function ProgramGrid({ favorites, onToggleFavorite, groupApi }: ProgramTabProps) {
   const [day, setDay] = useState<Day>(loadStoredDay)
   const [category, setCategory] = useState<Category | 'all'>('all')
   const { days: weatherDays } = useWeather()
@@ -42,7 +43,7 @@ export function ProgramTab({ favorites, onToggleFavorite, groupApi }: ProgramTab
     <section aria-label="Programme">
       <div className="day-picker" role="tablist" aria-label="Jour">
         {DAYS.map((d) => {
-          const weather = weatherDays.find((w) => w.date === `2026-07-${d.date}`)
+          const weather = weatherDays.find((w) => w.date === `2026-09-${d.date}`)
           const { icon, label } = weather ? describeWeatherCode(weather.weatherCode) : { icon: null, label: '' }
           return (
             <button
@@ -117,4 +118,11 @@ export function ProgramTab({ favorites, onToggleFavorite, groupApi }: ProgramTab
       </div>
     </section>
   )
+}
+
+export function ProgramTab(props: ProgramTabProps) {
+  if (events.length === 0) {
+    return <ProgramComingSoon />
+  }
+  return <ProgramGrid {...props} />
 }
