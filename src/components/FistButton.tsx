@@ -1,3 +1,5 @@
+import { triggerHaptic } from '../lib/haptic'
+
 interface FistButtonProps {
   active: boolean
   title: string
@@ -17,7 +19,10 @@ export function FistButton({ active, title, onToggle }: FistButtonProps) {
           ? `Retirer « ${title} » de ma timeline`
           : `Ajouter « ${title} » à ma timeline`
       }
-      onClick={onToggle}
+      onClick={() => {
+        triggerHaptic()
+        onToggle()
+      }}
     >
       <svg viewBox="0 0 24 24" aria-hidden="true">
         {active ? (

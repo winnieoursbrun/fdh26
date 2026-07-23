@@ -1,4 +1,5 @@
 import type { FriendPresence } from '../hooks/useGroup'
+import { triggerHaptic } from '../lib/haptic'
 
 function PinIcon({ label }: { label?: string }) {
   return (
@@ -53,7 +54,10 @@ export function PresenceButton({
           ? `Ne plus signaler ma présence à « ${eventTitle} »`
           : `Dire à mon groupe que je suis à « ${eventTitle} »`
       }
-      onClick={onToggle}
+      onClick={() => {
+        triggerHaptic()
+        onToggle()
+      }}
     >
       <PinIcon />
       {here ? 'Tu y es' : "J'y suis"}
