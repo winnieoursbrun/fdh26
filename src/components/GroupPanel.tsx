@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { renderSVG } from 'uqr'
 import type { MemberState } from '../lib/group'
+import { triggerHaptic } from '../lib/haptic'
 
 interface GroupPanelProps {
   group: { code: string; name: string } | null
@@ -78,6 +79,7 @@ export function GroupPanel({
               return
             }
             if (mode === 'create') {
+              triggerHaptic()
               onCreate(name.trim())
               setInviteOpen(true)
             } else {
