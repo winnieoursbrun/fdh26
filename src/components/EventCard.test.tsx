@@ -3,6 +3,9 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import { EventCard } from './EventCard'
 import type { FestEvent } from '../types'
 
+const triggerHaptic = vi.hoisted(() => vi.fn())
+vi.mock('../lib/haptic', () => ({ triggerHaptic }))
+
 function makeEvent(overrides: Partial<FestEvent> = {}): FestEvent {
   return {
     id: 'test-event',
@@ -100,6 +103,13 @@ describe('EventCard — favori et copains', () => {
     expect(onToggleFavorite).toHaveBeenCalledWith(event.id)
   })
 
+  it('déclenche un retour haptique en levant le poing', () => {
+    triggerHaptic.mockClear()
+    renderCard({ title: 'MIOSSEC' })
+    fireEvent.click(screen.getByRole('button', { name: 'Ajouter « MIOSSEC » à ma timeline' }))
+    expect(triggerHaptic).toHaveBeenCalled()
+  })
+
   it('reflète l’état favori sur le poing levé', () => {
     renderCard({ title: 'MIOSSEC' }, true)
     const fist = screen.getByRole('button', {
@@ -169,8 +179,10 @@ describe('EventCard — présence « j’y suis »', () => {
       name: 'Dire à mon groupe que je suis à « MIOSSEC »',
     })
     expect(btn).toHaveTextContent("J'y suis")
+    triggerHaptic.mockClear()
     fireEvent.click(btn)
     expect(onToggle).toHaveBeenCalled()
+    expect(triggerHaptic).toHaveBeenCalled()
   })
 
   it('reflète l’état « Tu y es »', () => {

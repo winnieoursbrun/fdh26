@@ -44,7 +44,7 @@ Règle de tri importante : les horaires < 05:00 sont la fin de nuit du jour de g
 
 ## Design
 
-Identité inspirée de l'imagerie du Front populaire / Fête de l'Humanité : écru `#f2ede2`, rouge `#c8202f`, jaune `#ffd02e`, contours noirs 2px, ombres « sticker » décalées (`--sticker`). Display : Bricolage Grotesque (auto-hébergée via @fontsource, requis pour l'offline). Dark mode via `prefers-color-scheme`. Élément signature : le bouton favori est un **poing levé** qui se lève (`src/components/FistButton.tsx`, classes `.fist-btn`/`.is-raised`) — clin d'œil au geste de solidarité du festival ; ne pas le remplacer par une étoile ou reprendre le parapluie de PDJ26.
+Identité inspirée de l'imagerie du Front populaire / Fête de l'Humanité : écru `#f2ede2`, rouge `#c8202f`, jaune `#ffd02e`, contours noirs 2px, ombres « sticker » décalées (`--sticker`). Display : Bricolage Grotesque (auto-hébergée via @fontsource, requis pour l'offline). Dark mode via `prefers-color-scheme`. Élément signature : le bouton favori est un **poing levé** qui se lève (`src/components/FistButton.tsx`, classes `.fist-btn`/`.is-raised`) — clin d'œil au geste de solidarité du festival ; ne pas le remplacer par une étoile ou reprendre le parapluie de PDJ26. Retour haptique : `triggerHaptic()` (`src/lib/haptic.ts`, sans dépendance — Vibration API + hack du `<input switch>` pour iOS façon `use-haptic`) est déclenché au tap sur les boutons d'événement favori (`FistButton`) et présence (`PresenceButton`).
 
 L'app doit rester 100 % offline une fois installée : tout asset ajouté doit être précaché (vérifier les `globPatterns` du workbox dans `vite.config.ts`).
 
