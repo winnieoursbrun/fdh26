@@ -19,6 +19,12 @@ const GROUP_LABELS: Record<string, string> = {
   vente: 'Boutique, bar & restauration',
 }
 
+// Les groupes sans aucune zone ne sont pas rendus : le plan officiel 2026 ne
+// donne pas l'emplacement des services (bars, restauration, toilettes).
+const PRESENT_GROUPS = Object.keys(GROUP_LABELS).filter((key) =>
+  venues.some((v) => v.group === key),
+)
+
 describe('MapTab', () => {
   beforeEach(() => {
     localStorage.clear()
@@ -27,16 +33,16 @@ describe('MapTab', () => {
   it('affiche le plan du site avec son texte alternatif', () => {
     render(<MapTab />)
     expect(
-      screen.getByRole('img', { name: /Plan schématique et indicatif du site avec 14 points/ }),
+      screen.getByRole('img', { name: /redessiné d'après le plan officiel 2026, avec 21 points/ }),
     ).toBeInTheDocument()
   })
 
-  it('affiche une légende par groupe, seule « Programmation » ouverte', () => {
+  it('affiche une légende par groupe non vide, seule « Programmation » ouverte', () => {
     const { container } = render(<MapTab />)
     const groups = [...container.querySelectorAll('details.legend-group')]
-    expect(groups).toHaveLength(4)
+    expect(groups).toHaveLength(PRESENT_GROUPS.length)
     expect(groups.map((g) => g.querySelector('summary')?.textContent)).toEqual(
-      Object.values(GROUP_LABELS),
+      PRESENT_GROUPS.map((key) => GROUP_LABELS[key]),
     )
     expect(groups.filter((g) => g.hasAttribute('open'))).toHaveLength(1)
     expect(container.querySelector('details.legend-programmation')).toHaveAttribute('open')
@@ -44,7 +50,8 @@ describe('MapTab', () => {
 
   it('liste chaque point du plan dans le bon groupe de légende', () => {
     const { container } = render(<MapTab />)
-    for (const [key, label] of Object.entries(GROUP_LABELS)) {
+    for (const key of PRESENT_GROUPS) {
+      const label = GROUP_LABELS[key]
       const details = container.querySelector(`details.legend-${key}`)!
       const items = within(details as HTMLElement).getAllByRole('listitem')
       const expected = venues.filter((v) => v.group === key)

@@ -24,7 +24,7 @@ export function MapTab() {
           >
             <img
               src={`${import.meta.env.BASE_URL}map.svg`}
-              alt="Plan schématique et indicatif du site avec 14 points numérotés, détaillés dans la légende ci-dessous — en attente du plan officiel du festival"
+              alt="Plan schématique du site, redessiné d'après le plan officiel 2026, avec 21 points numérotés détaillés dans la légende ci-dessous"
               draggable={false}
             />
           </TransformComponent>
@@ -32,8 +32,9 @@ export function MapTab() {
         <p className="map-hint">Pince ou double-tape pour zoomer</p>
       </div>
       <p className="map-disclaimer">
-        Plan schématique et indicatif, en attendant la publication du plan
-        officiel par l'organisation.
+        Schéma redessiné d'après le plan officiel 2026 : les positions sont
+        approximatives et les repères de services (bars, restauration,
+        toilettes) n'y figurent pas. Réfère-toi au plan affiché sur place.
       </p>
 
       <AddressCard />
@@ -41,7 +42,7 @@ export function MapTab() {
       <TicketsCard />
 
       <div className="legend">
-        {GROUPS.map((g) => (
+        {GROUPS.filter((g) => venues.some((v) => v.group === g.key)).map((g) => (
           <details key={g.key} className={`legend-group legend-${g.key}`} open={g.key === 'programmation'}>
             <summary>{g.label}</summary>
             <ol className="legend-list">
