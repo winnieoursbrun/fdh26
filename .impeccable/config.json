@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "bounce-easing",
+        "value": "cubic-bezier(0.34, 1.5, 0.64, 1)",
+        "createdAt": "2026-09-10T22:51:49.767Z",
+        "reason": "Claude's call, not the user's: signature raised-fist favourite button (CLAUDE.md Design). Domain-appropriate impulse for a fist being thrown up, over 4px of translation and 8deg of rotation - the overshoot is ~1px, read as liveliness rather than bounce, and it is the standard idiom for a like button. prefers-reduced-motion already neutralises it."
+      }
+    ]
+  }
+}
