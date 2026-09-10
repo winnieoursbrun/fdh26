@@ -69,6 +69,18 @@ vi.mock('../data/events.json', () => ({
       subtype: null,
       description: null,
     },
+    {
+      id: 'bal-sam-2200',
+      title: 'Bal populaire',
+      artist: null,
+      day: 'sam',
+      start: '22:00',
+      end: '23:30',
+      venue: 'Le Bar',
+      category: 'bal',
+      subtype: null,
+      description: null,
+    },
   ],
 }))
 
@@ -211,11 +223,28 @@ describe('ProgramTab — compteur et tri', () => {
   })
 
   it('affiche l’état vide pour un couple jour/catégorie sans événement', () => {
-    // vendredi n'a aucun bal (vérifié sur les données réelles)
+    // le chip « Bals » n'est rendu que parce qu'un autre jour en propose un
+    expect(events.some((e) => e.category === 'bal')).toBe(true)
     expect(events.some((e) => e.day === 'ven' && e.category === 'bal')).toBe(false)
     renderTab()
     fireEvent.click(screen.getByRole('button', { name: 'Bals' }))
     expect(screen.getByText('Rien dans cette catégorie ce jour-là')).toBeInTheDocument()
+  })
+
+  it('ne rend pas de chip pour une catégorie absente du programme', () => {
+    expect(events.some((e) => e.category === 'radio')).toBe(false)
+    renderTab()
+    expect(screen.queryByRole('button', { name: 'Radio' })).not.toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Concerts' })).toBeInTheDocument()
+  })
+
+  it('signale un jour dont le programme n’est pas encore publié', () => {
+    expect(events.some((e) => e.day === 'dim')).toBe(false)
+    renderTab()
+    fireEvent.click(screen.getByRole('tab', { name: /Dim/ }))
+    expect(
+      screen.getByText('Programme de ce jour pas encore disponible'),
+    ).toBeInTheDocument()
   })
 
   it('accorde le compteur au singulier pour un seul événement', () => {

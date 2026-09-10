@@ -12,9 +12,9 @@ export const DAY_LONG: Record<Day, string> = {
   dim: 'Dimanche 13 septembre',
 }
 
-// Horaire d'ouverture non encore publié par l'organisation : estimation à ajuster
-// dès que la grille officielle sort (voir la FAQ "Programmation").
-export const FESTIVAL_START = new Date(2026, 8, 11, 14, 0)
+// Premier rendez-vous du programme officiel : vendredi 11 septembre à 10:00
+// (initiations sportives, Village famille).
+export const FESTIVAL_START = new Date(2026, 8, 11, 10, 0)
 
 export const CATEGORIES: { key: Category; label: string }[] = [
   { key: 'concert', label: 'Concerts' },

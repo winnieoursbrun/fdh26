@@ -11,6 +11,10 @@ import eventsData from '../data/events.json'
 
 const events = eventsData as FestEvent[]
 
+// Le programme officiel n'alimente pas toutes les catégories du festival :
+// on n'affiche que les chips qui filtrent réellement quelque chose.
+const CHIP_CATEGORIES = CATEGORIES.filter((c) => events.some((e) => e.category === c.key))
+
 const DAY_STORAGE_KEY = 'fdh26-program-day'
 
 function loadStoredDay(): Day {
@@ -35,8 +39,9 @@ function ProgramGrid({ favorites, onToggleFavorite, groupApi }: ProgramTabProps)
     localStorage.setItem(DAY_STORAGE_KEY, d)
   }
 
-  const list = events
-    .filter((e) => e.day === day && (category === 'all' || e.category === category))
+  const dayEvents = events.filter((e) => e.day === day)
+  const list = dayEvents
+    .filter((e) => category === 'all' || e.category === category)
     .sort(byTime)
 
   return (
@@ -75,7 +80,7 @@ function ProgramGrid({ favorites, onToggleFavorite, groupApi }: ProgramTabProps)
         >
           Tout
         </button>
-        {CATEGORIES.map((c) => (
+        {CHIP_CATEGORIES.map((c) => (
           <button
             key={c.key}
             type="button"
@@ -89,9 +94,11 @@ function ProgramGrid({ favorites, onToggleFavorite, groupApi }: ProgramTabProps)
       </div>
 
       <p className="list-count">
-        {list.length === 0
-          ? 'Rien dans cette catégorie ce jour-là'
-          : `${list.length} événement${list.length > 1 ? 's' : ''}`}
+        {dayEvents.length === 0
+          ? "Programme de ce jour pas encore disponible"
+          : list.length === 0
+            ? 'Rien dans cette catégorie ce jour-là'
+            : `${list.length} événement${list.length > 1 ? 's' : ''}`}
       </p>
 
       <div className="card-list">

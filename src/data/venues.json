@@ -1,23 +1,107 @@
 [
-  { "num": 1, "name": "Scène Angela Davis", "group": "programmation" },
-  { "num": 2, "name": "Scène Joséphine Baker", "group": "programmation" },
-  { "num": 3, "name": "Scène Zebrock — Nina Simone", "group": "programmation" },
-  { "num": 4, "name": "Scène internationale (« Le 92 accueille le monde »)", "group": "programmation" },
-  { "num": 5, "name": "Agora de l'Humanité", "group": "programmation" },
-  { "num": 6, "name": "Ateliers de l'Humanité", "group": "programmation" },
-  { "num": 7, "name": "Village du Monde", "group": "programmation" },
-  { "num": 8, "name": "Village du Livre", "group": "programmation" },
-  { "num": 9, "name": "Village des Médias indépendants", "group": "programmation" },
-  { "num": 10, "name": "Village des Territoires solidaires", "group": "programmation" },
-  { "num": 11, "name": "Village Famille", "group": "programmation" },
-  { "num": 12, "name": "Forum social", "group": "programmation" },
-  { "num": 13, "name": "Espace Sciences & Numérique", "group": "programmation" },
-  { "num": 14, "name": "Espace Jack Ralite — Arts vivants & cinéma", "group": "programmation" },
-  { "num": 15, "name": "Espace Sport", "group": "programmation" },
-  { "num": 16, "name": "Entrée Humanité", "group": "accueil" },
-  { "num": 17, "name": "Entrée Marcel Cachin", "group": "accueil" },
-  { "num": 18, "name": "Parking P11 — Humanité", "group": "accueil" },
-  { "num": 19, "name": "Parkings P1 & PMR", "group": "accueil" },
-  { "num": 20, "name": "Navettes PMR-PSH & taxis", "group": "accueil" },
-  { "num": 21, "name": "RER C — vers la gare de Brétigny-sur-Orge", "group": "accueil" }
+  {
+    "num": 1,
+    "name": "Scène Angela Davis",
+    "group": "programmation"
+  },
+  {
+    "num": 2,
+    "name": "Scène Joséphine Baker",
+    "group": "programmation"
+  },
+  {
+    "num": 3,
+    "name": "Scène Zebrock - Nina Simone",
+    "group": "programmation"
+  },
+  {
+    "num": 4,
+    "name": "Scène Inter - le 92 accueille le monde",
+    "group": "programmation"
+  },
+  {
+    "num": 5,
+    "name": "Agora",
+    "group": "programmation"
+  },
+  {
+    "num": 6,
+    "name": "Ateliers de l'Humanité",
+    "group": "programmation"
+  },
+  {
+    "num": 7,
+    "name": "Village du Monde",
+    "group": "programmation"
+  },
+  {
+    "num": 8,
+    "name": "Village du Livre",
+    "group": "programmation"
+  },
+  {
+    "num": 9,
+    "name": "Village des Médias Indépendants",
+    "group": "programmation"
+  },
+  {
+    "num": 10,
+    "name": "Village des Territoires Solidaires",
+    "group": "programmation"
+  },
+  {
+    "num": 11,
+    "name": "Village famille",
+    "group": "programmation"
+  },
+  {
+    "num": 12,
+    "name": "Forum Social",
+    "group": "programmation"
+  },
+  {
+    "num": 13,
+    "name": "Espace Sciences et Numérique",
+    "group": "programmation"
+  },
+  {
+    "num": 14,
+    "name": "Espace Jack Ralite",
+    "group": "programmation"
+  },
+  {
+    "num": 15,
+    "name": "Espace Sport",
+    "group": "programmation"
+  },
+  {
+    "num": 16,
+    "name": "Entrée Humanité",
+    "group": "accueil"
+  },
+  {
+    "num": 17,
+    "name": "Entrée Marcel Cachin",
+    "group": "accueil"
+  },
+  {
+    "num": 18,
+    "name": "Parking P11 — Humanité",
+    "group": "accueil"
+  },
+  {
+    "num": 19,
+    "name": "Parkings P1 & PMR",
+    "group": "accueil"
+  },
+  {
+    "num": 20,
+    "name": "Navettes PMR-PSH & taxis",
+    "group": "accueil"
+  },
+  {
+    "num": 21,
+    "name": "RER C — vers la gare de Brétigny-sur-Orge",
+    "group": "accueil"
+  }
 ]
