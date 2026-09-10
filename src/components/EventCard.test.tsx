@@ -81,18 +81,26 @@ describe('EventCard — détails dépliables', () => {
     expect(screen.getByText('Feu! Chatterton')).toHaveClass('card-recs-tag')
   })
 
-  it('affiche les bios des intervenant·es une fois déplié', () => {
-    renderCard({ description: 'desc', speakers: ['Camille, sociologue.'] })
-    fireEvent.click(screen.getByRole('button', { name: 'En savoir plus' }))
-    expect(screen.getByText('Intervenant·es')).toBeInTheDocument()
-    expect(screen.getByText('Camille, sociologue.')).toHaveClass('card-speaker-bio')
-  })
-
-  it('n’affiche ni recommandations ni intervenant·es quand absents', () => {
+  it('n’affiche pas de recommandations quand il n’y en a pas', () => {
     renderCard({ description: 'desc' })
     fireEvent.click(screen.getByRole('button', { name: 'En savoir plus' }))
     expect(screen.queryByText('Tu aimeras si tu aimes')).not.toBeInTheDocument()
-    expect(screen.queryByText('Intervenant·es')).not.toBeInTheDocument()
+  })
+})
+
+describe('EventCard — intervenant·es', () => {
+  // Les noms sont annoncés directement sur la carte (sans déplier) : pour un
+  // débat, c'est ce qu'on cherche en premier.
+  it('affiche les noms des intervenant·es sans déplier', () => {
+    renderCard({ speakers: ['Fabien Roussel', 'Sophie Binet'] })
+    expect(screen.getByText('Fabien Roussel · Sophie Binet')).toHaveClass(
+      'card-speakers-line',
+    )
+  })
+
+  it('n’affiche aucune ligne d’intervenant·es quand il n’y en a pas', () => {
+    renderCard({ speakers: null })
+    expect(document.querySelector('.card-speakers-line')).toBeNull()
   })
 })
 

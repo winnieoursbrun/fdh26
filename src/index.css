@@ -559,6 +559,15 @@ p {
   white-space: pre-line;
 }
 
+/* Intervenant·es annoncé·es dans la description officielle : juste les noms,
+   sous le lieu, puisque pour un débat c'est ce qu'on cherche en premier. */
+.card-speakers-line {
+  margin-top: 3px;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
 /* Photo credit the festival attaches to some illustrations. */
 .card-credit {
   margin-top: 6px;
@@ -566,8 +575,7 @@ p {
   color: var(--muted);
 }
 
-.card-recs,
-.card-speakers {
+.card-recs {
   margin-top: 10px;
   padding-top: 10px;
   border-top: 1.5px dashed var(--line);
@@ -596,16 +604,6 @@ p {
   font-size: 0.78rem;
   font-weight: 600;
   background: var(--paper);
-}
-
-.card-speaker-bio {
-  font-size: 0.85rem;
-  line-height: 1.5;
-  margin-top: 6px;
-}
-
-.card-speaker-bio:first-of-type {
-  margin-top: 0;
 }
 
 /* ---------- Poing levé favori ---------- */

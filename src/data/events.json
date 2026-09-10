@@ -139,7 +139,12 @@
     "subtype": null,
     "description": "Avec Antoine Champagne (Reflets), Laura Quenneville (Coop-médias), Elodie Safaris (Arrêt sur Images et animé par Jacques Trentesaux.\nUn débat organisé par La Presse Libre, Coop-Médias.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Antoine Champagne",
+      "Laura Quenneville",
+      "Elodie Safaris",
+      "Jacques Trentesaux"
+    ],
     "image": "z66d194009471a53a30a72d8e.jpg",
     "copyright": null
   },
@@ -171,7 +176,11 @@
     "subtype": null,
     "description": "Avec Philippe Perrin, astronaute, Thomas Meynadier, syndicaliste Thales Alenia Space et Sébastien Rostan, syndicalistes Airbus.\nOrganisé par La Revue Progressistes et l'Humanité",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Philippe Perrin",
+      "Thomas Meynadier",
+      "Sébastien Rostan"
+    ],
     "image": "z66d18eba9471a53a30a72d7c.jpg",
     "copyright": null
   },
@@ -187,7 +196,11 @@
     "subtype": null,
     "description": "En partenariat Fondation Gabriel Péri\nNabil Boukili, député fédéral à la Chambre des représentants de Belgique (PTB) ; Despina Sinou, maîtresse de conférences en droit public, membre de l’Institut Nicos-Poulantzas et de Syriza (Grèce) ; Charlotte Balavoine, administratrice de la Fondation Gabriel-Péri, membre de l’exécutif du PCF chargée des questions internationales.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Nabil Boukili",
+      "Despina Sinou",
+      "Charlotte Balavoine"
+    ],
     "image": "z66d187d89471a53a30a72d6c.jpg",
     "copyright": null
   },
@@ -203,7 +216,10 @@
     "subtype": null,
     "description": "Avec Thibault Izoret (Blast), Zaza et Sophie Mazas.\nUn débat organisé par Contre Attaque, Sphères et Blast.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Thibault Izoret",
+      "Sophie Mazas"
+    ],
     "image": "z66d194009471a53a30a72d8e.jpg",
     "copyright": null
   },
@@ -235,7 +251,9 @@
     "subtype": null,
     "description": "Autour du thème : « Le séparatisme de la bourgeoisie et la stratégie du choc »\nAnimée par Eugénie Barbezat.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Eugénie Barbezat"
+    ],
     "image": "z6a9a789e571c461a82628ef7.jpg",
     "copyright": null
   },
@@ -267,7 +285,10 @@
     "subtype": null,
     "description": "Avec Nicolas Mathieu, écrivain, Benoît Coquard, sociologue",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Nicolas Mathieu",
+      "Benoît Coquard"
+    ],
     "image": "z66d187d89471a53a30a72d6c.jpg",
     "copyright": null
   },
@@ -283,7 +304,9 @@
     "subtype": null,
     "description": "directeur de La lettre clandestine (Éditions Garnier) animée par Bernard Vasseur.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Bernard Vasseur"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -315,7 +338,13 @@
     "subtype": null,
     "description": "Gaelle Choquer Marchand, directrice des politiques familiales et sociales à la CNAF, Alain Schmitt, directeur général de l’ANCV (Agence Nationale pour les Chèques-Vacances), Martine Pinville, Présidente de VVF, ancienne secrétaire d'État chargée du Commerce, de l'Artisanat, de la Consommation et de l'Économie sociale et solidaire et Maxime Cellier, secrétaire général de la FNHPA. Animé par Frédéric Mallozzi, président de Vacances & Familles\nEn partenariat avec Vacances et Famille",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Frédéric Mallozzi",
+      "Gaelle Choquer Marchand",
+      "Alain Schmitt",
+      "Martine Pinville",
+      "Maxime Cellier"
+    ],
     "image": "z66d186d39471a53a30a72d65.jpg",
     "copyright": null
   },
@@ -331,7 +360,10 @@
     "subtype": null,
     "description": "Avec Rémy Gerbet de Wikimédia, les SansPagEs et le Café pédagogique.\nOrganisé par Les Ordis Libres",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Rémy Gerbet",
+      "Organisé par Les Ordis Libres"
+    ],
     "image": "z66d18eba9471a53a30a72d7c.jpg",
     "copyright": null
   },
@@ -363,7 +395,9 @@
     "subtype": null,
     "description": "Auteur de Sous couvert d’objectivité: carton rouge (Éditions du Croquant).\nAnimée par Scarlett Bain.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Scarlett Bain"
+    ],
     "image": "z6a9a884e571c461a82628f1c.jpg",
     "copyright": null
   },
@@ -379,7 +413,14 @@
     "subtype": null,
     "description": "Fabienne CLAMENS, Direction Fédérale de la Fédération CGT des Organismes Sociaux et mandatée CGT au Conseil d'Orientation des Retraites, Victor DUCHESNE, Enseignant-chercheur en économie à l'Université Sorbonne Paris Nord, Hadrien CLOUET, Député LFI de la Haute Garonne, Yannick MONNET, Député PCF de l'Allier, Animé par Cécile VELASQUEZ, Secrétaire générale de la Fédération CGT des Organismes Sociaux\nOrganisé par la Fédération CGT Organismes Sociaux",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Cécile VELASQUEZ",
+      "Fabienne CLAMENS",
+      "Direction Fédérale",
+      "Victor DUCHESNE",
+      "Hadrien CLOUET",
+      "Yannick MONNET"
+    ],
     "image": "z66d18e769471a53a30a72d78.jpg",
     "copyright": null
   },
@@ -395,7 +436,13 @@
     "subtype": null,
     "description": "Avec Romain Tord (Politis), Youlie Yamamoto (ATTAC), Murielle Guilbert (Solidaires), amia El Khalfaoui (SAVE), Laetitia Lafforgue (UFISC) et Robin Saxod (Coop-médias).\nUn débat organisé par Politis.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Romain Tord",
+      "Youlie Yamamoto",
+      "Murielle Guilbert",
+      "Laetitia Lafforgue",
+      "Robin Saxod"
+    ],
     "image": "z66d194009471a53a30a72d8e.jpg",
     "copyright": null
   },
@@ -411,7 +458,12 @@
     "subtype": null,
     "description": "William Blanc, Arnaud Fossier, Mathilde Larrère, historien-ne-s; et François Ruffin, député de la Somme.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "William Blanc",
+      "Arnaud Fossier",
+      "Mathilde Larrère",
+      "François Ruffin"
+    ],
     "image": "z66d187d89471a53a30a72d6c.jpg",
     "copyright": null
   },
@@ -443,7 +495,9 @@
     "subtype": null,
     "description": "Auteurs de L'émancipation par le travail - Les leçons de la communauté de travail Boimondau (1943-1953) (Edition de l'Atelier) et de L'entreprise de demain existe depuis hier : histoire des Scop et des SCIC ( Éditions Le bord de l'eau) animée par Pierre-Henri Lab",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Pierre-Henri Lab"
+    ],
     "image": "z6a9a7f9c571c461a82628f05.jpg",
     "copyright": null
   },
@@ -459,7 +513,11 @@
     "subtype": null,
     "description": "Avec Katia Aruca Chaple, fonctionnaire du Département des relations internationales du Comité central du PCC, Carolina Tejadas, directrice de l’hebdomadaire Voz de Colombie et Charlotte Balavoine, Fondation Gabriel Péri.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Katia Aruca Chaple",
+      "Carolina Tejadas",
+      "Charlotte Balavoine"
+    ],
     "image": "z66d18f309471a53a30a72d80.jpg",
     "copyright": null
   },
@@ -491,7 +549,10 @@
     "subtype": null,
     "description": "Avec Fabien Roussel, secrétaire national du PCF et Patrick Martin, président du MEDEF",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Fabien Roussel",
+      "Patrick Martin"
+    ],
     "image": "z6a9bf1adcb5eba46b198eba4.jpg",
     "copyright": null
   },
@@ -507,7 +568,13 @@
     "subtype": null,
     "description": "Avec Gabriel Malek (Les Amis de la Terre), Sylvie Mayer (commission ESS du PCF), Pascal Lefebvre (CGT), Béatrice Delpech (Enercoop)\nTable ronde animée par Marie-Stéphane Guy (L'Humanité)\nEn partenariat avec les LICOORNES",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Gabriel Malek",
+      "Sylvie Mayer",
+      "Pascal Lefebvre",
+      "Béatrice Delpech",
+      "Marie-Stéphane Guy"
+    ],
     "image": "z66d186d39471a53a30a72d65.jpg",
     "copyright": null
   },
@@ -539,7 +606,9 @@
     "subtype": null,
     "description": "Co-auteur de La reproduction au 21ème siècle - Actualité de la sociologie de Bourdieu et Passeron ( Éditions Le Croquant).\nAnimée par Pierre-Henri Lab",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Pierre-Henri Lab"
+    ],
     "image": "z6a9a809a571c461a82628f0f.jpg",
     "copyright": null
   },
@@ -587,7 +656,13 @@
     "subtype": null,
     "description": "Natacha POMMET, Secrétaire Générale de la Fédération CGT des Services Publics, Méhadée BERNARD, Présidente du Grand Orly Seine Bièvre, Manon MONMIREL, élue à Saint Ouen, Léo DE MONTER, animateur de la coordination syndicale départementale CGT d’Ille et Vilaine animé par Robin VERNER, journaliste à la NVO\nOrganisé par la Fédération CGT des Services Publics",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Robin VERNER",
+      "Natacha POMMET",
+      "Méhadée BERNARD",
+      "Manon MONMIREL",
+      "Léo DE MONTER"
+    ],
     "image": "z66d18e769471a53a30a72d78.jpg",
     "copyright": null
   },
@@ -603,7 +678,9 @@
     "subtype": null,
     "description": "Directeur de l'Humanité, Sénateur de Seine-Saint-Denis et auteur de 211 milliards. Révélations sur les aides publiques aux entreprises (Editions de l'Atelier) animée par Dominique Sicot",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Dominique Sicot"
+    ],
     "image": "z6a9a887b571c461a82628f22.jpg",
     "copyright": null
   },
@@ -635,7 +712,12 @@
     "subtype": null,
     "description": "Bally Bagayoko, maire LFI de Saint-Denis ; Vincent Bouget, maire PCF de Nîmes ; Laurence Ruffin, maire écologiste de Grenoble ; Lucie Castets, maire du 12e arrondissement de Paris.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Bally Bagayoko",
+      "Vincent Bouget",
+      "Laurence Ruffin",
+      "Lucie Castets"
+    ],
     "image": "z66d187d89471a53a30a72d6c.jpg",
     "copyright": null
   },
@@ -651,7 +733,9 @@
     "subtype": null,
     "description": "Marydé Fernández López, députée, membre du Comité central et cheffe du Bureau chargé des relations avec l'Union des jeunes communistes (UJC) et les organisations de masse. Katia Aruca Chaple, fonctionnaire du Département des relations internationales du Comité central du PCC. Vincent Govelet, coordinateur de la campagne \"Solidarité avec Cuba\" du PCF",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Marydé Fernández López"
+    ],
     "image": "z66d18f309471a53a30a72d80.jpg",
     "copyright": null
   },
@@ -667,7 +751,10 @@
     "subtype": null,
     "description": "Avec La Confédération paysanne, Les soulèvements de la Terre, Les Inverti.e.s. Animée par Lucie Geffroy (La Déferlante) et Chaymaa Deb (L'Iceberg).\nUn débat organisé par La Déferlante et L'Iceberg.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Lucie Geffroy",
+      "Chaymaa Deb"
+    ],
     "image": "z66d194009471a53a30a72d8e.jpg",
     "copyright": null
   },
@@ -683,7 +770,10 @@
     "subtype": null,
     "description": "Avec Flavien Ronteix, rédacteur en chef de la revue Progressistes et Antoine Devillet, membre de l'association Le Nuage était sous nos pieds\nOrganisé par La Revue Progressistes, Les Ordis Libres et La Mouette",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Flavien Ronteix",
+      "Antoine Devillet"
+    ],
     "image": "z66d18eba9471a53a30a72d7c.jpg",
     "copyright": null
   },
@@ -699,7 +789,11 @@
     "subtype": null,
     "description": "Il sera animé par Mejdaline Mhiri et donnera la parole à un public engagé sur ces questions, notamment Gaël Rivière (président de la Fédération Française Handisport), Syanie Dalmat (journaliste à L’Équipe) et Hélène Ba (Basket Pour Toutes)",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Mejdaline Mhiri",
+      "Syanie Dalmat",
+      "Hélène Ba"
+    ],
     "image": "z66ddc69012de986918a3e6b9.jpg",
     "copyright": null
   },
@@ -731,7 +825,9 @@
     "subtype": null,
     "description": "Auteur de L'Arabe du samedi soir : la nuit est une lutte des classes ( Éditions Seuil) animée par Nicolas Mathey",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Nicolas Mathey"
+    ],
     "image": "z6a9a8869571c461a82628f1f.jpg",
     "copyright": null
   },
@@ -763,7 +859,12 @@
     "subtype": null,
     "description": "Avec Sylvie Platel, docteure en santé publique, WECF, Martin Rieussec-Fournier, administrateur de La Mutuelle Familiale, Annie Thébaud-Mony, directrice de recherche honoraire à l’INSERM, et Judith Wolf, chercheure CNRS, Giscope 84\nEn partenariat avec la Mutuelle Familiale",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Sylvie Platel",
+      "Martin Rieussec-Fournier",
+      "Annie Thébaud-Mony",
+      "Judith Wolf"
+    ],
     "image": "z66d186d39471a53a30a72d65.jpg",
     "copyright": null
   },
@@ -795,7 +896,9 @@
     "subtype": null,
     "description": "Autrice de Séverine - Une journaliste pour le peuple ( Éditions Les Pérégrines) animée par Pierre Cazmajor",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Pierre Cazmajor"
+    ],
     "image": "z6a9a811e571c461a82628f13.jpg",
     "copyright": null
   },
@@ -827,7 +930,11 @@
     "subtype": null,
     "description": "Ahmad Ashour, ancien directeur de l'Institut culturel Tamer de Gaza, Marion Slitine, historienne et anthropologue, Amal Khaleefa, doctorante en didactique des langues",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Ahmad Ashour",
+      "Marion Slitine",
+      "Amal Khaleefa"
+    ],
     "image": "z66d18f309471a53a30a72d80.jpg",
     "copyright": null
   },
@@ -859,7 +966,9 @@
     "subtype": null,
     "description": "Avec Jean-Luc Mélenchon, fondateur de la France Insoumise",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Jean-Luc Mélenchon"
+    ],
     "image": "z6a9bf047cb5eba46b198eb9e.jpg",
     "copyright": null
   },
@@ -939,7 +1048,11 @@
     "subtype": null,
     "description": "Avec Denis Robert, le collectif « Désarmer Bolloré », Anaïs Massola, la librairie indépendante Le Rideau Rouge et l'association L'écologie du livre. Modéré par Nassira El Moaddem.\nUn débat organisé par Blast, L'Humanité, Fakir, Coop-Médias et La Presse Libre.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Denis Robert",
+      "Anaïs Massola",
+      "Nassira El Moaddem"
+    ],
     "image": "z66d194009471a53a30a72d8e.jpg",
     "copyright": null
   },
@@ -955,7 +1068,10 @@
     "subtype": null,
     "description": "avec Ernest Pignon-Ernest et Gérard Mordillat, président et vice-président des Ami.es de l’Humanité.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Ernest Pignon-Ernest",
+      "Gérard Mordillat"
+    ],
     "image": "z66d1878a9471a53a30a72d68.jpg",
     "copyright": null
   },
@@ -987,7 +1103,9 @@
     "subtype": null,
     "description": "Auteurs des fascistes n'ont jamais compté les étoiles (Éditions Mémoires d'encrier) animée par Muriel Steinmetz",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Muriel Steinmetz"
+    ],
     "image": "z6a9a88a5571c461a82628f28.jpg",
     "copyright": null
   },
@@ -1019,7 +1137,12 @@
     "subtype": null,
     "description": "François-Xavier Demoures, auteur ; Elsa Faucillon, députée PCF ; Pouria Amirshahi, député Écologiste et social ; Sophie Mazas, avocate LDH.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "François-Xavier Demoures",
+      "Elsa Faucillon",
+      "Pouria Amirshahi",
+      "Sophie Mazas"
+    ],
     "image": "z66d187d89471a53a30a72d6c.jpg",
     "copyright": null
   },
@@ -1035,7 +1158,9 @@
     "subtype": null,
     "description": "Mary Lou McDonald, dirigeante de la formation irlandaise du Sinn Féin",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Mary Lou McDonald"
+    ],
     "image": "z66d18f309471a53a30a72d80.jpg",
     "copyright": null
   },
@@ -1707,7 +1832,9 @@
     "subtype": null,
     "description": "autour du thème \"Marc Bloch. Être historien de son temps. Jusqu’au péril de sa vie\", animée par Anne Jollet, en partenariat avec les Cahiers d’histoire. Revue d’histoire critique",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Anne Jollet"
+    ],
     "image": "z6a9a83c6571c461a82628f19.jpg",
     "copyright": null
   },
@@ -1755,7 +1882,13 @@
     "subtype": null,
     "description": "Avec Francois Bernard (SPPP / Le Moment), Nicolas Mayart (Le Média), Nadia Ettayeb (Aligre FM), Richard Sovied (Telebocal) et Sylvain Delfau (Les Locales).\nUn débat organisé par Le Moment, Le Média et SPPP.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Francois Bernard",
+      "Nicolas Mayart",
+      "Nadia Ettayeb",
+      "Richard Sovied",
+      "Sylvain Delfau"
+    ],
     "image": "z66d194009471a53a30a72d8e.jpg",
     "copyright": null
   },
@@ -1771,7 +1904,13 @@
     "subtype": null,
     "description": "Animé par Salomé GADAFI SGA Fédération CGT du Spectacle et Paolo AIQUEL, Secrétaire du SNJ CGT, Laurent BINET, Ecrivain, Marine RIOU, Directrice/Programmatrice de salles\"Art et Essai\", Anne-Sophie SIMPERE, journaliste, enquêtrice à l'Observatoire des multinationales, Karine HUET SGA SNAM-CGT, Sophie TAILLE-POLIAN Députée du Val de Marne\n﻿Organisé par la Fédération CGT Spectacle",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Paolo AIQUEL",
+      "Laurent BINET",
+      "Marine RIOU",
+      "Anne-Sophie SIMPERE",
+      "Karine HUET SGA SNAM-CGT"
+    ],
     "image": "z66d18e769471a53a30a72d78.jpg",
     "copyright": null
   },
@@ -1803,7 +1942,9 @@
     "subtype": null,
     "description": "Avec Valérie Masson- Delmotte, climatologue, directrice de recherche au Commissariat à l’énergie atomique et aux énergies alternatives (CEA).",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Valérie Masson- Delmotte"
+    ],
     "image": "z66d187d89471a53a30a72d6c.jpg",
     "copyright": null
   },
@@ -1819,7 +1960,9 @@
     "subtype": null,
     "description": "Historiens et auteurs d'Histoire de la CGT (Éditions Arcane 17) et Michel Pigenet pour Les États généraux de 1945. Une expérience démocratique oubliée (Editions du Croquant) animée par Naïm Sakhi. En partenariat avec l'IHS CGT.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Naïm Sakhi"
+    ],
     "image": "z6a9a89f2571c461a82628f31.jpg",
     "copyright": null
   },
@@ -1883,7 +2026,9 @@
     "subtype": null,
     "description": "pour Anthropologie de l'Orgasme (Éditions La Découverte), animée par Laurence Mauriaucourt",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Laurence Mauriaucourt"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -1915,7 +2060,9 @@
     "subtype": null,
     "description": "Auteur de Paul Vaillant-Couturier: les mots d'un combattant (Presses universitaires de Clermont-Ferrand) animée par Diego Chauvet",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Diego Chauvet"
+    ],
     "image": "z6a9a8a38571c461a82628f34.jpg",
     "copyright": null
   },
@@ -1947,7 +2094,10 @@
     "subtype": null,
     "description": "Mathilde Touvier, directrice de recherche à l'Inserm et directrice Nutrinet-Santé ; Camille Dorioz, directeur des campagnes de Foodwatch France. En partenariat avec la Terre.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Mathilde Touvier",
+      "Camille Dorioz"
+    ],
     "image": "z66d187d89471a53a30a72d6c.jpg",
     "copyright": null
   },
@@ -1963,7 +2113,9 @@
     "subtype": null,
     "description": "pour Laâyoune, en attendant (Éditions Anarchasis), animée par Cem Algul",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Cem Algul"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -2027,7 +2179,11 @@
     "subtype": null,
     "description": "Avec Coline Folliot pour l'Association des Journalistes Lesbiennes, Gay, Bi-e-s, Trans (AJL), Manal Fkihi pour l\"association des journalistes antiracistes et racisé·es (Ajar), et animé par Marie Barbier (La Déferlante).\nUn débat organisé par La Déferlante et Histoires Crépues.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Coline Folliot",
+      "Manal Fkihi",
+      "Marie Barbier"
+    ],
     "image": "z66d194009471a53a30a72d8e.jpg",
     "copyright": null
   },
@@ -2059,7 +2215,9 @@
     "subtype": null,
     "description": "Auteur de La liberté d'expression contre la liberté de la presse ? (Éditions Seuil) animée par Julien Camy",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Julien Camy"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -2075,7 +2233,13 @@
     "subtype": null,
     "description": "Lucas Chancel, économiste, spécialiste des inégalités ; Lucie Pinson, directrice de l’ONG Reclaim Finance ; Denis Durand, économiste membre de la commission économique du PCF ; Éric Coquerel, député LFI, président de la commission des Finances de l'Assemblée nationale ; Anne-Laure Delatte, économiste, directrice de recherches au CNRS.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Lucas Chancel",
+      "Lucie Pinson",
+      "Denis Durand",
+      "Éric Coquerel",
+      "Anne-Laure Delatte"
+    ],
     "image": "z66d187d89471a53a30a72d6c.jpg",
     "copyright": null
   },
@@ -2091,7 +2255,11 @@
     "subtype": null,
     "description": "Alec Desbordes, spécialiste des relations industrielles états-uniennes, Christophe Deroubaix, journaliste, Alexis Coskun, rédacteur-en-chef de Recherches internationales",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Alec Desbordes",
+      "Christophe Deroubaix",
+      "Alexis Coskun"
+    ],
     "image": "z66d18f309471a53a30a72d80.jpg",
     "copyright": null
   },
@@ -2107,7 +2275,10 @@
     "subtype": null,
     "description": "Avec Yann Kindo, historien et Nicolas Tardits de la Commission ESR du PCF.\nOrganisé par le PCF de l'Université Paris-Saclay et la Revue Progressistes",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Yann Kindo",
+      "Nicolas Tardits"
+    ],
     "image": "z66d18eba9471a53a30a72d7c.jpg",
     "copyright": null
   },
@@ -2123,7 +2294,9 @@
     "subtype": null,
     "description": "pour Parions sur l'école (Éditions Café pédagogique) animée par Olivier Chartrain.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Olivier Chartrain"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -2187,7 +2360,9 @@
     "subtype": null,
     "description": "Auteur du Le Maroc, faux Protectorat, vraie Colonie : Fragments d’Histoire, 1904-1956 (Editions Hémisphères) animée par Latifa Madani",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Latifa Madani"
+    ],
     "image": "z6a9a8aaf571c461a82628f3d.jpg",
     "copyright": null
   },
@@ -2203,7 +2378,9 @@
     "subtype": null,
     "description": "co-auteurs du \"Le partage des richesses, toute une histoire\" (Éditions de l’Atelier) animée par Dominique Sicot.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Dominique Sicot"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -2219,7 +2396,12 @@
     "subtype": null,
     "description": "Anne-Cécile Mailfert, présidente de la Fondation des femmes ; Camille Kouchner, avocate et autrice ; Claire Bourdille, fondatrice du Collectif enfantiste ; Oumou Koita, militante contre l’excision.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Anne-Cécile Mailfert",
+      "Camille Kouchner",
+      "Claire Bourdille",
+      "Oumou Koita"
+    ],
     "image": "z66d187d89471a53a30a72d6c.jpg",
     "copyright": null
   },
@@ -2235,7 +2417,11 @@
     "subtype": null,
     "description": "Fabrice COUDOUR, Secrétaire général de la FNME CGT, Catherine MACGREGOR, Directrice Générale d'ENGIE, Animé par Gaël FAROU\nOrganisé par la FNME CGT",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Gaël FAROU",
+      "Fabrice COUDOUR",
+      "Catherine MACGREGOR"
+    ],
     "image": "z66d18e769471a53a30a72d78.jpg",
     "copyright": null
   },
@@ -2267,7 +2453,9 @@
     "subtype": null,
     "description": "Rencontre avec Jean-Yves Mollier, historien, Hugues Jallon, écrivain, et Jérome Clément, fondateur d'Arte\nAnimée par Muriel Stainmetz.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Muriel Stainmetz"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -2299,7 +2487,9 @@
     "subtype": null,
     "description": "auteur de Pourquoi les fascistes n'aiment pas les spaghettis ? (Édition Ystia) animée Par Pierre Cazemajor",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Pierre Cazemajor"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -2315,7 +2505,12 @@
     "subtype": null,
     "description": "Avec Billy (Contre Attaque), Charlotte Meyer (Brûle), Guillaume Etiévant (Frustration Magazine), Edwin Malboeuf (Mouais) et Pierre Douillard-Lefèvre (Contre Attaque).\nUn débat organisé par Contre Attaque, Frustration Mag et Mouais.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Charlotte Meyer",
+      "Guillaume Etiévant",
+      "Edwin Malboeuf",
+      "Pierre Douillard-Lefèvre"
+    ],
     "image": "z66d194009471a53a30a72d8e.jpg",
     "copyright": null
   },
@@ -2331,7 +2526,12 @@
     "subtype": null,
     "description": "Magali Reghezza-Zitt, géographe ; Serge Zaka, agroclimatologue ; Christophe Cassou, climatologue, coauteur du Giec ; Yamina Saheb, docteure en ingénierie énergétique, coautrice du Giec.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Magali Reghezza-Zitt",
+      "Serge Zaka",
+      "Christophe Cassou",
+      "Yamina Saheb"
+    ],
     "image": "z66d187d89471a53a30a72d6c.jpg",
     "copyright": null
   },
@@ -2395,7 +2595,10 @@
     "subtype": null,
     "description": "Hélène Tigroudja, Professeure de droit international des droits de l'homme et de droit international à l'Université d'Aix-Marseille, Tran To Nga, militante qui lutte pour faire reconnaître le crime d'écocide auVietnam par les fabricants états-uniens de l'agent orange, Collectif stop ecocide France",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Hélène Tigroudja",
+      "Tran To Nga"
+    ],
     "image": "z66d18f309471a53a30a72d80.jpg",
     "copyright": null
   },
@@ -2427,7 +2630,9 @@
     "subtype": null,
     "description": "autrice de La grande méthode (Éditions La Fabrique) animée par Cem Algul",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Cem Algul"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -2443,7 +2648,9 @@
     "subtype": null,
     "description": "autrice de S’organiser. Reprendre le pouvoir, mode d’emploi (éditions Rivages Payot) animée par Julien Camy",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Julien Camy"
+    ],
     "image": "z6a9a8b7e571c461a82628f40.jpg",
     "copyright": null
   },
@@ -2475,7 +2682,9 @@
     "subtype": null,
     "description": "Léa Hiraux, Coordinatrice comité action mutialiste jeunes, Violaine De Filippis-Abate Avocate droits des femmes, Fethi CHEIKH Président Aubeane Mutuelle, Elue politque.\nEn partenariat avec ALTERNATIVE MUTUALISTE",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Léa Hiraux"
+    ],
     "image": "z66d186d39471a53a30a72d65.jpg",
     "copyright": null
   },
@@ -2491,7 +2700,9 @@
     "subtype": null,
     "description": "autrice de Pour ne pas disparaître (Éditions Robert Laffont), animée par Mejdaline Mhiri",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Mejdaline Mhiri"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -2539,7 +2750,11 @@
     "subtype": null,
     "description": "Jacky Albrand SG fédération CGT des Transports, Arnaud Quémard DG SANEF, Christophe Leguevaques Avocat, animé par Marie TOULGOAT, journaliste à l'Humanité\nOrganisé par la Fédération CGT des Transports",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Marie TOULGOAT",
+      "Jacky Albrand",
+      "Arnaud Quémard DG SANEF"
+    ],
     "image": "z66d18e769471a53a30a72d78.jpg",
     "copyright": null
   },
@@ -2555,7 +2770,9 @@
     "subtype": null,
     "description": "Auteur de Cheminement d'un communiste en terre chrétienne, (Editions de Borée) animée par Pierre Dharréville",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Pierre Dharréville"
+    ],
     "image": "z6a9a8b91571c461a82628f43.jpg",
     "copyright": null
   },
@@ -2587,7 +2804,11 @@
     "subtype": null,
     "description": "Avec François Ruffin, député et essayiste, Diane Semerdjian, responsable plaidoyer à Transparency International France et Eric Alt, administrateur de l'association Anticor",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "François Ruffin",
+      "Diane Semerdjian",
+      "Eric Alt"
+    ],
     "image": "z66d1878a9471a53a30a72d68.jpg",
     "copyright": null
   },
@@ -2603,7 +2824,9 @@
     "subtype": null,
     "description": "Avec Sophie Binet, secrétaire générale de la CGT",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Sophie Binet"
+    ],
     "image": "z6a9690f0c0f0b34be41a70f1.jpg",
     "copyright": null
   },
@@ -2619,7 +2842,9 @@
     "subtype": null,
     "description": "Avec Bookynette de l'April et Wicklow de Framasoft.\nOrganisé par l'April et Framasot",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Wicklow de Framasoft"
+    ],
     "image": "z66d18eba9471a53a30a72d7c.jpg",
     "copyright": null
   },
@@ -2635,7 +2860,9 @@
     "subtype": null,
     "description": "Avec Raid Fahmi, ancien ministre et secrétaire général du Parti communiste (PCI)",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Raid Fahmi"
+    ],
     "image": "z66d18f309471a53a30a72d80.jpg",
     "copyright": null
   },
@@ -2651,7 +2878,9 @@
     "subtype": null,
     "description": "Autour d’Engels écrits politiques 1883-1895 (Editions sociales) animée par Dominique Sicot.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Dominique Sicot"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -2683,7 +2912,9 @@
     "subtype": null,
     "description": "Autrice de Comme des esclaves - Vivre la surexploitation et s'en libérer (éditions La Découverte) animée par Latifa Madani",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Latifa Madani"
+    ],
     "image": "z6a9a8baf571c461a82628f46.jpg",
     "copyright": null
   },
@@ -2715,7 +2946,12 @@
     "subtype": null,
     "description": "Avec Aurélie TROUVÉ, Députée LFI, Julien DIVE, Député LR, Virginie NEUMAYER, membre du bureau confédéral de la CGT et Chloé RIDEL, députée européenne PS.\nEn partenariat avec MAX HAVELAAR",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Aurélie TROUVÉ",
+      "Julien DIVE",
+      "Virginie NEUMAYER",
+      "Chloé RIDEL"
+    ],
     "image": "z66d186d39471a53a30a72d65.jpg",
     "copyright": null
   },
@@ -2779,7 +3015,14 @@
     "subtype": null,
     "description": "Avec Aurélien Saintoul (LFI), Pierre Laurent (PCF), Olivier Besancenot (NPA),Sophie Taillé-Polian (Génération.s) et Sandrine Rousseau. Animé par Tom Demars-Granja (l'Humanité) et Lisa Lap (Le Média).\nUn débat organisé par l'Humanité, Le Media, Coop-Médias et La Presse Libre.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Aurélien Saintoul",
+      "Pierre Laurent",
+      "Olivier Besancenot",
+      "Sophie Taillé-Polian",
+      "Tom Demars-Granja",
+      "Lisa Lap"
+    ],
     "image": "z66d194009471a53a30a72d8e.jpg",
     "copyright": null
   },
@@ -2795,7 +3038,9 @@
     "subtype": null,
     "description": "Auteur de Une histoire globale de la RDA (Éditions Tallandier) animée par Diego Chauvet",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Diego Chauvet"
+    ],
     "image": "z6a9a8bc2571c461a82628f49.jpg",
     "copyright": null
   },
@@ -2827,7 +3072,10 @@
     "subtype": null,
     "description": "Nicolas Lambert, géographe, et Geoffroy Valadon, designer, Association Nuées.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Nicolas Lambert",
+      "Geoffroy Valadon"
+    ],
     "image": "z66d18f309471a53a30a72d80.jpg",
     "copyright": null
   },
@@ -2859,7 +3107,12 @@
     "subtype": null,
     "description": "Avec Sandra Regol, députée écologiste ; Sébastien Delavoux, animateur du réseau CGT Sdis ; Claire Lejeune, députée LFI ; Frédéric Mellier, secrétaire départemental du PCF Gironde.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Sandra Regol",
+      "Sébastien Delavoux",
+      "Claire Lejeune",
+      "Frédéric Mellier"
+    ],
     "image": "z66d187d89471a53a30a72d6c.jpg",
     "copyright": null
   },
@@ -2875,7 +3128,10 @@
     "subtype": null,
     "description": "Avec Christophe Deroubaix, grand reporter à l’Humanité, et François Da Rocha Carneiro, historien.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Christophe Deroubaix",
+      "François Da Rocha Carneiro"
+    ],
     "image": "z66d1878a9471a53a30a72d68.jpg",
     "copyright": null
   },
@@ -2891,7 +3147,9 @@
     "subtype": null,
     "description": "Auteur de La zone : une histoire populaire de Paris (Edtions B42) animée par Julien Camy",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Julien Camy"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -2923,7 +3181,11 @@
     "subtype": null,
     "description": "Thierry Nier SG de la Fédération CGT des Cheminots, Clément BEAUNE Haut Commissaire à la Stratégie et au Plan, Fabrice Charrière Secrétaire Général UNSA, Jean Louis DALIBERT Président de l’association SOS Gares Normandie, Matthieu Chabanel PDG SNCF Réseau, Mathieu GALLOIS, maire de Saran, Animé par Naïm SAHKI, journaliste au journal l'Humanité.\nOrganisé par la Fédération CGT des Cheminots",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Naïm SAHKI",
+      "Thierry Nier",
+      "Mathieu GALLOIS"
+    ],
     "image": "z66d18e769471a53a30a72d78.jpg",
     "copyright": null
   },
@@ -2939,7 +3201,9 @@
     "subtype": null,
     "description": "animée par Alain Serres",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Alain Serres"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -2971,7 +3235,11 @@
     "subtype": null,
     "description": "Carolina Tejada , directrice de l'hebdomadaire Voz, membre de la direction nationale du Parti communiste colombien, Christophe Ventura, directeur de recherche à l'IRIS, spécialiste de l'Amérique latine et Maria Luiza Lapa de Souz, représentante en France du Parti des Travailleurs (Brésil)",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Carolina Tejada",
+      "Christophe Ventura",
+      "Maria Luiza Lapa"
+    ],
     "image": "z66d18f309471a53a30a72d80.jpg",
     "copyright": null
   },
@@ -2987,7 +3255,13 @@
     "subtype": null,
     "description": "Charles Fournier, Député Indre et Loire, Alice Pouiller, Coop Médias, coopérative de médias indépendants, Clara Michielini, ONG « A voté », Frédérique Lamarre, Déléguée nationale MGEN, Virginie Neumayer, membre du Bureau confédéral de la CGT animée par David Bornstein modérateur de The Conversation France.\n﻿En partenariat avec la MGEN",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Charles Fournier",
+      "Alice Pouiller",
+      "Clara Michielini",
+      "Frédérique Lamarre",
+      "Virginie Neumayer"
+    ],
     "image": "z66d186d39471a53a30a72d65.jpg",
     "copyright": null
   },
@@ -3003,7 +3277,9 @@
     "subtype": null,
     "description": "Autour des Caddies de la colère (Editions Goater) en présence de Ghislaine Ménage animée par Dominique Sicot",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Dominique Sicot"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -3035,7 +3311,10 @@
     "subtype": null,
     "description": "Avec Monique Pinçon-Charlot, sociologue, Roland Gori, psychanalyste, et Bolchegeek, auteur.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Monique Pinçon-Charlot",
+      "Roland Gori"
+    ],
     "image": "z66d1878a9471a53a30a72d68.jpg",
     "copyright": null
   },
@@ -3051,7 +3330,14 @@
     "subtype": null,
     "description": "Avec Chaymaa Deb (L'Iceberg), Léa Guedj (Reporterre), Loup Espargilière (Vert), Yvana Alétas (Histoires Crépues) et Virginie Jourdan (La Maison écologique). Animé par Léa Dang (Socialter).\nUn débat organisé par Socialter, Vert, Reporterre, La Maison Ecologique, Histoires Crépues et L'Iceberg.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Chaymaa Deb",
+      "Léa Guedj",
+      "Loup Espargilière",
+      "Yvana Alétas",
+      "Virginie Jourdan",
+      "Léa Dang"
+    ],
     "image": "z66d194009471a53a30a72d8e.jpg",
     "copyright": null
   },
@@ -3067,7 +3353,12 @@
     "subtype": null,
     "description": "Juliette Grange, philosophe et politologue ; Michel Feher, philosophe ; Dieynaba Diop, députée PS; Jean-Victor Castor, député GDR",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Juliette Grange",
+      "Michel Feher",
+      "Dieynaba Diop",
+      "Jean-Victor Castor"
+    ],
     "image": "z66d187d89471a53a30a72d6c.jpg",
     "copyright": null
   },
@@ -3083,7 +3374,10 @@
     "subtype": null,
     "description": "avec Jean Vigreux et Guillaume Roubaud-Quashie co-auteurs de Les Fronts populaires, une perspective mondiale 1934-1938 et Louise Bure, animée par la Fondation Gabriel Péri",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Jean Vigreux",
+      "Louise Bure"
+    ],
     "image": "z6a9a8bd5571c461a82628f4c.jpg",
     "copyright": null
   },
@@ -3179,7 +3473,11 @@
     "subtype": null,
     "description": "- Céline Ménager, Chargée de mission au sein de l'association DALO\n- Anne Olivier, Co-présidente en charge du plaidoyer à Solidarités Nouvelles pour le Logement Essonne\n- Jean-Marc Prieur, Directeur de Solidarités Nouvelles pour le Logement en Essonne\nEn partenariat avec SOLIDARITES NOUVELLES POUR LE LOGEMENT",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Céline Ménager",
+      "Anne Olivier",
+      "Jean-Marc Prieur"
+    ],
     "image": "z66d186d39471a53a30a72d65.jpg",
     "copyright": null
   },
@@ -3195,7 +3493,9 @@
     "subtype": null,
     "description": "\"Pourquoi et comment promouvoir ces nouveaux terrains de lutte, état des lieux des\nexpériences des militants déjà engagés et des propositions.\"\nLe débat animé par Clothilde Sauvage de Vent Debout. Prendront part au débat ; Valentin Guery (Sociologue Paris Nanterre), Vertige Media, Marie George Buffet (Femmes ici et là-bas), Basket Pour Toutes (Timothée GAUTHIÉROT) et le Racoon Kai Boxing Club (Adrien Pouillot).",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Clothilde Sauvage"
+    ],
     "image": "z66ddc69012de986918a3e6b9.jpg",
     "copyright": null
   },
@@ -3227,7 +3527,9 @@
     "subtype": null,
     "description": "co-auteurs de Cornucopia. Une anthologie pour le XVIe siècle (Éditions Droz), animée par Cem Algul",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Cem Algul"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -3243,7 +3545,9 @@
     "subtype": null,
     "description": "Co-autrice de L’État et la révolution citoyenne, (Editions La dispute) animée par Laurence Mauriaucourt",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Laurence Mauriaucourt"
+    ],
     "image": "z6a9a8be7571c461a82628f4f.jpg",
     "copyright": null
   },
@@ -3291,7 +3595,12 @@
     "subtype": null,
     "description": "Sophie BINET SG de la CGT, Jean-Pierre FARANDOU, MInistre du Travail et des Solidarités de France, Amir REZA-TOFIGHI, Présidents des Entrepreneurs, Animé par Marion DALLARD, journaliste à l'Humanité.\nOrganisé par la Confédération",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Marion DALLARD",
+      "Sophie BINET",
+      "Jean-Pierre FARANDOU",
+      "Amir REZA-TOFIGHI"
+    ],
     "image": "z66d18e769471a53a30a72d78.jpg",
     "copyright": null
   },
@@ -3307,7 +3616,9 @@
     "subtype": null,
     "description": "auteurs d’Extrême droite : le grand péril (Éditions Rue de l’échiquier) et Du pied gauche ( Éditions Charivari) animée par Julien Camy.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Julien Camy"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -3323,7 +3634,13 @@
     "subtype": null,
     "description": "Ludivine Bantigny, historienne ; Guillaume Roubaud-Quashie, historien et dirigeant du PCF ; Antoine Léaument, député LFI ; Marine Tondelier, Secrétaire nationale Les Écologistes, Chloé Ridel, députée européenne socialiste.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Ludivine Bantigny",
+      "Guillaume Roubaud-Quashie",
+      "Antoine Léaument",
+      "Marine Tondelier",
+      "Chloé Ridel"
+    ],
     "image": "z66d187d89471a53a30a72d6c.jpg",
     "copyright": null
   },
@@ -3339,7 +3656,11 @@
     "subtype": null,
     "description": "Jean-Marie Collin, directeur de la Campagne ICAN en France, Hélène Bidard, vice-présidente du PGE, Roland Nivet, porte-parole national du Mouvement de la paix",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Jean-Marie Collin",
+      "Hélène Bidard",
+      "Roland Nivet"
+    ],
     "image": "z66d18f309471a53a30a72d80.jpg",
     "copyright": null
   },
@@ -3355,7 +3676,9 @@
     "subtype": null,
     "description": "Avec William Blanc, historien",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "William Blanc"
+    ],
     "image": "z66d1878a9471a53a30a72d68.jpg",
     "copyright": null
   },
@@ -3371,7 +3694,9 @@
     "subtype": null,
     "description": "Mathilide Larrère, historienne, Louise Gaxie directrice de la fondation Gabriel Péri, David Chaurand directeur de l'IHS-CGT autour du jeu Les conquêtes sociales de Coco Cherry, animée par la Fondation Gabriel Péri, en partenariat avec l'IHS CGT",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Mathilide Larrère"
+    ],
     "image": "z6a9a8bff571c461a82628f52.jpg",
     "copyright": null
   },
@@ -3435,7 +3760,9 @@
     "subtype": null,
     "description": "Auteur de COGIPpunk : comment le monde est devenu une dystopie discount (Éditions Au diable Vauvert) animée par Latifa Madani",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Latifa Madani"
+    ],
     "image": "z6a9a8e42571c461a82628f79.jpg",
     "copyright": null
   },
@@ -3451,7 +3778,9 @@
     "subtype": null,
     "description": "pour Sur la brèche (Éditions Arcane 17) animée par Scarlett Bain",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Scarlett Bain"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -3499,7 +3828,10 @@
     "subtype": null,
     "description": "Anna Camposampiero, chargée des relations interantionales de Rifondazione Comunista (Italie) et membre de l'exécutif du Parti de la gauche européenne (PGE)\nShumona Sinha, romancière franco-indienne et Julia Lara membre du Mouvement des travailleurs sans-terre (MST, Brésil)",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Anna Camposampiero",
+      "Shumona Sinha"
+    ],
     "image": "z66d18f309471a53a30a72d80.jpg",
     "copyright": null
   },
@@ -3531,7 +3863,9 @@
     "subtype": null,
     "description": "Autrice du Low-cost contre le travail. Enquête sur les enseignes à bas coût (Éditions Raison d'agir) animée par Cem Algul",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Cem Algul"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -3563,7 +3897,9 @@
     "subtype": null,
     "description": "Avec Mathieu Pigasse, homme d'affaires et banquier français",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Mathieu Pigasse"
+    ],
     "image": "z6a968e23c0f0b34be41a70e4.jpg",
     "copyright": null
   },
@@ -4107,7 +4443,9 @@
     "subtype": null,
     "description": "Avec Rachid Santaki, journaliste et romancier français\nL’initiative de dictées géantes portée par Rachid Santaki depuis 2013 et dans toute la France est partie d’un constat clair : l’orthographe et les mots qui sont des enjeux essentiels pour chacun d’entre nous peuvent être un jeu mais surtout un moment fédérateur.\nLe succès de la Dictée Géante repose sur le profil de Rachid Santaki. Tout d’abord, il a écrit des ouvrages en lien avec la société. Il a également animé des centaines d’ateliers d’écriture et travaillé sur des projets de mémoires. Toujours à l’écoute mais également créatif, il innove pour proposer des dictées originales et surtout il fédère toutes les classes de notre société.\nParmi les participants, il y a les habitués, les fans de Santaki qui ont lu tous ses romans, les scolaires emmenés par leur prof après une visite de l’écrivain en classe, des ados, des pères, mères de famille et des personnes âgées ravis de se pencher à nouveau sur quelques lignes de Victor Hugo ou de Saint-Exupéry.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Rachid Santaki"
+    ],
     "image": "z6a968f12c0f0b34be41a70eb.jpg",
     "copyright": null
   },
@@ -4171,7 +4509,9 @@
     "subtype": null,
     "description": "Auteur des Jeunesses communistes (Editions Atlande) animée par Nicolas Mathey",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Nicolas Mathey"
+    ],
     "image": "z6a9a8c12571c461a82628f55.jpg",
     "copyright": null
   },
@@ -4203,7 +4543,10 @@
     "subtype": null,
     "description": "Christian Pellicani, Président MNLE, Un représentant FNME-CGT, Un représentant association \"Sauvons le climat\", Christian Chasseau, Secrétaire MNLE. En partenariat avec la MNLE",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Christian Pellicani",
+      "Christian Chasseau"
+    ],
     "image": "z66d186d39471a53a30a72d65.jpg",
     "copyright": null
   },
@@ -4219,7 +4562,12 @@
     "subtype": null,
     "description": "Avec Bally Bagayoko, Pierre Tevanian, Sarra Grira et Marie Le Roch (RetroNews). Animé Michael Pauron (Afrique XXI)\nUn débat organisé par Orient XXI, Afrique XXI et RetroNews.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Bally Bagayoko",
+      "Pierre Tevanian",
+      "Sarra Grira",
+      "Marie Le Roch"
+    ],
     "image": "z66d194009471a53a30a72d8e.jpg",
     "copyright": null
   },
@@ -4235,7 +4583,9 @@
     "subtype": null,
     "description": "autrice de c'est MON corps! (Éditions La martinière jeunesse) animée par Henriette Zouguebi",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Henriette Zouguebi"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -4251,7 +4601,9 @@
     "subtype": null,
     "description": "Co-auteur de Manifeste pour la démocratie au travail (Éditions La Dispute) animée par Eugénie Barbezat",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Eugénie Barbezat"
+    ],
     "image": "z6a9a8c25571c461a82628f58.jpg",
     "copyright": null
   },
@@ -4267,7 +4619,9 @@
     "subtype": null,
     "description": "Avec Raphaël Bouguemari, membre de la commission écologie du PCF.\nOrganisé par la Revue Progressistes",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Raphaël Bouguemari"
+    ],
     "image": "z66d18eba9471a53a30a72d7c.jpg",
     "copyright": null
   },
@@ -4299,7 +4653,9 @@
     "subtype": null,
     "description": "auteur de Numérique : Stop à l'exploitation (Éditions Le temps des cerises) animée par Diego Chauvet",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Diego Chauvet"
+    ],
     "image": "z6a9a8cac571c461a82628f5b.jpg",
     "copyright": null
   },
@@ -4315,7 +4671,9 @@
     "subtype": null,
     "description": "Avec Fabien Gay, directeur de l’Humanité et sénateur de Seine-Saint-Denis : rencontre les lecteurs pour évoquer l’avenir du journal;",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Fabien Gay"
+    ],
     "image": "z6a9698a3c0f0b34be41a7122.jpg",
     "copyright": null
   },
@@ -4331,7 +4689,9 @@
     "subtype": null,
     "description": "co-auteurs de De l'autre côté du tableau noir : Les mathématiques à visage humain (Éditions Seuil) animée par Nicolas Mathey.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Nicolas Mathey"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -4347,7 +4707,9 @@
     "subtype": null,
     "description": "Avec Jean-Michel Bocquet, chercheur en sciences de l’éducation et Julien Nombo-Poaty coordinateur national des Pionniers de France.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Jean-Michel Bocquet"
+    ],
     "image": "z66e3f1b012de986918a3e9d1.jpg",
     "copyright": null
   },
@@ -4363,7 +4725,11 @@
     "subtype": null,
     "description": "Aurélie Trouvé, députée LFI ; Nicolas Haettinger, délégué CGT Novasco ; Aymeric Seassau, adjoint au maire de Nantes, membre du CEN du PCF, responsable à la nouvelle industrialisation.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Aurélie Trouvé",
+      "Nicolas Haettinger",
+      "Aymeric Seassau"
+    ],
     "image": "z66d187d89471a53a30a72d6c.jpg",
     "copyright": null
   },
@@ -4411,7 +4777,13 @@
     "subtype": null,
     "description": "Thomas DUTEL, Secrétaire du CSEC GRDF, Gwenael PLAGNE, Secrétaire du CSEC EDF, Salim KHAMALLAH, Secrétaire du CSEC ENEDIS, Alam DUFOUR, Députée du Groupe La France Insoumise - Nouveau Front Populaire, Pierre Bell-Lloch Maire de Vitry Sur Seine, animé par Marie TOULGOAT, journaliste à l'Humanité.\nOrganisé par les CSEC Energie",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Marie TOULGOAT",
+      "Thomas DUTEL",
+      "Gwenael PLAGNE",
+      "Salim KHAMALLAH",
+      "Alam DUFOUR"
+    ],
     "image": "z66d18e769471a53a30a72d78.jpg",
     "copyright": null
   },
@@ -4459,7 +4831,14 @@
     "subtype": null,
     "description": "Eddie Jacquemart, Président de la CNL, Pascal Salvodelli, Sénateur, Bastien BONNARGENT, secrétaire national MJCF, Delphine VALENTIN, DG IDF Habitat, Margaux ALDERBERT, secrétaire générale \"Nos services publics\".En partenariat avec la CONFEDERATION NATIONALE DU LOGEMENT",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Eddie Jacquemart",
+      "Pascal Salvodelli",
+      "Bastien BONNARGENT",
+      "Delphine VALENTIN",
+      "DG IDF Habitat",
+      "Margaux ALDERBERT"
+    ],
     "image": "z66d186d39471a53a30a72d65.jpg",
     "copyright": null
   },
@@ -4475,7 +4854,10 @@
     "subtype": null,
     "description": "Michael Neumann, responsable de l'Unité Migration chez MSF, SOS Méditerranée",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Michael Neumann",
+      "SOS Méditerranée"
+    ],
     "image": "z66d18f309471a53a30a72d80.jpg",
     "copyright": null
   },
@@ -4507,7 +4889,9 @@
     "subtype": null,
     "description": "auteur des Handiclapés (Grrr...art Editions) animée par Nicolas Mathey.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Nicolas Mathey"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -4571,7 +4955,9 @@
     "subtype": null,
     "description": "autrice de Main basse sur la ville (Éditions Stock) animée par Elena Vedere",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Elena Vedere"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -4603,7 +4989,10 @@
     "subtype": null,
     "description": "Caroline Roussy, directrice de recherche à l'IRIS, responsable du Programme Afrique/s et Garba Abdoul Azizou, ex-directeur adjoint du Centre national d'étude stratégique et de sécurité (CNESS-Niger)",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Caroline Roussy",
+      "Garba Abdoul Azizou"
+    ],
     "image": "z66d18f309471a53a30a72d80.jpg",
     "copyright": null
   },
@@ -4635,7 +5024,9 @@
     "subtype": null,
     "description": "traductrice de la Fille de la terre d'Agnes Smedlay (Nada Editions) animée par Julien Camy",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Julien Camy"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -4651,7 +5042,9 @@
     "subtype": null,
     "description": "- David HORIOT – Président du réseau CHANTIER ECOLE\n- Morgane GAUQUELIN – Réseau des Entrepreneurs Citoyens – Directrice\n- Lucile MARTY – Directrice de la Fédération Régionale des C.I.D.F.F. d’ILE DE France.\n- Un représentant d'ENVIE\nAnimé par DELLIERE Karine, Directrice Générale de la CCAS- IEG",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "DELLIERE Karine"
+    ],
     "image": "z66d186d39471a53a30a72d65.jpg",
     "copyright": null
   },
@@ -4667,7 +5060,11 @@
     "subtype": null,
     "description": "Avec Sylvain Delaître, représentant CGT au CSF Cyber du CNI et au Conseil Supérieur de la Réserve Militaire, ainsi que Camille Françoise, coordinatrice de Knowledge Rights 21 France et Bastien Le Querrec, juriste à la Quadrature du Net.\nOrganisé par OUVATON, Accolades et l'Humanité",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Sylvain Delaître",
+      "Bastien Le Querrec",
+      "Organisé par OUVATON"
+    ],
     "image": "z66d18eba9471a53a30a72d7c.jpg",
     "copyright": null
   },
@@ -4683,7 +5080,10 @@
     "subtype": null,
     "description": "Auteurs de Du FN au RN, les raisons d'un succès (Éditions PUF) et de Ils ne sont pas d'extrême-droite, ils font l'extrême-droite (Éditions La découverte) animée par Pierre-Henri Lab",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Pierre-Henri Lab",
+      "Auteurs de Du FN au RN"
+    ],
     "image": "z6a9a8d4b571c461a82628f67.jpg",
     "copyright": null
   },
@@ -4699,7 +5099,9 @@
     "subtype": null,
     "description": "auteur de L’Exclusion culturelle, manifeste pour une riposte populaire (Éditions du Faubourg) animée par Julien Camy",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Julien Camy"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -4715,7 +5117,9 @@
     "subtype": null,
     "description": "Sylvie Durand Membre du Secrétariat de l'UGICT, Chimie, UD 93, Pierre-louis BRAS Ancien Président du Conseil d'orientation des retraites, Franck Von Lennep Président du comité de suivi des retraites, animé par Sarah DELATTRE, journaliste à la Vie Ouvrière.\nOrganisé par l'UGICT CGT",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Sarah DELATTRE"
+    ],
     "image": "z66d18e769471a53a30a72d78.jpg",
     "copyright": null
   },
@@ -4731,7 +5135,11 @@
     "subtype": null,
     "description": "Avec Jessie Varin (Nouvelle Seine), Alicia C'est Tout et Reha (Histoires crepues).\nUn débat organisé par Co.Média, Narval et Histoires Crépues et animé par Amira Bouziri (Co.Media) .",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Jessie Varin",
+      "Alicia C'est Tout",
+      "Amira Bouziri"
+    ],
     "image": "z66d194009471a53a30a72d8e.jpg",
     "copyright": null
   },
@@ -4795,7 +5203,11 @@
     "subtype": null,
     "description": "Avec Philippe Dutheil, leader des Grandes Bouches, Pierre Soletti, poète, et Monique Pinçon-Charlot, sociologue.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Philippe Dutheil",
+      "Pierre Soletti",
+      "Monique Pinçon-Charlot"
+    ],
     "image": "z66d1878a9471a53a30a72d68.jpg",
     "copyright": null
   },
@@ -4843,7 +5255,11 @@
     "subtype": null,
     "description": "Thierry Bodin, syndicaliste, membre de Médicaments Biens Communs (MBC),\nGaëlle Krikorian, sociologue, membre des communs pharmaceutiques,\nMaxime Paul, membre du bureau de La Mutuelle Familiale,\net Antoine Prioux, pharmacien, membre des communs pharmaceutiques\nEn partenariat avec la Mutuelle Familiale",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Thierry Bodin",
+      "Gaëlle Krikorian",
+      "Maxime Paul"
+    ],
     "image": "z66d186d39471a53a30a72d65.jpg",
     "copyright": null
   },
@@ -4875,7 +5291,9 @@
     "subtype": null,
     "description": "autrice d'Allemagne 1918-1923. Lecons d'une révolution fusillée (Atlande Editions) animée par Dominique Sicot",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Dominique Sicot"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -4891,7 +5309,9 @@
     "subtype": null,
     "description": "Auteur de Brecht et les mauvais temps nouveaux (Éditions La Fabrique) animée par Marie-Jo Sirach.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Marie-Jo Sirach"
+    ],
     "image": "z6a9a8d5b571c461a82628f6a.jpg",
     "copyright": null
   },
@@ -4939,7 +5359,9 @@
     "subtype": null,
     "description": "Avec Dominique Bari journaliste à l’Humanité et Barthélemy Courmont, directeur de recherche à l’Iris",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Barthélemy Courmont"
+    ],
     "image": "z66d18f309471a53a30a72d80.jpg",
     "copyright": null
   },
@@ -4955,7 +5377,10 @@
     "subtype": null,
     "description": "Alexandre Ouizille, sénateur socialiste : Cécile Duflot, directrice générale d'Oxfam France ; Mélanie Plouviez, philosophe, maîtresse de conférences à l'université Côte d'Azur, autrice de l'Injustice en héritage.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Alexandre Ouizille",
+      "Mélanie Plouviez"
+    ],
     "image": "z66d187d89471a53a30a72d6c.jpg",
     "copyright": null
   },
@@ -4971,7 +5396,12 @@
     "subtype": null,
     "description": "Avec Chloé Pathé, éditions Anamosa, collectif les Désirables, Frantz Olivié, éditeur chez Anacharsis et auteur du livre Edition (Anamosa) et Claire Stavaux, directrice des éditions de l’Arche, collectif les Désirables animée par Sophie Joubert",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Chloé Pathé",
+      "Frantz Olivié",
+      "Claire Stavaux",
+      "Sophie Joubert"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -4987,7 +5417,10 @@
     "subtype": null,
     "description": "Avec André Chassaigne, ancien député, auteur de « Cheminement d’un communiste en terres chrétiennes », et François Da Rocha Carneiro, historien",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "André Chassaigne",
+      "François Da Rocha Carneiro"
+    ],
     "image": "z66d1878a9471a53a30a72d68.jpg",
     "copyright": null
   },
@@ -5003,7 +5436,10 @@
     "subtype": null,
     "description": "Vincent GAUTHERON, Secrétaire Général de l'URIF, Sophie TROCHET Secrétaire générale de l'UD de l'Aude, Thomas LEMAHIEU Journaliste à L'Humanité, Nassira EL MOADDEM Journaliste, Directrice et rédactrice en chef du Bondy Blog, Animé par Dominique MARTINEZ, journaliste à la Vie Ouvrière.\nOrganisé par l'URIF CGT",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Dominique MARTINEZ",
+      "Vincent GAUTHERON"
+    ],
     "image": "z66d18e769471a53a30a72d78.jpg",
     "copyright": null
   },
@@ -5035,7 +5471,9 @@
     "subtype": null,
     "description": "auteur des Les chemins de la colère (Bayard Editions) animée par Dominique Sicot",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Dominique Sicot"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -5051,7 +5489,10 @@
     "subtype": null,
     "description": "Alexandre Ouizille, sénateur socialiste : Cécile Duflot, directrice générale d'Oxfam France ; Mélanie Plouviez, philosophe, maîtresse de conférences à l'université Côte d'Azur, autrice de l'Injustice en héritage.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Alexandre Ouizille",
+      "Mélanie Plouviez"
+    ],
     "image": "z66d187d89471a53a30a72d6c.jpg",
     "copyright": null
   },
@@ -5067,7 +5508,9 @@
     "subtype": null,
     "description": "Autrice de Filles de la librairie (Éditions Flammarion) et Et si l'amitié pouvait tout changer ? (Éditions La Martinière) animée par Caroline Constant",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Caroline Constant"
+    ],
     "image": "z6a9a8d95571c461a82628f6d.jpg",
     "copyright": null
   },
@@ -5083,7 +5526,10 @@
     "subtype": null,
     "description": "Francisca Bravo Miranda et Jorge Moral, membres du syndicats CCOO",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Francisca Bravo Miranda",
+      "Jorge Moral"
+    ],
     "image": "z66d18f309471a53a30a72d80.jpg",
     "copyright": null
   },
@@ -5099,7 +5545,9 @@
     "subtype": null,
     "description": "Avec Hubert Krivine, physicien.\nOrganisé par le PCF de l'Université Paris-Saclay",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Hubert Krivine"
+    ],
     "image": "z66d18eba9471a53a30a72d7c.jpg",
     "copyright": null
   },
@@ -5163,7 +5611,11 @@
     "subtype": null,
     "description": "Denis DURAND, directeur d’Economie Politique, Cathie BOUVET, Secrétaire fédérale en charge de la politique revendicative – FNATH-CGT, Fethi CHEIKH, président AUBEANE mutuelle. Francis BALAY, président Alternative mutualiste\nEn partenariat avec ALTERNATIVE MUTUALISTE",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Denis DURAND",
+      "Cathie BOUVET",
+      "Fethi CHEIKH"
+    ],
     "image": "z66d186d39471a53a30a72d65.jpg",
     "copyright": null
   },
@@ -5211,7 +5663,9 @@
     "subtype": null,
     "description": "autrice de Peine Kapital : monologue avec l'intelligence artificielle (Éditions La Fabrique) animée par Nicolas Mathey",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Nicolas Mathey"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -5243,7 +5697,9 @@
     "subtype": null,
     "description": "autrices de Viser Juste (Éditions l'Arche) et de Darya et Dounya (Éditions Seuil) animée par Sophie Joubert",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Sophie Joubert"
+    ],
     "image": "z6a9a8db2571c461a82628f70.jpg",
     "copyright": null
   },
@@ -5291,7 +5747,11 @@
     "subtype": null,
     "description": "Charlotte Recoquillon, chercheuse rattachée à l’Institut français de géopolitique et journaliste; Cole Stangler, journaliste; Clément Pairot, auteur.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Charlotte Recoquillon",
+      "Cole Stangler",
+      "Clément Pairot"
+    ],
     "image": "z66d187d89471a53a30a72d6c.jpg",
     "copyright": null
   },
@@ -5323,7 +5783,9 @@
     "subtype": null,
     "description": "Co-auteurs de Colette Magny - Remettre le western à l'endroit (Éditions Les fondeurs de briques) animée par Edgard Garcia",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Edgard Garcia"
+    ],
     "image": "z6a9a8dcf571c461a82628f73.jpg",
     "copyright": null
   },
@@ -5419,7 +5881,12 @@
     "subtype": null,
     "description": "Avec Kendrys Legenty (Fondateur La Fabrique des soignants), Christophe-Cécil Garnier (Rédacteur en chef du pôle enquête de StreetPress) et Mariam Toure (co-fondatrice de la jeunesse populaire, diasporas.fr et women wave project. Jeune Conseillère pour le Haut Commissariat des Droits de l’Homme aux Nations Unies).\nUn débat organisé par Komune, StreetPress et la Fabrique des Soignants et animé par Anna Jégo (Présidente Komune media).",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Kendrys Legenty",
+      "Christophe-Cécil Garnier",
+      "Mariam Toure",
+      "Anna Jégo"
+    ],
     "image": "z66d194009471a53a30a72d8e.jpg",
     "copyright": null
   },
@@ -5435,7 +5902,9 @@
     "subtype": null,
     "description": "autour du numéro 28 de la revue L'Irrégulière (Éditions Anamosa) animée par Nicolas Mathey",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Nicolas Mathey"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -5499,7 +5968,9 @@
     "subtype": null,
     "description": "Avec Joe Sacco, auteur de bandes dessinées et journaliste américano-maltais.\nIl se fait connaître avec son œuvre Palestine, une bande dessinée documentaire sur le conflit israélo-palestinien qui lui vaut un American Book Award en 1996.\nIl poursuit son travail de bande dessinée documentaire en ex-Yougoslavie, donnant naissance à plusieurs ouvrages sur la guerre de Bosnie-Herzégovine, puis consacre des reportages dessinés à des sujets comme la crise migratoire à Malte ou les populations autochtones du Canada.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Joe Sacco"
+    ],
     "image": "z6a9692a3c0f0b34be41a70f4.jpg",
     "copyright": null
   },
@@ -5515,7 +5986,9 @@
     "subtype": null,
     "description": "auteur de Manuel contre la mise en échec scolaire (Éditions La Dispute) animée par Nicolas Mathey",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Nicolas Mathey"
+    ],
     "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
@@ -5579,7 +6052,10 @@
     "subtype": null,
     "description": "Fleur Breteau, fondatrice de Cancer colère ; Thomas Gibert, porte-parole de la Confédération paysanne.",
     "recommendations": null,
-    "speakers": null,
+    "speakers": [
+      "Fleur Breteau",
+      "Thomas Gibert"
+    ],
     "image": "z66d187d89471a53a30a72d6c.jpg",
     "copyright": null
   },

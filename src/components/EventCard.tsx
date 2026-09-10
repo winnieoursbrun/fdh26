@@ -49,6 +49,9 @@ export function EventCard({
           <h3 className="card-title">{event.title}</h3>
           {event.artist && <p className="card-artist">{event.artist}</p>}
           <p className="card-venue">{event.venue}</p>
+          {event.speakers && event.speakers.length > 0 && (
+            <p className="card-speakers-line">{event.speakers.join(' · ')}</p>
+          )}
         </div>
         <FistButton
           active={isFavorite}
@@ -94,16 +97,6 @@ export function EventCard({
                       </span>
                     ))}
                   </div>
-                </div>
-              )}
-              {event.speakers && (
-                <div className="card-speakers">
-                  <span className="card-recs-label">Intervenant·es</span>
-                  {event.speakers.map((bio) => (
-                    <p key={bio} className="card-speaker-bio">
-                      {bio}
-                    </p>
-                  ))}
                 </div>
               )}
             </>

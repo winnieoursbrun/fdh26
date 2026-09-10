@@ -163,6 +163,101 @@ def sort_minutes(time):
     return (hours + 24 if hours < 5 else hours) * 60 + minutes
 
 
+# --- Speaker extraction ---------------------------------------------------
+# The feed has no structured guest list for talks: the line-up is written in
+# the description. Three shapes cover almost all of them:
+#   "Avec Fabien Roussel, secretaire national du PCF et Patrick Martin..."
+#   "Nabil Boukili, depute federal ... ; Despina Sinou, maitresse de..."
+#   "Animee par Eugenie Barbezat."
+# Parsing is deliberately conservative: a missing name is much better than a
+# job title or a media outlet displayed as a speaker.
+
+# "Avec" has to open the description or a sentence; a plain lowercase "avec"
+# mid-sentence means something else ("avec des classiques et des nouveautes").
+SPEAKER_INTRO = re.compile(r'(?:^|(?<=[.!?\n]) )\s*Avec\s+(.+?)(?:[.!\n]|$)', re.S)
+
+# Moderators, wherever they appear.
+SPEAKER_HOST = re.compile(
+    r'(?:anim[ée]{1,2}e?|mod[ée]r[ée]e?|pr[ée]sent[ée]e?)\s+par\s+(.+?)(?:[.!\n]|$)', re.I)
+
+SPEAKER_SPLIT = re.compile(r',|;| et | & ')
+SPEAKER_PREFIX = re.compile(
+    r'^(?:anim[ée]{1,2}e?\s+par|mod[ée]r[ée]e?\s+par|en\s+pr[ée]sence\s+de|par|avec)\s+',
+    re.I)
+
+# A name is 2 to 4 capitalised words: "Fabien Roussel", "Katia Aruca Chaple",
+# "Pierre-Francois Moreau". A single word is too ambiguous (it would catch
+# "Blast" or "Politis"), and job titles start lowercase ("astronaute").
+NAME = re.compile(
+    r"^(?:[A-ZÀ-ÖØ-Þ][\w'’-]*)(?:[ -](?:[a-zà-öø-þ]{1,3} )?[A-ZÀ-ÖØ-Þ][\w'’-]*){1,3}$")
+
+# Job titles, collectives and organisations are not speakers, however
+# name-shaped ("Secretaire Generale" shows up in all-caps guest lists).
+NOT_A_PERSON = re.compile(
+    r'^(?:les?|la|l\'|des?|du|un|une)\s|\b(?:fondation|association|collectif|comit[ée]|'
+    r'syndicat|institut|[ée]ditions?|revue|journal|f[ée]d[ée]ration|union|ligue|parti|'
+    r'mouvement|r[ée]daction|magazine|maison|centre|agence|compagnie|cie|groupe|'
+    r'conf[ée]d[ée]ration|secr[ée]taire|g[ée]n[ée]rale?s?|pr[ée]sidente?s?|directeur|'
+    r'directrice|d[ée]put[ée]e?|s[ée]nateur|s[ée]natrice|maire|professeure?|docteure?|'
+    r'avocate?|journaliste|sociologue|[ée]crivaine?|[ée]conomiste|historienne?|'
+    r'philosophe|chercheure?|chercheuse|syndicaliste|militante?|porte-parole|'
+    r'responsable|coordinateur|coordinatrice|membre|autrice|auteure?|r[ée]alisateur|'
+    r'r[ée]alisatrice|com[ée]dienne?|conseill[eè]re?|adjointe?|tr[ée]sori[eè]re?|'
+    r'ministre|m[ée]dias?|coop|entrepreneurs?|porte\s?parole)\b',
+    re.I)
+
+# "Remy Gerbet de Wikimedia" -> the affiliation is not part of the name.
+AFFILIATION_TAIL = re.compile(
+    r'\s+(?:de|du|des|d\'|chez|pour)\s+\S.*$', re.I)
+
+
+# Union roles glued to a name in a few listings ("Sophie BINET SG").
+ROLE_SUFFIX = re.compile(r'\s+(?:SG|CGT|CFDT|FO|FSU|PCF|LFI|MEDEF)\b.*$')
+
+
+def clean_name(fragment):
+    fragment = SPEAKER_PREFIX.sub('', fragment.strip()).strip(' \'"“”«»:-')
+    fragment = ROLE_SUFFIX.sub('', fragment).strip()
+    if not fragment:
+        return None
+    # Drop a trailing affiliation only if a full name remains in front of it.
+    trimmed = AFFILIATION_TAIL.sub('', fragment)
+    if NAME.match(trimmed) and len(trimmed.split()) >= 2:
+        fragment = trimmed
+    if not NAME.match(fragment) or NOT_A_PERSON.search(fragment):
+        return None
+    return fragment
+
+
+def names_in(sentence):
+    # Affiliations in brackets are not part of the name.
+    sentence = re.sub(r'\([^)]*\)?', ' ', sentence)
+    return [name for name in (clean_name(f) for f in SPEAKER_SPLIT.split(sentence)) if name]
+
+
+# Categories whose description announces a guest list. Anywhere else the
+# description is prose, and parsing it yields sentences ("Originaires de
+# Belfast", "Admire de Cavanna") rather than speakers.
+SPEAKER_CATEGORIES = {'debat', 'conference'}
+
+
+def speakers_from(description, category):
+    """Names announced in the description, in order, deduplicated."""
+    if not description or category not in SPEAKER_CATEGORIES:
+        return []
+    names = []
+    for sentence in SPEAKER_INTRO.findall(description):
+        names.extend(names_in(sentence))
+    for sentence in SPEAKER_HOST.findall(description):
+        names.extend(names_in(sentence))
+    # A line that *opens* on a name is a guest list, not prose.
+    for line in description.split('\n'):
+        first = SPEAKER_SPLIT.split(line, 1)[0]
+        if clean_name(first):
+            names.extend(names_in(line))
+    return list(dict.fromkeys(names))
+
+
 def build_events(feed):
     scenes = {s['_id']: fr(s['name']) for s in feed['scenes']}
     groups = {g['_id']: g for g in feed['groups']}
@@ -246,7 +341,10 @@ def build_events(feed):
             'subtype': ', '.join(list(dict.fromkeys(subtypes))[:MAX_SUBTYPES]) or None,
             'description': description,
             'recommendations': list(dict.fromkeys(topics))[:MAX_TOPICS] or None,
-            'speakers': list(dict.fromkeys(speakers)) or None,
+            # The feed only tags speakers on stands, never on the talks
+            # themselves, so fall back to parsing the description.
+            'speakers': (list(dict.fromkeys(speakers))
+                         or speakers_from(description, category)) or None,
             'image': raw.get('image') or None,
             'copyright': raw.get('copyright') or None,
         })
