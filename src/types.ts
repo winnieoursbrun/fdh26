@@ -1,15 +1,16 @@
 export type Day = 'ven' | 'sam' | 'dim'
 
+// The official programme publishes the category of every event; these eight
+// keys map one-to-one onto the "programmes" of the festival's own schedule.
 export type Category =
   | 'concert'
-  | 'bal'
   | 'spectacle'
+  | 'debat'
   | 'conference'
+  | 'cinema'
+  | 'evenement'
+  | 'exposition'
   | 'atelier'
-  | 'imaginarium'
-  | 'balade'
-  | 'radio'
-  | 'famille'
 
 export type VenueGroup = 'programmation' | 'accueil' | 'bienetre' | 'vente'
 
@@ -26,6 +27,10 @@ export interface FestEvent {
   description: string | null
   recommendations?: string[] | null
   speakers?: string[] | null
+  // Illustration published alongside the event, precached under /events/.
+  image?: string | null
+  // Photo credit the festival attaches to the illustration, when there is one.
+  copyright?: string | null
 }
 
 export interface Venue {

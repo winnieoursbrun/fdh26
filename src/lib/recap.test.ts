@@ -47,7 +47,7 @@ describe('computeRecapStats', () => {
     const events = [
       makeEvent({ id: 'a', day: 'ven', start: '20:00', category: 'concert', venue: 'Le Parasol' }),
       makeEvent({ id: 'b', day: 'sam', start: '18:00', category: 'concert', venue: 'Le Parasol' }),
-      makeEvent({ id: 'c', day: 'sam', start: '21:00', category: 'bal', venue: 'La Scène Solaire' }),
+      makeEvent({ id: 'c', day: 'sam', start: '21:00', category: 'debat', venue: 'La Scène Solaire' }),
     ]
     const stats = computeRecapStats(events)
 
@@ -55,7 +55,7 @@ describe('computeRecapStats', () => {
     expect(stats.daysAttended).toBe(2)
     expect(stats.byCategory).toEqual([
       { category: 'concert', label: 'Concerts', count: 2 },
-      { category: 'bal', label: 'Bals', count: 1 },
+      { category: 'debat', label: 'Débats', count: 1 },
     ])
   })
 
@@ -90,7 +90,7 @@ describe('buildRecapSlides', () => {
   it('construit toutes les diapositives quand les données sont disponibles', () => {
     const events = [
       makeEvent({ id: 'early', day: 'ven', start: '18:00', category: 'concert', venue: 'Le Parasol' }),
-      makeEvent({ id: 'late', day: 'dim', start: '15:00', category: 'bal', venue: 'Le Village' }),
+      makeEvent({ id: 'late', day: 'dim', start: '15:00', category: 'debat', venue: 'Le Village' }),
     ]
     const stats = computeRecapStats(events)
     const slides = buildRecapSlides(stats)

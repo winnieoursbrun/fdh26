@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { render, screen, within } from '@testing-library/react'
+import { fireEvent, render, screen, within } from '@testing-library/react'
 import { MapTab } from './MapTab'
 import type { Venue } from '../types'
 import venuesData from '../data/venues.json'
@@ -13,14 +13,14 @@ vi.mock('react-zoom-pan-pinch', () => ({
 }))
 
 const GROUP_LABELS: Record<string, string> = {
-  programmation: 'Programmation',
+  programmation: 'Scènes, villages & espaces',
   accueil: 'Accueil public',
   bienetre: 'Bien-être',
   vente: 'Boutique, bar & restauration',
 }
 
-// Les groupes sans aucune zone ne sont pas rendus : le plan officiel 2026 ne
-// donne pas l'emplacement des services (bars, restauration, toilettes).
+// Les groupes sans aucune zone ne sont pas rendus. Les données officielles
+// géolocalisent désormais les quatre groupes, mais le garde-fou reste utile.
 const PRESENT_GROUPS = Object.keys(GROUP_LABELS).filter((key) =>
   venues.some((v) => v.group === key),
 )
@@ -30,11 +30,22 @@ describe('MapTab', () => {
     localStorage.clear()
   })
 
-  it('affiche le plan du site avec son texte alternatif', () => {
+  it('affiche le plan de l’édition 2026 par défaut', () => {
     render(<MapTab />)
-    expect(
-      screen.getByRole('img', { name: /redessiné d'après le plan officiel 2026, avec 21 points/ }),
-    ).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: /Plan officiel 2026/ })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '2026' })).toHaveAttribute('aria-pressed', 'true')
+  })
+
+  it('bascule sur la vue d’ensemble, en signalant qu’elle date de 2024', () => {
+    render(<MapTab />)
+    fireEvent.click(screen.getByRole('button', { name: "Vue d'ensemble" }))
+
+    expect(screen.getByRole('img', { name: /édition 2024/ })).toBeInTheDocument()
+    expect(screen.queryByRole('img', { name: /Plan officiel 2026/ })).not.toBeInTheDocument()
+    expect(screen.getByText(/celui de l'édition 2024/)).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: '2026' }))
+    expect(screen.getByRole('img', { name: /Plan officiel 2026/ })).toBeInTheDocument()
   })
 
   it('affiche une légende par groupe non vide, seule « Programmation » ouverte', () => {
@@ -56,9 +67,7 @@ describe('MapTab', () => {
       const items = within(details as HTMLElement).getAllByRole('listitem')
       const expected = venues.filter((v) => v.group === key)
       expect(items, label).toHaveLength(expected.length)
-      expect(items.map((li) => li.textContent)).toEqual(
-        expected.map((v) => `${v.num}${v.name}`),
-      )
+      expect(items.map((li) => li.textContent)).toEqual(expected.map((v) => v.name))
     }
   })
 

@@ -303,41 +303,37 @@ p {
   --cat: var(--red);
   --cat-ink: #141414;
 }
+.cat-debat {
+  --cat: var(--yellow);
+  --cat-ink: #141414;
+}
+.cat-conference {
+  --cat: var(--peri);
+  --cat-ink: var(--on-dark);
+}
 .cat-spectacle {
   --cat: var(--poppy);
   --cat-ink: var(--on-dark);
 }
-.cat-conference {
-  --cat: var(--peri);
+.cat-evenement {
+  --cat: var(--sky);
+  --cat-ink: #141414;
+}
+.cat-exposition {
+  --cat: var(--violet);
+  --cat-ink: var(--on-dark);
+}
+.cat-cinema {
+  --cat: #141414;
   --cat-ink: var(--on-dark);
 }
 .cat-atelier {
   --cat: var(--green);
   --cat-ink: #141414;
 }
-.cat-bal {
-  --cat: var(--yellow);
-  --cat-ink: #141414;
-}
-.cat-famille {
-  --cat: var(--sky);
-  --cat-ink: #141414;
-}
-.cat-balade {
-  --cat: var(--green-light);
-  --cat-ink: #141414;
-}
-.cat-radio {
-  --cat: #141414;
-  --cat-ink: var(--on-dark);
-}
-.cat-imaginarium {
-  --cat: var(--violet);
-  --cat-ink: var(--on-dark);
-}
 
 @media (prefers-color-scheme: dark) {
-  .cat-radio {
+  .cat-cinema {
     --cat: #000;
   }
 }
@@ -429,44 +425,33 @@ p {
   --cat: var(--red);
   --cat-ink: #141414;
 }
-.chip-spectacle {
-  --cat: var(--poppy);
-  --cat-ink: var(--on-dark);
+.chip-debat {
+  --cat: var(--yellow);
+  --cat-ink: #141414;
 }
 .chip-conference {
   --cat: var(--peri);
   --cat-ink: var(--on-dark);
 }
-.chip-atelier {
-  --cat: var(--green);
-  --cat-ink: #141414;
+.chip-spectacle {
+  --cat: var(--poppy);
+  --cat-ink: var(--on-dark);
 }
-.chip-bal {
-  --cat: var(--yellow);
-  --cat-ink: #141414;
-}
-.chip-famille {
+.chip-evenement {
   --cat: var(--sky);
   --cat-ink: #141414;
 }
-.chip-balade {
-  --cat: var(--green-light);
-  --cat-ink: #141414;
-}
-.chip-radio {
-  --cat: #141414;
-  --cat-ink: var(--on-dark);
-}
-.chip-imaginarium {
+.chip-exposition {
   --cat: var(--violet);
   --cat-ink: var(--on-dark);
 }
-
-.list-count {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--muted);
-  margin: 2px 0 10px;
+.chip-cinema {
+  --cat: #141414;
+  --cat-ink: var(--on-dark);
+}
+.chip-atelier {
+  --cat: var(--green);
+  --cat-ink: #141414;
 }
 
 /* ---------- Cartes événement ---------- */
@@ -523,6 +508,18 @@ p {
   min-width: 0;
 }
 
+/* Illustration published with the event, precached under /events/. It is
+   decorative next to the title, hence the empty alt and the accent border. */
+.card-thumb {
+  flex: none;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  background: var(--cat, var(--line));
+}
+
 .card-title {
   font-size: 1.12rem;
   font-weight: 800;
@@ -559,6 +556,14 @@ p {
   margin-top: 8px;
   font-size: 0.88rem;
   line-height: 1.5;
+  white-space: pre-line;
+}
+
+/* Photo credit the festival attaches to some illustrations. */
+.card-credit {
+  margin-top: 6px;
+  font-size: 0.72rem;
+  color: var(--muted);
 }
 
 .card-recs,
@@ -613,21 +618,23 @@ p {
   background: var(--card);
   display: grid;
   place-items: center;
-  color: var(--ink);
-  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  color: var(--muted);
+  transition: background 0.18s ease, color 0.18s ease,
+    transform 0.22s cubic-bezier(0.34, 1.5, 0.64, 1), box-shadow 0.18s ease;
 }
 
+/* The glyph keeps its native 448x512 viewBox: height leads, width follows. */
 .fist-btn svg {
-  width: 24px;
-  height: 24px;
+  width: 25px;
+  height: 28px;
+  overflow: visible;
+  /* Fist held low while the event is not a favourite. */
+  transform: translateY(2px) scale(0.9);
+  transition: transform 0.22s cubic-bezier(0.34, 1.5, 0.64, 1);
 }
 
-.fist-btn .fist-head {
+.fist-btn .fist-glyph {
   fill: currentColor;
-}
-
-.fist-btn .fist-arm {
-  stroke: currentColor;
 }
 
 .fist-btn.is-raised {
@@ -637,8 +644,14 @@ p {
   transform: translate(-1px, -1px) rotate(-8deg);
 }
 
+/* Favourite: the fist is punched up, solid black on the yellow badge. */
+.fist-btn.is-raised svg {
+  transform: translateY(-2px) scale(1);
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .fist-btn {
+  .fist-btn,
+  .fist-btn svg {
     transition: none;
   }
   .fist-btn.is-raised {
@@ -729,7 +742,7 @@ p {
 }
 
 .timeline-empty .empty-fist {
-  width: 72px;
+  width: 63px;
   height: 72px;
   fill: var(--red);
   color: var(--ink);
@@ -758,9 +771,19 @@ p {
   background: #fff;
 }
 
+/* Le cadre suit le ratio du plan affiché au lieu d'une hauteur fixe, sinon
+   l'image flotte au milieu d'une bande vide. Plafonné pour que la légende et
+   l'adresse restent atteignables sans scroller tout l'écran. */
 .map-wrapper {
   width: 100% !important;
-  height: 54dvh !important;
+  height: auto !important;
+  max-height: 62dvh;
+}
+.map-edition {
+  aspect-ratio: 1206 / 1001;
+}
+.map-ensemble {
+  aspect-ratio: 3251 / 2526;
 }
 
 .map-content img {
@@ -895,18 +918,6 @@ p {
   gap: 10px;
 }
 
-.legend-num {
-  flex-shrink: 0;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  border: 1.5px solid var(--line);
-  background: var(--paper);
-  font-size: 0.72rem;
-  font-weight: 800;
-  display: grid;
-  place-items: center;
-}
 
 /* ---------- FAQ ---------- */
 .faq-group summary::before {

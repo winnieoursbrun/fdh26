@@ -1,71 +1,129 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Convertit les pages « Programme complet » du site officiel en src/data/events.json.
+"""Regenerates src/data/events.json and src/data/venues.json from the official data feed.
 
-Usage :
-    python3 docs/tools/build_events.py page-ven.html page-sam.html page-dim.html
+The official site (fete.humanite.fr) renders its programme with the Chapito
+widget, which pulls everything it knows from a single static JSON file:
 
-Enregistrer une page par jour depuis
-https://fete.humanite.fr/blog/programme-complet/?date=2026-09-1X
-(Ctrl+S, « page complète » ou « HTML seul »), puis passer les fichiers en argument.
-Le script est idempotent : les cartes en double (le site en publie parfois) et les
-pages d'un même jour fournies deux fois sont dédoublonnées.
+    https://static.humanite.chapi.to/data.json
+
+That feed is far richer than the HTML pages this script used to scrape: it
+publishes the real category of every event (`programId`), the line-up behind
+each slot (`musicGroupsIds`), descriptions, genres, illustration ids and GPS
+coordinates for every point of interest on the site.
+
+Usage:
+    python3 docs/tools/build_events.py                   # download the live feed
+    python3 docs/tools/build_events.py --data feed.json  # reuse a local copy
+    python3 docs/tools/build_events.py --save feed.json  # keep the downloaded feed
+
+Event ids are slugs of `title-day-hhmm`, so they move when a slot is
+rescheduled -- which drops the matching favourites. Keep that in mind before
+regenerating.
 """
-import argparse, collections, html, io, json, os, re, sys, unicodedata
+import argparse
+import collections
+import html
+import io
+import json
+import os
+import re
+import sys
+import unicodedata
+import urllib.request
+from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-OUT = os.path.join(ROOT, 'src', 'data', 'events.json')
+EVENTS_OUT = os.path.join(ROOT, 'src', 'data', 'events.json')
+VENUES_OUT = os.path.join(ROOT, 'src', 'data', 'venues.json')
+IMAGES_OUT = os.path.join(ROOT, 'docs', 'tools', 'event-images.json')
 
+FEED_URL = 'https://static.humanite.chapi.to/data.json'
+
+PARIS = ZoneInfo('Europe/Paris')
+
+# 91st edition: Friday 11 to Sunday 13 September 2026.
 DAY_BY_DATE = {'2026-09-11': 'ven', '2026-09-12': 'sam', '2026-09-13': 'dim'}
-
-# Chaque événement est un <a> vers sa fiche, contenant titre / créneau / lieu.
-CARD = re.compile(
-    r'<a href="https://fete\.humanite\.fr/blog/programme-complet/\?date=(\d{4}-\d{2}-\d{2})&amp;event=([0-9a-f]+)"'
-    r'.*?font-weight: bold; font-size: 1em; margin-bottom: 4px;">(.*?)</div>'
-    r'<div style="font-size: 0\.85em;">(.*?)</div>'
-    r'<div style="font-size: 0\.85em;">(.*?)</div>',
-    re.S)
-
-SLOT = re.compile(
-    r'^(?:Vendredi|Samedi|Dimanche)\s+\d{1,2}\s+Septembre\s+(\d{2}:\d{2})(?:\s*>\s*(\d{2}:\d{2}))?\s*$')
-
-# Les lieux de la Fête sont thématiques : la catégorie de l'app s'en déduit.
-# (Le programme officiel n'expose pas la catégorie dans la carte d'événement.)
-VENUE_CATEGORY = {
-    'Scène Angela Davis': 'concert',
-    'Scène Joséphine Baker': 'concert',
-    'Scène Zebrock - Nina Simone': 'concert',
-    'Scène Inter - le 92 accueille le monde': 'concert',
-    "Stand de Cœur d'Essonne Agglomération": 'concert',
-    'Espace Jack Ralite': 'spectacle',
-    'Allées de la Fête': 'spectacle',
-    'Village famille': 'famille',
-    'Espace Sport': 'atelier',
-    'Village du Livre': 'conference',
-    'Village du Livre - Studio Livre': 'conference',
-    'Agora': 'conference',
-    'Forum Social': 'conference',
-    'Village des Médias Indépendants': 'conference',
-    'Espace Sciences et Numérique': 'conference',
-    'Village des Territoires Solidaires': 'conference',
-    'Village du Monde': 'conference',
-    "Les Ami.e.s de l'Humanité": 'conference',
-}
-
-# Quelques cartes sortent du thème de leur lieu (soirée DJ au stand des Ami.es…).
-TITLE_OVERRIDES = [
-    (re.compile(r'soir[ée]e dj', re.I), 'bal'),
-    (re.compile(r'stand-?up', re.I), 'spectacle'),
-    (re.compile(r'\bfanfare\b', re.I), 'concert'),
-    (re.compile(r'\bconcert\b', re.I), 'concert'),
-    (re.compile(r'en musique', re.I), 'concert'),
-]
-
 DAY_INDEX = {'ven': 0, 'sam': 1, 'dim': 2}
 
+# The feed publishes the real category as a `programId`, so nothing has to be
+# guessed from the venue any more.
+CATEGORY_BY_PROGRAM = {
+    '62bc77ad0c502213df928376': 'concert',     # Concerts
+    '62bc77e00c502213df928378': 'spectacle',   # Spectacles
+    '62bc78190c502213df92837a': 'cinema',      # Cinéma
+    '62bc783c0c502213df92837c': 'evenement',   # Évènements
+    '62bc78610c502213df92837e': 'debat',       # Débats
+    '66d9ed7621241f6717d0a094': 'exposition',  # Exposition
+    '66e059a812de986918a3e759': 'atelier',     # Ateliers
+    '6a8c727ebe286963750370f5': 'conference',  # Conférences et rencontres
+}
 
-def clean(fragment):
-    return html.unescape(re.sub(r'(?s)<[^>]+>', '', fragment)).replace('\xa0', ' ').strip()
+# `musicGroupsIds` mixes performers and speakers; the guest type tells them apart.
+PERFORMER_TYPES = {
+    '62b1831f154fd90ece6ef215',  # Artistes
+    '62fbb170be2cbe5bdf5f200b',  # Compagnie
+    '69fc9d03efe2a66d9bcdcfe5',  # Humoristes
+    '66bb1d64460001238bda1dc5',  # Réalisateur·rice.s
+    '66c83c9004c2ca2357eeb149',  # Films
+}
+SPEAKER_TYPES = {
+    '62b1831f154fd90ece6ef219',  # Intervenant.e.s
+    '64ff3174f39bac3899132b93',  # Auteur.e.s
+}
+
+# Genre families that read well as an event subtitle ("Rap", "Débat"...).
+SUBTYPE_GENRE_CATEGORIES = {'Genre de musique', 'Discipline'}
+# Campaign topics, surfaced as recommendations rather than as a subtitle.
+TOPIC_GENRE_CATEGORIES = {'Sujet'}
+# Some village stands tag a dozen topics; a card only has room for a few.
+MAX_TOPICS = 4
+MAX_SUBTYPES = 2
+
+# Venue groups for the map legend. Stages and villages come from `scenes`; the
+# rest is matched on the point-of-interest label. Anything unmatched is a place
+# on the site rather than a service, so it joins the stages and villages.
+VENUE_GROUP_RULES = [
+    (re.compile(r'sanitaire|urinoir', re.I), 'bienetre'),
+    (re.compile(r"point d'eau", re.I), 'bienetre'),
+    (re.compile(r'pr[ée]vention|escale', re.I), 'bienetre'),
+    (re.compile(r'secours|infirmerie', re.I), 'accueil'),
+    (re.compile(r'point info|objets trouv|enfants trouv|consigne|pmr|psh', re.I), 'accueil'),
+    (re.compile(r'entr[ée]e|parking|navette|taxi', re.I), 'accueil'),
+    (re.compile(r'boutique', re.I), 'vente'),
+]
+
+# The back office spells a few points of interest by hand, so the same place can
+# show up twice ("Uninoirs feminin" / "Urinoirs feminins"). Labels are matched
+# accent- and case-insensitively; these fold the leftovers together.
+POI_LABEL_ALIASES = {
+    'uninoirs feminin': 'Urinoirs féminins',
+    'village sport': 'Espace Sport',
+    'agora de l humanite': 'Agora',
+}
+
+
+def fr(value):
+    """The feed stores translatable fields as {fr, en} -- and sometimes as a plain string."""
+    if isinstance(value, dict):
+        return value.get('fr') or value.get('en') or ''
+    return value or ''
+
+
+def text_of(fragment):
+    """Flattens the rich-text HTML the back office produces into plain text."""
+    if not fragment:
+        return None
+    text = re.sub(r'(?is)<(script|style|head)[^>]*>.*?</\1>', '', fragment)
+    text = re.sub(r'(?i)<br\s*/?>', '\n', text)
+    text = re.sub(r'(?i)</(p|div|li|h[1-6])>', '\n', text)
+    text = re.sub(r'(?i)<li[^>]*>', '- ', text)
+    text = re.sub(r'(?s)<[^>]+>', '', text)
+    text = html.unescape(text).replace('\xa0', ' ')
+    lines = [re.sub(r'[ \t]+', ' ', line).strip() for line in text.split('\n')]
+    text = '\n'.join(line for line in lines if line).strip()
+    return text or None
 
 
 def slug(value):
@@ -74,82 +132,221 @@ def slug(value):
     return re.sub(r'-{2,}', '-', value)[:48].strip('-')
 
 
-def category_for(title, venue):
-    if venue not in VENUE_CATEGORY:
-        sys.exit(f'Lieu inconnu, catégorie indéterminable : {venue!r}\n'
-                 f'Ajoute-le à VENUE_CATEGORY dans {__file__}.')
-    for pattern, category in TITLE_OVERRIDES:
-        if pattern.search(title):
-            return category
-    return VENUE_CATEGORY[venue]
+def local(ms):
+    return datetime.fromtimestamp(ms / 1000, timezone.utc).astimezone(PARIS)
 
 
-def parse(paths):
-    seen, rows, skipped = set(), [], 0
-    for path in paths:
-        page = io.open(path, encoding='utf-8', errors='replace').read()
-        for date, _event_id, raw_title, raw_slot, raw_venue in CARD.findall(page):
-            title, slot, venue = clean(raw_title), clean(raw_slot), clean(raw_venue)
-            match = SLOT.match(slot)
-            if not match:
-                print(f'créneau non reconnu, carte ignorée : {slot!r}', file=sys.stderr)
+def load_feed(args):
+    if args.data:
+        return json.load(io.open(args.data, encoding='utf-8'))
+    request = urllib.request.Request(FEED_URL, headers={'User-Agent': 'fdh26-build-events'})
+    with urllib.request.urlopen(request, timeout=120) as response:
+        raw = response.read()
+    if args.save:
+        io.open(args.save, 'wb').write(raw)
+    return json.loads(raw)
+
+
+def grid_day(event):
+    """Returns the app day key for an event.
+
+    `day` is the programme day (midnight or 2 AM local, depending on how the
+    slot was entered), which is exactly the grid day we want: a 3:40 AM set is
+    filed under the evening it belongs to, not under the next morning.
+    """
+    return DAY_BY_DATE.get(local(event['day']).strftime('%Y-%m-%d'))
+
+
+def sort_minutes(time):
+    hours, minutes = map(int, time.split(':'))
+    # A time before 05:00 is the tail end of the grid day's night: it sorts after 23:59.
+    return (hours + 24 if hours < 5 else hours) * 60 + minutes
+
+
+def build_events(feed):
+    scenes = {s['_id']: fr(s['name']) for s in feed['scenes']}
+    groups = {g['_id']: g for g in feed['groups']}
+    genres = {g['_id']: g for g in feed['genres']}
+
+    events, ids, skipped = [], collections.Counter(), collections.Counter()
+    for raw in feed['events']:
+        day = grid_day(raw)
+        if not day:
+            skipped['hors dates du festival'] += 1
+            continue
+        category = CATEGORY_BY_PROGRAM.get(raw.get('programId'))
+        if not category:
+            sys.exit(f"Programme inconnu, catégorie indéterminable : {raw.get('programId')!r}\n"
+                     f'Ajoute-le à CATEGORY_BY_PROGRAM dans {__file__}.')
+
+        title = fr(raw['title']).strip()
+        start = local(raw['showStartDate'])
+        end = None
+        if raw.get('showEndDate') and not raw.get('hideEndDate'):
+            end = local(raw['showEndDate']).strftime('%H:%M')
+
+        performers, speakers = [], []
+        for group_id in raw.get('musicGroupsIds', []):
+            group = groups.get(group_id)
+            if not group:
                 continue
-            start, end = match.groups()
-            key = (date, start, end, venue, title)
-            if key in seen:
-                skipped += 1
+            name = fr(group['name']).strip()
+            if not name or name == title:
                 continue
-            seen.add(key)
-            rows.append(dict(date=date, title=title, start=start, end=end, venue=venue))
-    return rows, skipped
+            if group.get('typeId') in PERFORMER_TYPES:
+                performers.append(name)
+            elif group.get('typeId') in SPEAKER_TYPES:
+                speakers.append(name)
+
+        # Genres hang off the event, but talks and stands tag their topics on
+        # the group instead; take both so debates get their subject matter.
+        genre_ids = list(raw.get('genres', []))
+        for group_id in raw.get('musicGroupsIds', []):
+            genre_ids.extend(groups.get(group_id, {}).get('genres', []))
+
+        subtypes, topics = [], []
+        for genre_id in dict.fromkeys(genre_ids):
+            genre = genres.get(genre_id)
+            if not genre:
+                continue
+            family = genre.get('category', {})
+            family = family.get('name') if isinstance(family, dict) else None
+            name = fr(genre['name']).strip()
+            if family in SUBTYPE_GENRE_CATEGORIES:
+                subtypes.append(name)
+            elif family in TOPIC_GENRE_CATEGORIES:
+                topics.append(name)
+
+        description = text_of(fr(raw.get('description')))
+        if not description:
+            # Stands and villages describe themselves once, on the group.
+            for group_id in raw.get('musicGroupsIds', []):
+                group = groups.get(group_id)
+                if group:
+                    description = text_of(fr(group.get('description')))
+                    if description:
+                        break
+
+        event_id = f'{slug(title)}-{day}-{start.strftime("%H%M")}'
+        ids[event_id] += 1
+        if ids[event_id] > 1:
+            # Two slots share a title, a day and a start time (the same show on
+            # two stages): keep them apart so favourites stay unambiguous.
+            event_id = f'{event_id}-{ids[event_id]}'
+
+        events.append({
+            'id': event_id,
+            'title': title,
+            'artist': ', '.join(dict.fromkeys(performers)) or None,
+            'day': day,
+            'start': start.strftime('%H:%M'),
+            'end': end,
+            'venue': scenes.get(raw.get('sceneId')) or "Fête de l'Humanité",
+            'category': category,
+            'subtype': ', '.join(list(dict.fromkeys(subtypes))[:MAX_SUBTYPES]) or None,
+            'description': description,
+            'recommendations': list(dict.fromkeys(topics))[:MAX_TOPICS] or None,
+            'speakers': list(dict.fromkeys(speakers)) or None,
+            'image': raw.get('image') or None,
+            'copyright': raw.get('copyright') or None,
+        })
+
+    events.sort(key=lambda e: (DAY_INDEX[e['day']], sort_minutes(e['start']), e['title']))
+    return events, skipped
 
 
-def sort_key(event):
-    hours, minutes = map(int, event['start'].split(':'))
-    # Une heure < 05:00 est la fin de nuit du jour de grille : elle se trie après 23:59.
-    return (DAY_INDEX[event['day']], (hours + 24 if hours < 5 else hours) * 60 + minutes,
-            event['title'])
+def venue_group(label, is_scene):
+    if is_scene:
+        return 'programmation'
+    for pattern, group in VENUE_GROUP_RULES:
+        if pattern.search(label):
+            return group
+    return 'programmation'
+
+
+def fold(label):
+    """Accent- and case-insensitive key, used to spot two spellings of one place."""
+    plain = unicodedata.normalize('NFKD', label).encode('ascii', 'ignore').decode()
+    return re.sub(r'[^a-z0-9]+', ' ', plain.lower()).strip()
+
+
+def build_venues(feed, events):
+    """Turns the geolocated points of interest into the map legend.
+
+    Identical labels (six sets of toilets, seven water points...) share a
+    single legend entry -- and therefore a single number, repeated on the map.
+    """
+    scenes = {s['_id']: s for s in feed['scenes']}
+    programmed = {e['venue'] for e in events}
+    # An event card's venue has to be findable in the legend, so the name the
+    # programme uses always wins over the one hand-typed on the map point.
+    by_scene_name = {fold(fr(s['name'])): fr(s['name']).strip() for s in feed['scenes']}
+    scene_weight = {fold(fr(s['name'])): s.get('weight', 0) for s in feed['scenes']}
+
+    entries, coords = {}, collections.defaultdict(list)
+    for poi in feed['poiList']:
+        scene = scenes.get(poi.get('entityId')) if poi.get('entityType') == 'SCENE' else None
+        name = fr(scene['name']).strip() if scene else fr(poi['label']).strip()
+        if not name:
+            continue
+        name = POI_LABEL_ALIASES.get(fold(name), name)
+        # Points of interest label stages loosely ("Espace sport" for the
+        # programme's "Espace Sport"): fold them back onto the stage.
+        name = by_scene_name.get(fold(name), name)
+        key = fold(name)
+        entries.setdefault(key, {
+            'name': name,
+            'group': venue_group(name, key in by_scene_name),
+            'weight': scene_weight.get(key, 0),
+        })
+        coords[key].append((float(poi['coords']['lat']), float(poi['coords']['lng'])))
+
+    # Stages with a programme but no point on the map still belong in the legend.
+    for scene in sorted(feed['scenes'], key=lambda s: -s.get('weight', 0)):
+        name = fr(scene['name']).strip()
+        if name in programmed and fold(name) not in entries:
+            entries[fold(name)] = {'name': name, 'group': 'programmation',
+                                   'weight': scene.get('weight', 0)}
+
+    order = {'programmation': 0, 'accueil': 1, 'bienetre': 2, 'vente': 3}
+    ranked = sorted(entries.values(), key=lambda v: (order[v['group']], -v['weight'], v['name']))
+
+    venues, placements = [], []
+    for num, entry in enumerate(ranked, start=1):
+        venues.append({'num': num, 'name': entry['name'], 'group': entry['group']})
+        for lat, lng in coords[fold(entry['name'])]:
+            placements.append({'num': num, 'name': entry['name'], 'group': entry['group'],
+                               'lat': lat, 'lng': lng})
+    return venues, placements
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument('pages', nargs='+', help='pages « Programme complet » enregistrées')
+    parser.add_argument('--data', help='local copy of the feed instead of downloading it')
+    parser.add_argument('--save', help='write the downloaded feed to this path')
     args = parser.parse_args()
 
-    rows, skipped = parse(args.pages)
-    if not rows:
-        sys.exit('Aucun événement trouvé : le gabarit du site a-t-il changé ?')
+    feed = load_feed(args)
+    events, skipped = build_events(feed)
+    venues, placements = build_venues(feed, events)
 
-    events, used_ids = [], collections.Counter()
-    for row in sorted(rows, key=lambda r: (r['date'], r['start'], r['venue'], r['title'])):
-        day = DAY_BY_DATE.get(row['date'])
-        if day is None:
-            sys.exit(f"Date hors festival : {row['date']}")
-        base = f"{slug(row['title'])}-{day}-{row['start'].replace(':', '')}"
-        used_ids[base] += 1
-        events.append({
-            'id': base if used_ids[base] == 1 else f'{base}-{used_ids[base]}',
-            'title': row['title'],
-            'artist': None,
-            'day': day,
-            'start': row['start'],
-            'end': row['end'],
-            'venue': row['venue'],
-            'category': category_for(row['title'], row['venue']),
-            'subtype': None,
-            'description': None,
-        })
+    io.open(EVENTS_OUT, 'w', encoding='utf-8').write(
+        json.dumps(events, ensure_ascii=False, indent=2) + '\n')
+    io.open(VENUES_OUT, 'w', encoding='utf-8').write(
+        json.dumps(venues, ensure_ascii=False, indent=2) + '\n')
+    io.open(IMAGES_OUT, 'w', encoding='utf-8').write(json.dumps(
+        sorted({e['image'] for e in events if e['image']}), ensure_ascii=False, indent=2) + '\n')
 
-    events.sort(key=sort_key)
-    with io.open(OUT, 'w', encoding='utf-8') as handle:
-        handle.write(json.dumps(events, ensure_ascii=False, indent=2) + '\n')
-
-    print(f'{len(events)} événements écrits dans {os.path.relpath(OUT, ROOT)}'
-          f' ({skipped} doublon(s) écarté(s))')
-    for day in ('ven', 'sam', 'dim'):
-        count = sum(1 for e in events if e['day'] == day)
-        print(f'  {day} : {count}' + ('  ← aucun événement' if not count else ''))
+    per_day = collections.Counter(e['day'] for e in events)
+    per_category = collections.Counter(e['category'] for e in events)
+    print(f'{len(events)} événements -> {os.path.relpath(EVENTS_OUT, ROOT)}')
+    print('  par jour     : ' + ', '.join(f'{d}={per_day[d]}' for d in DAY_INDEX))
+    print('  par catégorie: ' + ', '.join(f'{c}={n}' for c, n in per_category.most_common()))
+    print(f'{len(venues)} lieux ({len(placements)} points relevés) -> '
+          f'{os.path.relpath(VENUES_OUT, ROOT)}')
+    for reason, count in skipped.items():
+        print(f'  ignorés ({reason}) : {count}', file=sys.stderr)
 
 
 if __name__ == '__main__':

@@ -1,68 +1,248 @@
 [
   {
     "id": "dates-lieu",
-    "category": "Dates & lieu",
+    "category": "Dates & horaires",
     "question": "Quelles sont les dates et le lieu de la Fête de l'Humanité 2026 ?",
-    "answer": "La 91ᵉ édition se déroule du vendredi 11 au dimanche 13 septembre 2026, sur la Base aérienne 217, au Plessis-Pâté (Essonne)."
+    "answer": "La 91ᵉ édition se déroule du vendredi 11 au dimanche 13 septembre 2026, sur la Base 217, entre Brétigny-sur-Orge et Le Plessis-Pâté (Essonne). La Fête est installée sur cet ancien terrain d'aviation depuis 2022, après plus de 40 ans en Seine-Saint-Denis."
   },
   {
     "id": "horaires-ouverture",
-    "category": "Dates & lieu",
-    "question": "À quelle heure commence et finit chaque journée ?",
-    "answer": "D'après le programme officiel : le vendredi démarre à 10h et la nuit se prolonge jusqu'à 4h30 du matin sur la scène Joséphine Baker ; le dimanche commence à 9h et s'achève vers 21h. Les horaires du samedi ne sont pas encore intégrés à l'app."
+    "category": "Dates & horaires",
+    "question": "À quelle heure ouvre et ferme la Fête chaque jour ?",
+    "answer": "Horaires d'ouverture officiels :\n• Vendredi 11/09 : de 12h00 à 04h30\n• Samedi 12/09 : de 09h00 à 04h30\n• Dimanche 13/09 : de 09h00 à 21h00"
   },
   {
-    "id": "programmation-disponibilite",
-    "category": "Dates & lieu",
-    "question": "Le programme est-il déjà disponible ?",
-    "answer": "Oui : la grille horaire officielle est publiée et intégrée à l'onglet Programme pour le vendredi et le dimanche. Le samedi n'est pas encore repris dans l'app — en attendant, réfère-toi au programme du site officiel pour cette journée."
+    "id": "horaires-entrees",
+    "category": "Dates & horaires",
+    "question": "Jusqu'à quelle heure peut-on entrer sur le site ?",
+    "answer": "Les entrées ferment plus tôt que la Fête :\n• Vendredi 11/09 : de 12h00 à 00h30\n• Samedi 12/09 : de 09h00 à 00h30\n• Dimanche 13/09 : de 09h00 à 17h30\n\nAu-delà de ces horaires, l'entrée sur la Fête est refusée."
   },
   {
-    "id": "acces-en-train-et-navette",
+    "id": "point-info",
+    "category": "Dates & horaires",
+    "question": "Où trouver le point info sur place ?",
+    "answer": "Le Point info se trouve à côté de l'Agora de l'Humanité. Il est ouvert de 12h00 à 20h00 le vendredi, de 10h00 à 20h00 le samedi et de 10h00 à 21h00 le dimanche."
+  },
+  {
+    "id": "acces-rer-c",
     "category": "Accès & transport",
-    "question": "Comment venir au festival en train ?",
-    "answer": "La gare la plus proche est celle de Brétigny-sur-Orge (RER C). Des navettes gratuites relient Paris et la gare de Brétigny-sur-Orge jusqu'au site du festival, au Plessis-Pâté."
+    "question": "Comment venir en RER C ?",
+    "answer": "L'arrêt est Brétigny-sur-Orge (RER C). En gare, suis les panneaux et les agents jusqu'à la navette gratuite : elle te dépose en quelques minutes à l'entrée de la Base 217, puis il reste environ 12 minutes de marche jusqu'aux entrées.\n\nDerniers départs de Brétigny vers Paris : vendredi 01h42 / 01h58 / 02h25 · samedi 01h42 / 02h02 / 02h22 · dimanche 22h42 / 23h11 / 23h41.\nVers Dourdan : vendredi et samedi 00h19 / 00h50 / 01h55 · dimanche 21h49 / 22h49 / 23h49.\nVers Saint-Martin-d'Étampes : vendredi et samedi 00h34 / 01h20 / 02h10 · dimanche 21h19 / 22h19 / 23h19."
+  },
+  {
+    "id": "acces-rer-d",
+    "category": "Accès & transport",
+    "question": "Comment venir en RER D ?",
+    "answer": "L'arrêt est Orangis Bois de l'Épine (RER D). Une navette gratuite t'amène en une vingtaine de minutes directement à l'entrée Jean Jaurès de la Base 217.\n\nDerniers départs d'Orangis vers Paris : vendredi 23h45 / 00h04 · samedi 00h06 / 00h33 · dimanche 23h16 / 23h34.\nVers Corbeil-Essonnes : vendredi 23h24 / 23h53 · samedi 23h40 / 00h06 · dimanche 23h21 / 23h40."
+  },
+  {
+    "id": "navettes-retour",
+    "category": "Accès & transport",
+    "question": "À quelle heure partent les dernières navettes de la Fête ?",
+    "answer": "Les navettes sont gratuites et tournent en continu toute la journée entre les gares et la Fête. Dernières navettes au départ de la Fête :\n• Vers le RER C (Brétigny-sur-Orge) : vendredi 02h00 · samedi 02h00 · dimanche 21h30\n• Vers le RER D (Orangis Bois de l'Épine), direction Paris : vendredi 23h15 · samedi 00h30 · dimanche 23h00\n• Vers le RER D, direction Corbeil-Essonnes : vendredi 23h00 · samedi 23h20 · dimanche 23h00"
+  },
+  {
+    "id": "acces-voiture",
+    "category": "Accès & transport",
+    "question": "Peut-on venir en voiture et se garer ?",
+    "answer": "Pour l'édition 2026, les parkings publics affichent complet. Horaires d'entrée sur les parkings : vendredi 12h00-22h00, samedi 09h00-22h00, dimanche 09h00-17h00. Au-delà, l'entrée en véhicule est refusée ; la sortie reste possible 24h/24."
+  },
+  {
+    "id": "acces-deux-roues",
+    "category": "Accès & transport",
+    "question": "Et à vélo, en moto ou en scooter ?",
+    "answer": "Les parkings vélos et deux-roues motorisés sont gratuits sur présentation de ton titre d'entrée, avec une consigne gratuite pour les casques. Ils sont gérés par la Fédération Française des Motards en Colère. Horaires d'entrée : vendredi 12h00-22h00, samedi 09h00-22h00, dimanche 09h00-17h00 ; sortie possible 24h/24. Le parking vélos est accessible par la Porte J (depuis le sud-ouest) ou par la rue Latécoère au Plessis-Pâté (depuis le nord-est).\n\nAttention : vélos, skates et trottinettes sont interdits à l'intérieur de la Fête et du camping."
   },
   {
     "id": "acces-covoiturage",
     "category": "Accès & transport",
-    "question": "Y a-t-il une solution de covoiturage pour venir au festival ?",
-    "answer": "Une plateforme de covoiturage est généralement mise en avant par le festival les semaines précédant l'événement — à vérifier sur le site officiel à l'approche de la date."
+    "question": "Y a-t-il une solution de covoiturage ?",
+    "answer": "La Fête met en avant Covoit IDFM, l'application de covoiturage planifié d'Île-de-France Mobilités. Côté conducteur : 2 € minimum par passager pour un trajet de moins de 20 km (+0,10 €/km au-delà). Côté passager : 0,50 € par trajet jusqu'à 30 km (+0,10 €/km au-delà), et trajets inclus avec un forfait Navigo mensuel ou annuel, ou une carte ImagineR."
   },
   {
-    "id": "tarifs-pass-3-jours",
-    "category": "Tarifs & billetterie",
+    "id": "acces-depose-minute",
+    "category": "Accès & transport",
+    "question": "Existe-t-il un dépose-minute ?",
+    "answer": "Oui, un dépose-minute est organisé avenue de la Tremblaie, au Plessis-Pâté. Il permet d'entrer sur la Fête au niveau de l'entrée Humanité."
+  },
+  {
+    "id": "plan-acces",
+    "category": "Accès & transport",
+    "question": "Où trouver le plan d'accès officiel ?",
+    "answer": "Le plan d'accès grand public (portes, parkings, navettes) est téléchargeable en PDF sur fete.humanite.fr, rubrique Infos pratiques → Venir à la Fête. Le plan de l'onglet Carte de cette appli est un schéma redessiné, aux positions approximatives."
+  },
+  {
+    "id": "billetterie-officielle",
+    "category": "Billets & tarifs",
+    "question": "Où acheter ses billets ?",
+    "answer": "Tous les titres (Pass 3 jours, entrée camping, billets parking, camping-car) sont vendus sur la billetterie officielle See Tickets, accessible depuis fete.humanite.fr. Des revendeurs partenaires existent aussi : Fnac / France Billet, Ticketmaster (Cultura, E.Leclerc, Carrefour, Cora) et Shotgun."
+  },
+  {
+    "id": "tarifs-paliers",
+    "category": "Billets & tarifs",
     "question": "Combien coûte le pass 3 jours ?",
-    "answer": "La billetterie ouvre par paliers successifs, du moins cher au plus cher : le premier palier (55 €) est déjà épuisé, le suivant (60 €) prend le relais. Les tarifs augmentent à chaque palier, donc mieux vaut acheter tôt."
+    "answer": "La billetterie fonctionne par paliers successifs, du moins cher au plus cher : mieux vaut acheter tôt. Les montants annoncés dans la presse (premier palier à 55 €, puis 60 €, 1 € pour les 0-11 ans et 6 € pour les 12-15 ans) ne sont pas repris dans les infos pratiques officielles — vérifie le prix du palier en cours directement sur la billetterie."
   },
   {
-    "id": "tarifs-enfants-ados",
-    "category": "Tarifs & billetterie",
-    "question": "Quel est le tarif pour les enfants et les ados ?",
-    "answer": "Le pass 3 jours est à 1 € symbolique pour les enfants de 0 à 11 ans, et à 6 € pour les 12-15 ans."
+    "id": "pass-culture",
+    "category": "Billets & tarifs",
+    "question": "Peut-on payer avec le Pass Culture ?",
+    "answer": "Oui : les Pass 3 jours et les Billets Nuit sont disponibles sur l'application Pass Culture pour les jeunes de 15 à 18 ans."
   },
   {
-    "id": "tarifs-pass-culture",
-    "category": "Tarifs & billetterie",
-    "question": "Peut-on payer sa place avec le Pass Culture ?",
-    "answer": "Oui, le pass 3 jours est disponible à l'achat via le Pass Culture."
+    "id": "bourse-aux-billets",
+    "category": "Billets & tarifs",
+    "question": "Que faire si tout est complet ?",
+    "answer": "La Fête propose une bourse aux billets officielle et sécurisée pour l'édition 2026 (resell.seetickets.com), pensée pour éviter les arnaques et le marché noir. Tu peux y programmer une alerte, notamment pour les entrées camping, épuisées. Évite les reventes entre particuliers hors de cette plateforme."
   },
   {
-    "id": "camping-disponibilite",
-    "category": "Camping",
+    "id": "bon-de-soutien",
+    "category": "Billets & tarifs",
+    "question": "Comment fonctionne le bon de soutien ?",
+    "answer": "Le bon de soutien est un soutien financier au journal l'Humanité, à 45 €. C'est un bon papier illustré (cette année, neuf affiches historiques de la Fête), diffusé par les lectrices et lecteurs du journal. Le code à gratter au dos permet de demander une invitation pour les trois jours de la Fête, à enregistrer sur fete.humanite.fr/soutien."
+  },
+  {
+    "id": "sav-billetterie",
+    "category": "Billets & tarifs",
+    "question": "J'ai un problème avec ma commande, qui contacter ?",
+    "answer": "Pour un billet acheté sur la billetterie officielle, passe par le centre d'aide See Tickets avec ton numéro de commande. Pour un achat chez un revendeur, adresse-toi au SAV correspondant (Fnac / France Billet, Ticketmaster ou Shotgun). Pour une invitation bon de soutien perdue, tu peux demander à la recevoir par SMS depuis le SAV des bons de soutien."
+  },
+  {
+    "id": "camping-acces",
+    "category": "Camping & hébergement",
     "question": "Peut-on camper sur place ?",
-    "answer": "Un grand camping officiel est prévu sur le site, mais sa billetterie est déjà complète pour 2026. D'autres solutions d'hébergement existent dans les environs, en Essonne."
+    "answer": "Oui, mais le camping affiche complet pour 2026 — l'organisation annonce travailler à ajouter des places d'ici la Fête. L'achat d'une entrée camping est obligatoire, en plus du Pass 3 jours. L'accès est gratuit pour les enfants de 0 à 11 ans (nés après le 15/09/2015 inclus).\n\nLe camping est ouvert en continu du vendredi 11/09 à 12h00 au dimanche 13/09 à 20h00, avec sanitaires dédiés (WC et douches) et un bar / snack. À partir de 20h00 le dimanche, le camping n'est plus surveillé : l'organisation décline toute responsabilité en cas de vol ou de dégradation après cette heure."
   },
   {
-    "id": "programmation-scenes",
-    "category": "Programmation",
-    "question": "Quelles sont les scènes du festival ?",
-    "answer": "Quatre scènes musicales : Angela Davis, Joséphine Baker, Zebrock – Nina Simone et la scène Inter « le 92 accueille le monde ». S'y ajoutent l'Agora, le Forum social, l'espace Jack Ralite (arts vivants & cinéma), les villages (Monde, Livre, Médias indépendants, Territoires solidaires, Famille) et les espaces Sciences & Numérique et Sport."
+    "id": "camping-bracelet",
+    "category": "Camping & hébergement",
+    "question": "Comment obtenir son bracelet camping ?",
+    "answer": "Le camping est réservé aux personnes munies d'un bracelet. Il se retire aux entrées de la Fête, sur présentation du billet d'entrée camping ET du Pass 3 jours.\n\nHoraires de pose du bracelet : vendredi 11/09 de 12h00 à 01h00, samedi 12/09 de 09h00 à 01h00. En dehors de ces créneaux, impossible d'accéder au camping sans bracelet déjà récupéré."
   },
   {
-    "id": "sourcing-donnees",
-    "category": "Programmation",
-    "question": "D'où viennent les informations de cette fiche ?",
-    "answer": "Le programme (horaires, lieux) vient du programme officiel de fete.humanite.fr. Les infos pratiques (tarifs, camping, accès) viennent d'articles de presse et peuvent être approximatives ou datées. Vérifie toujours les infos définitives sur le site officiel du festival."
+    "id": "camping-parkings",
+    "category": "Camping & hébergement",
+    "question": "Où se garer quand on campe ou qu'on vient en camping-car ?",
+    "answer": "Un parking campeurs est situé à proximité du camping, accessible par la Porte R ; un billet parking est nécessaire. Un espace camping-car se trouve juste à côté des entrées et du camping, avec un titre d'entrée obligatoire pour le véhicule. Les deux affichent complet pour 2026.\n\nLe parking camping-car n'a ni sanitaires, ni eau courante, ni évacuation des eaux usées, ni électricité : prends une entrée camping par personne pour accéder aux sanitaires du camping. Horaires d'entrée : vendredi 12h00-22h00, samedi 09h00-22h00, dimanche 09h00-17h00 ; sortie 24h/24."
+  },
+  {
+    "id": "location-hebergement",
+    "category": "Camping & hébergement",
+    "question": "Peut-on louer une tente ou un tipi ?",
+    "answer": "La Fête travaille avec FestiTent (tentes 2 et 4 places, avec options matelas, sacs de couchage, chaises) et Bed & Smile (tipis 4, 5 ou 6 places avec matelas), dans des zones dédiées du camping. Les deux affichent complet pour 2026.\n\nDans tous les cas, la location doit être associée à l'achat d'une entrée camping par occupant·e, sinon l'entrée du camping est refusée. Le check-in se fait à la réception du prestataire sur le camping, une fois le bracelet posé."
+  },
+  {
+    "id": "moyens-paiement",
+    "category": "Sur place",
+    "question": "Peut-on payer par carte sur la Fête ?",
+    "answer": "De nombreux stands ne prennent pas la carte bancaire : prévois de l'argent liquide. Les distributeurs de billets les plus proches se trouvent sur la commune de Brétigny-sur-Orge."
+  },
+  {
+    "id": "objets-interdits",
+    "category": "Sur place",
+    "question": "Qu'est-ce qui est interdit sur la Fête et au camping ?",
+    "answer": "Liste non exhaustive des objets interdits sur la Fête et au camping :\n• contenants en verre\n• bombes aérosols (déodorants, peinture…)\n• couteaux et objets contondants : rasoirs, ciseaux\n• lasers\n• tout type d'outils (marteaux, tournevis…)\n• engins pyrotechniques\n• vélos, skates et trottinettes\n• parasols\n• réchauds électriques et à gaz\n• animaux de compagnie (sauf chiens guides)\n• drones\n• mâts rigides et drapeaux"
+  },
+  {
+    "id": "toilettes",
+    "category": "Sur place",
+    "question": "Où sont les toilettes ?",
+    "answer": "Sept blocs de WC, comptant chacun de nombreuses cabines, sont répartis sur la Fête. Chaque bloc dispose de toilettes PMR : si tu n'es pas en situation de handicap, laisse-les libres, ainsi que leurs accès.\n\nDeux zones d'urinoirs féminins (association Lâche la Pression) sont installées à proximité de l'entrée Marcel Cachin et de la scène Angela Davis."
+  },
+  {
+    "id": "casiers",
+    "category": "Sur place",
+    "question": "Peut-on laisser ses affaires dans un casier ?",
+    "answer": "Oui, la Fête propose des consignes avec Mobile Locker, en quantités limitées : réservation et paiement en ligne à l'avance. Les casiers small sont au camping, les medium et large aux entrées de la Fête."
+  },
+  {
+    "id": "recharge-telephone",
+    "category": "Sur place",
+    "question": "Comment recharger son téléphone ?",
+    "answer": "Deux stands Global Charger (près de l'Agora et à l'entrée principale, à côté du camping) prêtent gratuitement une batterie nomade MANA® contre une caution de 20 €. Utile pour tenir la journée sans perdre ta timeline."
+  },
+  {
+    "id": "gourde-tri",
+    "category": "Sur place",
+    "question": "Peut-on apporter sa gourde ? Comment ça se passe pour les déchets ?",
+    "answer": "La gourde est autorisée et encouragée : des points d'eau sont indiqués sur le plan de la Fête, et les stands peuvent la remplir. La Fête met à disposition des gobelets recyclables et incite les stands à la vaisselle réutilisable ; le plastique jetable est interdit depuis 2020. Des poubelles de tri sont installées partout sur le site — la démarche d'écologie populaire de la Fête dépend aussi du public."
+  },
+  {
+    "id": "accessibilite-dispositifs",
+    "category": "Accessibilité",
+    "question": "Quels dispositifs existent pour les personnes en situation de handicap ?",
+    "answer": "• Gratuité pour l'accompagnant·e : écris à accessibilite@humanite.fr avec ton Pass 3 jours et ta carte mobilité inclusion (CMI) portant la mention « besoin d'accompagnement » ou « cécité »\n• Parking PMR/PSH gratuit à proximité directe des entrées\n• Navettes exclusivement dédiées aux PMR/PSH\n• Files réservées et guichets dédiés aux entrées\n• Rampes d'accès dans les espaces officiels\n• WC adaptés sur chaque bloc sanitaire\n• Voies carrossables et stabilisées dans les allées publiques\n• Plateformes surélevées devant les scènes Angela Davis et Joséphine Baker\n\nCôté public : propose ton aide (en demandant l'accord), laisse la priorité dans les files, ne stationne pas sur les emplacements réservés et n'obstrue pas les rampes."
+  },
+  {
+    "id": "accessibilite-parking",
+    "category": "Accessibilité",
+    "question": "Comment accéder au parking PMR ?",
+    "answer": "Le parking PMR/PSH est situé à proximité directe des entrées. Le stationnement est gratuit, sur réservation préalable et présentation de la carte mobilité inclusion (CMI). L'accès se fait par la Porte B, où les agents guident vers le parking.\n\nHoraires d'entrée : vendredi 11/09 12h00-22h00, samedi 12/09 09h00-22h00, dimanche 13/09 09h00-17h00. Au-delà, l'entrée est refusée ; la sortie reste possible 24h/24."
+  },
+  {
+    "id": "accessibilite-navettes",
+    "category": "Accessibilité",
+    "question": "Y a-t-il des navettes adaptées aux fauteuils roulants ?",
+    "answer": "Oui. Des navettes PMR/PSH gratuites partent du parvis de la gare RER C de Brétigny-sur-Orge et sont les seules à déposer directement aux entrées de la Fête, sur un quai équipé d'une rampe. Elles sont adaptées aux fauteuils roulants et ouvertes aux personnes en situation de handicap, aux femmes enceintes et aux personnes âgées, sans réservation (roulement continu). L'organisation signale toutefois que la gare RER C de Brétigny n'est pas accessible en fauteuil.\n\nDernières navettes PMR au départ de la Fête : vendredi 01h45, samedi 01h45, dimanche 21h00.\n\nDepuis la gare RER D d'Orangis Bois de l'Épine, les navettes sont des cars ne pouvant accueillir que deux fauteuils : privilégie le RER C."
+  },
+  {
+    "id": "accessibilite-falc",
+    "category": "Accessibilité",
+    "question": "Existe-t-il un guide facile à lire et à comprendre ?",
+    "answer": "Oui, un guide FALC (facile à lire et à comprendre) est disponible sur demande aux entrées de la Fête, et téléchargeable sur fete.humanite.fr."
+  },
+  {
+    "id": "numeros-urgence",
+    "category": "Sécurité & prévention",
+    "question": "Quels sont les numéros d'urgence sur la Fête ?",
+    "answer": "• Infirmerie, 24h/24 : 01 49 22 73 31\n• Accueil sécurité : 01 49 22 73 29\n• Alerte violences sexistes et sexuelles (WhatsApp uniquement) : 07 75 68 12 92\n• Enfant perdu ou trouvé : 01 49 22 73 34"
+  },
+  {
+    "id": "postes-secours",
+    "category": "Sécurité & prévention",
+    "question": "Où trouver les secours sur le site ?",
+    "answer": "L'infirmerie centrale est derrière l'Agora de l'Humanité (chemin d'accès à droite de l'Agora). Quatre postes de secours avancés complètent le dispositif :\n• à gauche de la scène Angela Davis (plaine Mary Anning)\n• en face de l'entrée Jean Jaurès (avenue Jean-Marie Tjibaou)\n• à gauche de la scène Zebrock – Nina Simone (avenue Maurice et Josette Audin)\n• à droite de la scène Joséphine Baker (plaine Emmeline Pankhurst)"
+  },
+  {
+    "id": "vhss-signalement",
+    "category": "Sécurité & prévention",
+    "question": "Victime ou témoin de harcèlement ou de violences sexistes et sexuelles ?",
+    "answer": "Trois moyens d'agir :\n• envoyer un message WhatsApp au 07 75 68 12 92 en précisant la situation et l'endroit où tu te trouves (le message est privilégié à l'appel)\n• solliciter les bénévoles en maraude, les responsables de stand, la sécurité ou tout membre de l'organisation\n• te rendre à l'espace Prévention et réduction des risques, en face de la scène Joséphine Baker, où une équipe spécialisée accueille et accompagne"
+  },
+  {
+    "id": "prevention-espaces",
+    "category": "Sécurité & prévention",
+    "question": "Où sont les espaces de prévention et de repos ?",
+    "answer": "• Espace Prévention et réduction des risques, au niveau de l'entrée Marcel Cachin, près de la scène Joséphine Baker : associations spécialisées en milieu festif (Techno+, IFI, HYGIE, Planning Familial, #NousToutes, Redflag Riposte) et un lieu calme et protégé pour l'écoute des victimes de harcèlement, de discriminations ou de violences sexistes et sexuelles.\n• Village Santé Solidaire, sur l'esplanade Mélinée et Missak Manouchian à côté de l'Agora : préservatifs, éthylotests, bouchons d'oreilles, écoute et conseils, avec la Sécurité routière, En Avant Toutes, Dans le Genre Égales, le Centre LGBTQI+ Paris IDF, 100 % Handinamique, Nightline, Addictions France, OUTrans, la Fondation Gustave Roussy et Avenir Santé.\n• L'Escale (Mutuelles de France), place Jean Jaurès face à l'Agora : une pause à l'abri du bruit, du soleil et des intempéries, avec boisson chaude ou fraîche offerte, débats et ateliers. Boissons extérieures, alcool, nourriture et cigarettes n'y sont pas acceptés."
+  },
+  {
+    "id": "enfant-perdu",
+    "category": "Sécurité & prévention",
+    "question": "Que faire si un enfant est perdu ?",
+    "answer": "Dans les deux sens — tu as perdu ton enfant ou tu trouves un enfant perdu — préviens immédiatement l'organisation au 01 49 22 73 34, puis rends-toi (ou raccompagne l'enfant) au Point info situé à côté de l'Agora de l'Humanité."
+  },
+  {
+    "id": "objets-trouves",
+    "category": "Sécurité & prévention",
+    "question": "J'ai perdu ou trouvé un objet, comment faire ?",
+    "answer": "Objet perdu : remplis le formulaire objets perdus en ligne (lien sur fete.humanite.fr) et/ou passe au Point info, à côté de l'Agora de l'Humanité.\n\nObjet trouvé : dépose-le au Point info pendant la Fête. Une fois la Fête terminée, écris à fete@humanite.fr avec une photo de l'objet.\n\nAprès la Fête, les objets se récupèrent à l'accueil organisation, en Porte K : lundi 14/09 de 14h à 17h30, mardi 15/09 et mercredi 16/09 de 10h à 12h30 et de 14h à 17h30, jeudi 17/09 de 10h à 12h30. À partir du jeudi 17 septembre 14h, les objets non identifiés sont remis à la police municipale du Plessis-Pâté. Les cartes bancaires retrouvées seules sont automatiquement détruites."
+  },
+  {
+    "id": "fete-histoire",
+    "category": "La Fête",
+    "question": "C'est quoi, la Fête de l'Humanité ?",
+    "answer": "Un événement politique et multiculturel organisé chaque année par le journal l'Humanité, le deuxième week-end de septembre, depuis sa création par Marcel Cachin en 1930. Première fête populaire française à avoir organisé de grands concerts internationaux en plein air (Pink Floyd en 1970, Joan Baez en 1971, The Who en 1972, Chuck Berry en 1973…), elle réunit aujourd'hui plus de 50 concerts, un village du Livre, des arts vivants, du cinéma, des expositions et plus d'une centaine de débats et conférences. L'édition 2025 a attiré environ 610 000 visiteurs sur trois jours."
+  },
+  {
+    "id": "fete-scenes",
+    "category": "La Fête",
+    "question": "Quelles sont les scènes et les espaces du festival ?",
+    "answer": "Quatre scènes musicales : Angela Davis, Joséphine Baker, Zebrock – Nina Simone et la scène Inter « le 92 accueille le monde ». S'y ajoutent l'Agora de l'Humanité, le Forum social, l'espace des arts vivants Jack Ralite, les villages (Monde, Livre et son Studio Livre, Médias indépendants, Territoires solidaires, Famille) et les espaces Sciences & Numérique et Sport."
+  },
+  {
+    "id": "fete-charte",
+    "category": "La Fête",
+    "question": "Y a-t-il des règles de bonne conduite ?",
+    "answer": "Oui, une charte de la Fête. La Fête de l'Humanité est un lieu de partage, de solidarité et de lutte contre toutes les formes de violence et de discrimination : chacun·e doit y être accueilli·e et respecté·e dans sa différence, indépendamment de son identité de genre, de sa langue, de sa religion, de son handicap ou de son orientation sexuelle. Venir à la Fête, c'est respecter cette charte, prendre soin du lieu et limiter son impact environnemental. Elle est téléchargeable sur fete.humanite.fr."
   }
 ]

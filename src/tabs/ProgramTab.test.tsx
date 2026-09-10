@@ -77,7 +77,7 @@ vi.mock('../data/events.json', () => ({
       start: '22:00',
       end: '23:30',
       venue: 'Le Bar',
-      category: 'bal',
+      category: 'spectacle',
       subtype: null,
       description: null,
     },
@@ -223,18 +223,18 @@ describe('ProgramTab — compteur et tri', () => {
   })
 
   it('affiche l’état vide pour un couple jour/catégorie sans événement', () => {
-    // le chip « Bals » n'est rendu que parce qu'un autre jour en propose un
-    expect(events.some((e) => e.category === 'bal')).toBe(true)
-    expect(events.some((e) => e.day === 'ven' && e.category === 'bal')).toBe(false)
+    // le chip « Spectacles » n'est rendu que parce qu'un autre jour en propose un
+    expect(events.some((e) => e.category === 'spectacle')).toBe(true)
+    expect(events.some((e) => e.day === 'ven' && e.category === 'spectacle')).toBe(false)
     renderTab()
-    fireEvent.click(screen.getByRole('button', { name: 'Bals' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Spectacles' }))
     expect(screen.getByText('Rien dans cette catégorie ce jour-là')).toBeInTheDocument()
   })
 
   it('ne rend pas de chip pour une catégorie absente du programme', () => {
-    expect(events.some((e) => e.category === 'radio')).toBe(false)
+    expect(events.some((e) => e.category === 'cinema')).toBe(false)
     renderTab()
-    expect(screen.queryByRole('button', { name: 'Radio' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Cinéma' })).not.toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Concerts' })).toBeInTheDocument()
   })
 

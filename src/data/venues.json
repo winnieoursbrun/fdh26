@@ -26,82 +26,142 @@
   },
   {
     "num": 6,
-    "name": "Ateliers de l'Humanité",
-    "group": "programmation"
-  },
-  {
-    "num": 7,
     "name": "Village du Monde",
     "group": "programmation"
   },
   {
-    "num": 8,
-    "name": "Village du Livre",
-    "group": "programmation"
-  },
-  {
-    "num": 9,
-    "name": "Village des Médias Indépendants",
-    "group": "programmation"
-  },
-  {
-    "num": 10,
-    "name": "Village des Territoires Solidaires",
-    "group": "programmation"
-  },
-  {
-    "num": 11,
-    "name": "Village famille",
-    "group": "programmation"
-  },
-  {
-    "num": 12,
-    "name": "Forum Social",
-    "group": "programmation"
-  },
-  {
-    "num": 13,
-    "name": "Espace Sciences et Numérique",
-    "group": "programmation"
-  },
-  {
-    "num": 14,
+    "num": 7,
     "name": "Espace Jack Ralite",
     "group": "programmation"
   },
   {
+    "num": 8,
+    "name": "Allées de la Fête",
+    "group": "programmation"
+  },
+  {
+    "num": 9,
+    "name": "Forum Social",
+    "group": "programmation"
+  },
+  {
+    "num": 10,
+    "name": "Village des Médias Indépendants",
+    "group": "programmation"
+  },
+  {
+    "num": 11,
+    "name": "Village du Livre",
+    "group": "programmation"
+  },
+  {
+    "num": 12,
+    "name": "Village des Territoires Solidaires",
+    "group": "programmation"
+  },
+  {
+    "num": 13,
+    "name": "Les Ami.e.s de l'Humanité",
+    "group": "programmation"
+  },
+  {
+    "num": 14,
+    "name": "Espace Sciences et Numérique",
+    "group": "programmation"
+  },
+  {
     "num": 15,
-    "name": "Espace Sport",
+    "name": "Village famille",
     "group": "programmation"
   },
   {
     "num": 16,
-    "name": "Entrée Humanité",
-    "group": "accueil"
+    "name": "Stand de Cœur d'Essonne Agglomération",
+    "group": "programmation"
   },
   {
     "num": 17,
-    "name": "Entrée Marcel Cachin",
-    "group": "accueil"
+    "name": "Espace Sport",
+    "group": "programmation"
   },
   {
     "num": 18,
-    "name": "Parking P11 — Humanité",
-    "group": "accueil"
+    "name": "Village du Livre - Studio Livre",
+    "group": "programmation"
   },
   {
     "num": 19,
-    "name": "Parkings P1 & PMR",
-    "group": "accueil"
+    "name": "Place de l'Etat de Palestine",
+    "group": "programmation"
   },
   {
     "num": 20,
-    "name": "Navettes PMR-PSH & taxis",
+    "name": "Consignes et casiers",
     "group": "accueil"
   },
   {
     "num": 21,
-    "name": "RER C — vers la gare de Brétigny-sur-Orge",
+    "name": "Enfants trouvés",
     "group": "accueil"
+  },
+  {
+    "num": 22,
+    "name": "Infirmerie centrale",
+    "group": "accueil"
+  },
+  {
+    "num": 23,
+    "name": "Objets trouvés",
+    "group": "accueil"
+  },
+  {
+    "num": 24,
+    "name": "Plateforme PMR/PSH",
+    "group": "accueil"
+  },
+  {
+    "num": 25,
+    "name": "Point Info",
+    "group": "accueil"
+  },
+  {
+    "num": 26,
+    "name": "Poste de secours avancé",
+    "group": "accueil"
+  },
+  {
+    "num": 27,
+    "name": "Espace Prévention",
+    "group": "bienetre"
+  },
+  {
+    "num": 28,
+    "name": "Espace prévention et réduction des risques",
+    "group": "bienetre"
+  },
+  {
+    "num": 29,
+    "name": "L'Escale",
+    "group": "bienetre"
+  },
+  {
+    "num": 30,
+    "name": "Point d'eau",
+    "group": "bienetre"
+  },
+  {
+    "num": 31,
+    "name": "Sanitaires",
+    "group": "bienetre"
+  },
+  {
+    "num": 32,
+    "name": "Urinoirs féminins",
+    "group": "bienetre"
+  },
+  {
+    "num": 33,
+    "name": "Boutique de l'Humanité",
+    "group": "vente"
   }
 ]

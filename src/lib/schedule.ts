@@ -18,14 +18,13 @@ export const FESTIVAL_START = new Date(2026, 8, 11, 10, 0)
 
 export const CATEGORIES: { key: Category; label: string }[] = [
   { key: 'concert', label: 'Concerts' },
-  { key: 'spectacle', label: 'Spectacles' },
+  { key: 'debat', label: 'Débats' },
   { key: 'conference', label: 'Conférences' },
+  { key: 'spectacle', label: 'Spectacles' },
+  { key: 'evenement', label: 'Évènements' },
+  { key: 'exposition', label: 'Expositions' },
+  { key: 'cinema', label: 'Cinéma' },
   { key: 'atelier', label: 'Ateliers' },
-  { key: 'bal', label: 'Bals' },
-  { key: 'famille', label: 'En famille' },
-  { key: 'balade', label: 'Balades' },
-  { key: 'radio', label: 'Radio' },
-  { key: 'imaginarium', label: 'Imaginarium' },
 ]
 
 export const CATEGORY_LABEL: Record<Category, string> = Object.fromEntries(

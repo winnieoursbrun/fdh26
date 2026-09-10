@@ -9,7 +9,7 @@ import {
   isAllDay,
   isEventOngoing,
 } from '../lib/schedule'
-import { FistButton } from '../components/FistButton'
+import { FIST_PATH, FIST_VIEWBOX, FistButton } from '../components/FistButton'
 import { ReminderBanner } from '../components/ReminderBanner'
 import { GroupPanel } from '../components/GroupPanel'
 import { FriendChips, PresenceButton } from '../components/GroupBadges'
@@ -89,15 +89,13 @@ export function TimelineTab({
     return (
       <section className="timeline-empty" aria-label="Ma timeline">
         {groupPanel}
-        <svg viewBox="0 0 24 24" className="empty-fist" aria-hidden="true">
-          <path d="M12 3a5 5 0 0 1 5 5 5 5 0 0 1-1.2 3.3c1.4.3 2.4 1.6 2.4 3.1a3.2 3.2 0 0 1-3.2 3.2h-1.6a5 5 0 0 1-5-5V8a5 5 0 0 1 3.6-4.8Z" />
-          <path
-            d="M12 17.5v3.5"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
+        <svg
+          viewBox={FIST_VIEWBOX}
+          className="empty-fist"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path d={FIST_PATH} />
         </svg>
         <h2>Ta timeline est vide</h2>
         <p>

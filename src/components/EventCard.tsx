@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import type { FestEvent } from '../types'
 import { CATEGORY_LABEL, formatRange } from '../lib/schedule'
+import { eventImageUrl } from '../lib/images'
 import { FistButton } from './FistButton'
 import { FriendChips, PresenceButton } from './GroupBadges'
 import type { FriendPresence } from '../hooks/useGroup'
@@ -23,6 +24,7 @@ export function EventCard({
 }: EventCardProps) {
   const [expanded, setExpanded] = useState(false)
   const details = event.description ?? event.subtype
+  const image = eventImageUrl(event.image)
 
   return (
     <article className={`card cat-${event.category}`}>
@@ -33,6 +35,16 @@ export function EventCard({
         </span>
       </div>
       <div className="card-body">
+        {image && (
+          <img
+            className="card-thumb"
+            src={image}
+            alt=""
+            loading="lazy"
+            decoding="async"
+            draggable={false}
+          />
+        )}
         <div className="card-text">
           <h3 className="card-title">{event.title}</h3>
           {event.artist && <p className="card-artist">{event.artist}</p>}
@@ -69,6 +81,9 @@ export function EventCard({
           {expanded && (
             <>
               <p className="card-desc">{details}</p>
+              {event.copyright && (
+                <p className="card-credit">Photo {event.copyright}</p>
+              )}
               {event.recommendations && (
                 <div className="card-recs">
                   <span className="card-recs-label">Tu aimeras si tu aimes</span>

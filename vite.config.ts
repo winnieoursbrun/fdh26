@@ -16,7 +16,7 @@ export default defineConfig({
       // On enregistre le SW nous-mêmes via virtual:pwa-register (src/registerSW.ts)
       // pour catcher les échecs de register() au lieu de laisser une unhandled rejection.
       injectRegister: null,
-      includeAssets: ['favicon.svg', 'map.svg'],
+      includeAssets: ['favicon.svg', 'plan-officiel.png'],
       manifest: {
         name: "Fête de l'Humanité 2026 (non officiel)",
         short_name: 'FDH26',
@@ -39,7 +39,9 @@ export default defineConfig({
         ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
+        // webp covers public/events/ : les illustrations du programme doivent
+        // être précachées pour que les cartes restent complètes hors ligne.
+        globPatterns: ['**/*.{js,css,html,svg,png,webp,jpeg,woff2}'],
         maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
         runtimeCaching: [
           {
