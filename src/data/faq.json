@@ -6,10 +6,16 @@
     "answer": "La 91ᵉ édition se déroule du vendredi 11 au dimanche 13 septembre 2026, sur la Base aérienne 217, au Plessis-Pâté (Essonne)."
   },
   {
+    "id": "horaires-ouverture",
+    "category": "Dates & lieu",
+    "question": "À quelle heure commence et finit chaque journée ?",
+    "answer": "D'après le programme officiel : le vendredi démarre à 10h et la nuit se prolonge jusqu'à 4h30 du matin sur la scène Joséphine Baker ; le dimanche commence à 9h et s'achève vers 21h. Les horaires du samedi ne sont pas encore intégrés à l'app."
+  },
+  {
     "id": "programmation-disponibilite",
     "category": "Dates & lieu",
     "question": "Le programme est-il déjà disponible ?",
-    "answer": "Pas encore : plus d'une trentaine d'artistes sont déjà annoncés (onglet Programme), mais la grille horaire détaillée par scène et par jour n'a pas encore été publiée par l'organisation. Cette fiche sera mise à jour dès sa sortie officielle."
+    "answer": "Oui : la grille horaire officielle est publiée et intégrée à l'onglet Programme pour le vendredi et le dimanche. Le samedi n'est pas encore repris dans l'app — en attendant, réfère-toi au programme du site officiel pour cette journée."
   },
   {
     "id": "acces-en-train-et-navette",
@@ -50,13 +56,13 @@
   {
     "id": "programmation-scenes",
     "category": "Programmation",
-    "question": "Combien de scènes et d'artistes sont prévus ?",
-    "answer": "Une trentaine d'artistes sont déjà annoncés, répartis a priori sur plusieurs scènes (rap, chanson, rock, électro, reggae, musiques du monde…), sur les 3 jours du festival."
+    "question": "Quelles sont les scènes du festival ?",
+    "answer": "Quatre scènes musicales : Angela Davis, Joséphine Baker, Zebrock – Nina Simone et la scène Inter « le 92 accueille le monde ». S'y ajoutent l'Agora, le Forum social, l'espace Jack Ralite (arts vivants & cinéma), les villages (Monde, Livre, Médias indépendants, Territoires solidaires, Famille) et les espaces Sciences & Numérique et Sport."
   },
   {
     "id": "sourcing-donnees",
     "category": "Programmation",
     "question": "D'où viennent les informations de cette fiche ?",
-    "answer": "Le site officiel fete.humanite.fr n'a pas pu être consulté directement au moment de la création de cette app : ces infos viennent d'articles de presse (JDS, Tsugi, MyFestival…) et peuvent être incomplètes ou évoluer. Vérifie toujours les infos définitives sur le site officiel du festival."
+    "answer": "Le programme (horaires, lieux) vient du programme officiel de fete.humanite.fr. Les infos pratiques (tarifs, camping, accès) viennent d'articles de presse et peuvent être approximatives ou datées. Vérifie toujours les infos définitives sur le site officiel du festival."
   }
 ]

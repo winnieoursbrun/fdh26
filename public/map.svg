@@ -1,87 +1,139 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 640" font-family="system-ui, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" font-family="system-ui, sans-serif">
   <defs>
     <style>
       .zone { stroke: #141414; stroke-width: 3; }
+      .ground { fill: #e8e0cf; stroke: #141414; stroke-width: 3; }
       .prog { fill: #f6c9ce; }
       .accueil { fill: #cfe4f5; }
-      .bienetre { fill: #cdeccd; }
-      .vente { fill: #fff0b3; }
-      .label { fill: #141414; font-weight: 800; text-anchor: start; }
-      .sub { fill: #141414; font-weight: 600; text-anchor: start; }
+      .t { fill: #141414; font-weight: 800; text-anchor: middle; }
+      .s { fill: #141414; font-weight: 600; text-anchor: middle; }
+      .land { fill: #6b6455; font-weight: 600; text-anchor: middle; }
       .num { fill: #141414; font-weight: 800; font-size: 14px; text-anchor: middle; dominant-baseline: middle; }
       .badge { fill: #ffd02e; stroke: #141414; stroke-width: 2.2; }
+      .note { fill: #6b6455; font-weight: 600; text-anchor: middle; }
     </style>
   </defs>
 
-  <rect x="0" y="0" width="800" height="640" fill="#f2ede2" />
+  <rect x="0" y="0" width="1000" height="700" fill="#f2ede2" />
 
-  <text x="400" y="34" text-anchor="middle" font-size="16" font-weight="800" fill="#6b6455" letter-spacing="1">
-    PLAN SCHÉMATIQUE — INDICATIF, EN ATTENTE DU PLAN OFFICIEL
+  <text x="500" y="22" class="note" font-size="14" font-weight="800" letter-spacing="1">
+    SCHÉMA REDESSINÉ D'APRÈS LE PLAN OFFICIEL 2026 — POSITIONS APPROXIMATIVES
   </text>
 
-  <rect class="zone prog" x="24" y="56" width="230" height="130" rx="14" />
-  <text class="label" x="58" y="128" font-size="20">Grande Scène</text>
-  <circle class="badge" cx="41" cy="73" r="13" /><text class="num" x="41" y="74">1</text>
+  <!-- enceinte du festival -->
+  <rect class="ground" x="40" y="130" width="920" height="400" rx="26" />
+  <text x="200" y="205" class="land" font-size="11">Plaine Mary Anning</text>
 
-  <rect class="zone prog" x="270" y="56" width="230" height="130" rx="14" />
-  <text class="label" x="304" y="117" font-size="20">Scène Rap &amp;</text>
-  <text class="sub" x="304" y="137" font-size="12">Musiques Urbaines</text>
-  <circle class="badge" cx="287" cy="73" r="13" /><text class="num" x="287" y="74">2</text>
+  <!-- accès nord -->
+  <rect class="zone accueil" x="380" y="28" width="180" height="52" rx="12" />
+  <text x="486" y="52" class="t" font-size="11">Parking P11</text>
+  <text x="486" y="69" class="t" font-size="11">Humanité</text>
+  <circle class="badge" cx="397" cy="45" r="13" /><text class="num" x="397" y="46">18</text>
 
-  <rect class="zone prog" x="516" y="56" width="260" height="130" rx="14" />
-  <text class="label" x="550" y="117" font-size="20">Scène Chanson &amp;</text>
-  <text class="sub" x="550" y="137" font-size="12">Musiques du Monde</text>
-  <circle class="badge" cx="533" cy="73" r="13" /><text class="num" x="533" y="74">3</text>
+  <rect class="zone accueil" x="380" y="108" width="180" height="44" rx="12" />
+  <text x="488" y="136" class="t" font-size="13">Entrée Humanité</text>
+  <circle class="badge" cx="397" cy="125" r="13" /><text class="num" x="397" y="126">16</text>
 
-  <rect class="zone prog" x="24" y="204" width="230" height="110" rx="14" />
-  <text class="label" x="58" y="255" font-size="20">L'Agora</text>
-  <text class="sub" x="58" y="275" font-size="12">des Idées</text>
-  <circle class="badge" cx="41" cy="221" r="13" /><text class="num" x="41" y="222">4</text>
+  <!-- scènes hors enceinte principale -->
+  <rect class="zone prog" x="60" y="52" width="200" height="64" rx="14" />
+  <text x="160" y="90" class="t" font-size="13">Scène Angela Davis</text>
+  <circle class="badge" cx="77" cy="69" r="13" /><text class="num" x="77" y="70">1</text>
 
-  <rect class="zone prog" x="270" y="204" width="250" height="110" rx="14" />
-  <text class="label" x="304" y="255" font-size="18">Village du Monde</text>
-  <text class="sub" x="304" y="275" font-size="12">Stands associatifs</text>
-  <circle class="badge" cx="287" cy="221" r="13" /><text class="num" x="287" y="222">5</text>
+  <rect class="zone prog" x="740" y="52" width="200" height="64" rx="14" />
+  <text x="840" y="82" class="t" font-size="13">Scène</text>
+  <text x="840" y="100" class="t" font-size="13">Joséphine Baker</text>
+  <circle class="badge" cx="757" cy="69" r="13" /><text class="num" x="757" y="70">2</text>
 
-  <rect class="zone prog" x="536" y="204" width="240" height="110" rx="14" />
-  <text class="label" x="570" y="266" font-size="18">Village du Livre</text>
-  <circle class="badge" cx="553" cy="221" r="13" /><text class="num" x="553" y="222">6</text>
+  <!-- rangée nord de l'enceinte -->
+  <rect class="zone prog" x="360" y="166" width="160" height="68" rx="14" />
+  <text x="440" y="207" class="t" font-size="15">Agora</text>
+  <circle class="badge" cx="377" cy="183" r="13" /><text class="num" x="377" y="184">5</text>
 
-  <rect class="zone accueil" x="24" y="340" width="180" height="100" rx="14" />
-  <text class="label" x="58" y="397" font-size="20">Entrée</text>
-  <circle class="badge" cx="41" cy="357" r="13" /><text class="num" x="41" y="358">7</text>
+  <rect class="zone prog" x="540" y="166" width="190" height="68" rx="14" />
+  <text x="635" y="198" class="t" font-size="12">Village des Médias</text>
+  <text x="635" y="216" class="t" font-size="12">Indépendants</text>
+  <circle class="badge" cx="557" cy="183" r="13" /><text class="num" x="557" y="184">9</text>
 
-  <rect class="zone accueil" x="220" y="340" width="180" height="100" rx="14" />
-  <text class="label" x="254" y="397" font-size="18">Billetterie</text>
-  <circle class="badge" cx="237" cy="357" r="13" /><text class="num" x="237" y="358">8</text>
+  <rect class="zone prog" x="750" y="166" width="190" height="68" rx="14" />
+  <text x="845" y="198" class="t" font-size="13">Ateliers de</text>
+  <text x="845" y="216" class="t" font-size="13">l'Humanité</text>
+  <circle class="badge" cx="767" cy="183" r="13" /><text class="num" x="767" y="184">6</text>
 
-  <rect class="zone accueil" x="416" y="340" width="180" height="100" rx="14" />
-  <text class="label" x="450" y="397" font-size="18">Camping</text>
-  <circle class="badge" cx="433" cy="357" r="13" /><text class="num" x="433" y="358">9</text>
+  <!-- rangée centrale -->
+  <rect class="zone prog" x="60" y="250" width="180" height="68" rx="14" />
+  <text x="150" y="290" class="t" font-size="13">Village du Monde</text>
+  <circle class="badge" cx="77" cy="267" r="13" /><text class="num" x="77" y="268">7</text>
 
-  <rect class="zone accueil" x="612" y="340" width="164" height="100" rx="14" />
-  <text class="label" x="646" y="397" font-size="14">Navettes &amp; vélos</text>
-  <circle class="badge" cx="629" cy="357" r="13" /><text class="num" x="629" y="358">10</text>
+  <rect class="zone prog" x="260" y="250" width="170" height="68" rx="14" />
+  <text x="345" y="290" class="t" font-size="13">Village du Livre</text>
+  <circle class="badge" cx="277" cy="267" r="13" /><text class="num" x="277" y="268">8</text>
 
-  <rect class="zone accueil" x="24" y="464" width="180" height="100" rx="14" />
-  <text class="label" x="58" y="510" font-size="16">Toilettes &amp;</text>
-  <text class="sub" x="58" y="530" font-size="12">douches</text>
-  <circle class="badge" cx="41" cy="481" r="13" /><text class="num" x="41" y="482">11</text>
+  <rect class="zone prog" x="540" y="250" width="190" height="68" rx="14" />
+  <text x="635" y="282" class="t" font-size="11">Village des Territoires</text>
+  <text x="635" y="300" class="t" font-size="11">Solidaires</text>
+  <circle class="badge" cx="557" cy="267" r="13" /><text class="num" x="557" y="268">10</text>
 
-  <rect class="zone bienetre" x="220" y="464" width="180" height="100" rx="14" />
-  <text class="label" x="254" y="510" font-size="15">Accessibilité</text>
-  <text class="sub" x="254" y="530" font-size="12">&amp; Écoute</text>
-  <circle class="badge" cx="237" cy="481" r="13" /><text class="num" x="237" y="482">12</text>
+  <rect class="zone prog" x="790" y="250" width="150" height="68" rx="14" />
+  <text x="865" y="290" class="t" font-size="13">Espace Sport</text>
+  <circle class="badge" cx="807" cy="267" r="13" /><text class="num" x="807" y="268">15</text>
 
-  <rect class="zone vente" x="416" y="464" width="180" height="100" rx="14" />
-  <text class="label" x="450" y="521" font-size="16">Restauration</text>
-  <circle class="badge" cx="433" cy="481" r="13" /><text class="num" x="433" y="482">13</text>
+  <!-- rangée sud -->
+  <rect class="zone prog" x="130" y="334" width="210" height="68" rx="14" />
+  <text x="235" y="366" class="t" font-size="13">Scène Zebrock</text>
+  <text x="235" y="386" class="s" font-size="12">Nina Simone</text>
+  <circle class="badge" cx="147" cy="351" r="13" /><text class="num" x="147" y="352">3</text>
 
-  <rect class="zone vente" x="612" y="464" width="164" height="100" rx="14" />
-  <text class="label" x="646" y="521" font-size="20">Bar</text>
-  <circle class="badge" cx="629" cy="481" r="13" /><text class="num" x="629" y="482">14</text>
+  <rect class="zone prog" x="360" y="334" width="170" height="68" rx="14" />
+  <text x="445" y="366" class="t" font-size="11">Espace Sciences</text>
+  <text x="445" y="386" class="t" font-size="11">et Numérique</text>
+  <circle class="badge" cx="377" cy="351" r="13" /><text class="num" x="377" y="352">13</text>
 
-  <text x="400" y="600" text-anchor="middle" font-size="14" font-weight="600" fill="#6b6455">
-    Positions approximatives — se référer au plan officiel affiché sur place
+  <rect class="zone prog" x="550" y="334" width="150" height="68" rx="14" />
+  <text x="625" y="374" class="t" font-size="13">Forum Social</text>
+  <circle class="badge" cx="567" cy="351" r="13" /><text class="num" x="567" y="352">12</text>
+
+  <rect class="zone prog" x="720" y="334" width="220" height="68" rx="14" />
+  <text x="830" y="362" class="t" font-size="12">Espace Jack Ralite</text>
+  <text x="830" y="382" class="s" font-size="11">Arts vivants &amp; cinéma</text>
+  <circle class="badge" cx="737" cy="351" r="13" /><text class="num" x="737" y="352">14</text>
+
+  <!-- rangée basse -->
+  <rect class="zone prog" x="60" y="418" width="160" height="68" rx="14" />
+  <text x="140" y="458" class="t" font-size="13">Village famille</text>
+  <circle class="badge" cx="77" cy="435" r="13" /><text class="num" x="77" y="436">11</text>
+
+  <rect class="zone prog" x="240" y="418" width="240" height="68" rx="14" />
+  <text x="360" y="446" class="t" font-size="13">Scène Inter</text>
+  <text x="360" y="466" class="s" font-size="10">le 92 accueille le monde</text>
+  <circle class="badge" cx="257" cy="435" r="13" /><text class="num" x="257" y="436">4</text>
+
+  <!-- accès sud-est -->
+  <rect class="zone accueil" x="790" y="508" width="180" height="44" rx="12" />
+  <text x="898" y="536" class="t" font-size="12">Entrée Marcel Cachin</text>
+  <circle class="badge" cx="807" cy="525" r="13" /><text class="num" x="807" y="526">17</text>
+
+  <rect class="zone accueil" x="380" y="580" width="180" height="52" rx="12" />
+  <text x="484" y="604" class="t" font-size="12">Parkings</text>
+  <text x="484" y="622" class="t" font-size="12">P1 &amp; PMR</text>
+  <circle class="badge" cx="397" cy="597" r="13" /><text class="num" x="397" y="598">19</text>
+
+  <rect class="zone accueil" x="580" y="580" width="200" height="52" rx="12" />
+  <text x="694" y="604" class="t" font-size="11">Navettes PMR-PSH</text>
+  <text x="694" y="622" class="t" font-size="11">&amp; taxis</text>
+  <circle class="badge" cx="597" cy="597" r="13" /><text class="num" x="597" y="598">20</text>
+
+  <rect class="zone accueil" x="800" y="580" width="170" height="52" rx="12" />
+  <text x="898" y="604" class="t" font-size="13">RER C</text>
+  <text x="898" y="622" class="s" font-size="10">vers Brétigny-sur-Orge</text>
+  <circle class="badge" cx="817" cy="597" r="13" /><text class="num" x="817" y="598">21</text>
+
+  <text x="500" y="660" class="note" font-size="13">
+    Positions approximatives — réfère-toi au plan officiel affiché sur place.
+  </text>
+  <text x="500" y="680" class="note" font-size="11">
+    L'extrait de plan disponible était rogné : la bordure est du site n'y figurait pas.
+  </text>
+  <text x="500" y="696" class="note" font-size="11">
+    Bars, restauration et toilettes : repères lettrés sur le plan officiel, non reportés ici.
   </text>
 </svg>
