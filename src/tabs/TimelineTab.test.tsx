@@ -142,6 +142,77 @@ describe('TimelineTab — rendu', () => {
   })
 })
 
+describe('TimelineTab — export vers l’agenda', () => {
+  beforeEach(() => {
+    localStorage.clear()
+    vi.useFakeTimers({ toFake: ['Date'] })
+    vi.setSystemTime(new Date(2026, 8, 10, 12, 0))
+  })
+
+  afterEach(() => {
+    vi.useRealTimers()
+    vi.restoreAllMocks()
+    vi.unstubAllGlobals()
+  })
+
+  function captureIcs() {
+    const createObjectURL = vi.fn((_blob: Blob) => 'blob:fake')
+    vi.stubGlobal('URL', { ...URL, createObjectURL, revokeObjectURL: vi.fn() })
+    const realCreate = document.createElement.bind(document)
+    vi.spyOn(document, 'createElement').mockImplementation((tag: string) => {
+      const el = realCreate(tag) as HTMLElement
+      if (tag === 'a') {
+        el.click = vi.fn()
+      }
+      return el
+    })
+    return async () => {
+      const blob = createObjectURL.mock.calls[0]?.[0]
+      return blob ? await blob.text() : ''
+    }
+  }
+
+  const BUTTON = 'Ajouter mes favoris à mon agenda'
+
+  it('ne propose pas l’export quand la timeline est vide', () => {
+    renderTab()
+    expect(screen.queryByRole('button', { name: BUTTON })).not.toBeInTheDocument()
+  })
+
+  it('exporte les favoris au format .ics', async () => {
+    const read = captureIcs()
+    renderTab({ favorites: new Set([LARZAC, MIOSSEC]) })
+    fireEvent.click(screen.getByRole('button', { name: BUTTON }))
+
+    const ics = await read()
+    expect(ics).toContain('BEGIN:VCALENDAR')
+    expect(ics).toContain(`UID:${LARZAC}@fdh26`)
+    expect(ics).toContain(`UID:${MIOSSEC}@fdh26`)
+  })
+
+  it('n’exporte pas les favoris des amis, seulement les miens', async () => {
+    const read = captureIcs()
+    renderTab({
+      favorites: new Set([LARZAC]),
+      groupApi: fakeGroupApi({
+        group: { code: 'PLUIE-42', name: 'Moi' },
+        friendsByEvent: new Map([[STANDS, chips(['Lou'])]]),
+      } as Partial<GroupApi>),
+    })
+
+    // L'événement de l'amie est bien affiché…
+    expect(
+      screen.getByRole('heading', { level: 3, name: 'Le Village du Monde' }),
+    ).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: BUTTON }))
+
+    // … mais il ne part pas dans mon agenda.
+    const ics = await read()
+    expect(ics).toContain(`UID:${LARZAC}@fdh26`)
+    expect(ics).not.toContain(`UID:${STANDS}@fdh26`)
+  })
+})
+
 describe('TimelineTab — favoris des copains', () => {
   const inGroup = (friendsByEvent: Map<string, FriendPresence[]>) =>
     fakeGroupApi({

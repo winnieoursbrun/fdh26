@@ -9,6 +9,7 @@ import {
   isAllDay,
   isEventOngoing,
 } from '../lib/schedule'
+import { downloadIcs } from '../lib/ics'
 import { FIST_PATH, FIST_VIEWBOX, FistButton } from '../components/FistButton'
 import { ReminderBanner } from '../components/ReminderBanner'
 import { GroupPanel } from '../components/GroupPanel'
@@ -16,6 +17,7 @@ import { FriendChips, PresenceButton } from '../components/GroupBadges'
 import type { ReminderStatus } from '../hooks/useReminders'
 import type { GroupApi } from '../hooks/useGroup'
 import { useNow } from '../hooks/useNow'
+import * as Sentry from '@sentry/react'
 import eventsData from '../data/events.json'
 
 const events = eventsData as FestEvent[]
@@ -66,6 +68,14 @@ export function TimelineTab({
       onToggleShowFriends={toggleShowFriends}
     />
   )
+
+  // Seuls mes favoris partent dans l'agenda : les événements des amis sont
+  // affichés pour se repérer, pas pour encombrer mon calendrier.
+  const exportToCalendar = () => {
+    const mine = events.filter((e) => favorites.has(e.id)).sort(byTime)
+    downloadIcs(mine)
+    Sentry.metrics.count('calendar.export', 1, { attributes: { count: mine.length } })
+  }
 
   const friendFavoriteIds = groupApi.group && showFriends ? groupApi.friendsByEvent.keys() : []
   const visibleIds = new Set([...favorites, ...friendFavoriteIds])
@@ -119,6 +129,18 @@ export function TimelineTab({
         enable={onEnableReminders}
         favoritesCount={favorites.size}
       />
+      {favorites.size > 0 && (
+        <div className="calendar-export">
+          <button type="button" className="calendar-export-btn" onClick={exportToCalendar}>
+            Ajouter mes favoris à mon agenda
+          </button>
+          <p className="calendar-export-hint">
+            Récupère un fichier à ouvrir pour l'ajouter à ton agenda — il apparaîtra
+            ensuite sur ta montre, avec un rappel 15 min avant. Retirer un favori
+            ici n'efface pas l'événement de l'agenda.
+          </p>
+        </div>
+      )}
       {byDay.map((group) => (
         <div key={group.day} className="tl-day">
           <h2 className={`tl-day-title day-${group.day}`}>{DAY_LONG[group.day]}</h2>

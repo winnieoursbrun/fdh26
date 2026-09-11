@@ -1227,6 +1227,44 @@ p {
   line-height: 1;
 }
 
+.calendar-export {
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--sticker-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.calendar-export-btn {
+  align-self: flex-start;
+  padding: 8px 14px;
+  background: var(--yellow);
+  color: #141414;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  box-shadow: var(--sticker-sm);
+  font-weight: 800;
+  font-family: var(--display);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.calendar-export-btn:active {
+  box-shadow: none;
+  transform: translate(2px, 2px);
+}
+
+.calendar-export-hint {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
 .toggle-row {
   display: flex;
   align-items: center;
