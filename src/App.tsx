@@ -118,6 +118,7 @@ export default function App() {
   const isFirstTabRender = useRef(true)
   const [iosHelpOpen, setIosHelpOpen] = useState(false)
   const [timelineScrollToken, setTimelineScrollToken] = useState(0)
+  const [programScrollToken, setProgramScrollToken] = useState(0)
   const { favorites, toggle } = useFavorites()
   const favoriteEvents = useMemo(
     () => events.filter((e) => favorites.has(e.id)),
@@ -310,7 +311,12 @@ export default function App() {
       <main className="app-main">
         {tab === 'map' && <MapTab />}
         {tab === 'program' && (
-          <ProgramTab favorites={favorites} onToggleFavorite={toggle} groupApi={groupApi} />
+          <ProgramTab
+            favorites={favorites}
+            onToggleFavorite={toggle}
+            groupApi={groupApi}
+            scrollToken={programScrollToken}
+          />
         )}
         {tab === 'timeline' && (
           <TimelineTab
@@ -344,6 +350,9 @@ export default function App() {
               navigateToTab(t.key)
               if (t.key === 'timeline') {
                 setTimelineScrollToken((n) => n + 1)
+              }
+              if (t.key === 'program') {
+                setProgramScrollToken((n) => n + 1)
               }
             }}
           >

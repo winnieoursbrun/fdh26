@@ -70,13 +70,37 @@ const DEFAULT_ONGOING_MS = 60 * 60_000
 // un peu en avance, et la présence survit le temps de traîner à la sortie.
 const PRESENCE_MARGIN_MS = 15 * 60_000
 
+// Fin « réelle » d'un événement : son horaire de fin, ou début + 1 h quand le
+// programme n'en publie pas.
+export function eventDoneAt(e: FestEvent): number {
+  const start = eventStartDate(e).getTime()
+  return e.end ? eventEndDate(e).getTime() : start + DEFAULT_ONGOING_MS
+}
+
 // Un événement est « en cours » de 15 min avant son début à 15 min après sa fin
 // (ou début + 1 h sans horaire de fin) : fenêtre pendant laquelle on peut dire
 // au groupe qu'on y est.
 export function isEventOngoing(e: FestEvent, now: number): boolean {
   const start = eventStartDate(e).getTime()
-  const end = e.end ? eventEndDate(e).getTime() : start + DEFAULT_ONGOING_MS
-  return now >= start - PRESENCE_MARGIN_MS && now < end + PRESENCE_MARGIN_MS
+  return now >= start - PRESENCE_MARGIN_MS && now < eventDoneAt(e) + PRESENCE_MARGIN_MS
+}
+
+// Terminé : plus rien à en attendre, on peut le laisser au-dessus du fil.
+export function isPast(e: FestEvent, now: number): boolean {
+  return eventDoneAt(e) <= now
+}
+
+// Jour de grille en cours, ou null hors festival. Avant 05:00 on est encore
+// dans la nuit de la veille (même règle de bascule que timeMinutes()).
+export function currentFestivalDay(now: number): Day | null {
+  const date = new Date(now)
+  if (date.getHours() < 5) {
+    date.setDate(date.getDate() - 1)
+  }
+  if (date.getFullYear() !== 2026 || date.getMonth() !== 8) {
+    return null
+  }
+  return DAYS.find((d) => Number(d.date) === date.getDate())?.key ?? null
 }
 
 // Les animations « en continu » (stands du village, espace familles…) couvrent

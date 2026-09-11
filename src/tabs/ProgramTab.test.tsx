@@ -113,6 +113,7 @@ function renderTab(overrides: Partial<Parameters<typeof ProgramTab>[0]> = {}) {
       favorites={new Set<string>()}
       onToggleFavorite={onToggleFavorite}
       groupApi={fakeGroupApi()}
+      scrollToken={0}
       {...overrides}
     />,
   )
@@ -123,24 +124,64 @@ function renderedTitles() {
   return screen.getAllByRole('heading', { level: 3 }).map((h) => h.textContent)
 }
 
+// Vendredi midi : le programme du jour n'a pas encore commencé, aucun repère
+// « Maintenant » ne vient perturber les rendus par défaut.
+beforeEach(() => {
+  vi.useFakeTimers({ toFake: ['Date'] })
+  vi.setSystemTime(new Date(2026, 8, 11, 12, 0))
+})
+
+afterEach(() => {
+  vi.useRealTimers()
+})
+
 describe('ProgramTab — choix du jour', () => {
   beforeEach(() => {
     localStorage.clear()
     weatherDays = []
   })
 
-  it('ouvre sur vendredi sans stockage', () => {
+  it('ouvre sur vendredi hors festival sans stockage', () => {
+    vi.setSystemTime(new Date(2026, 7, 20, 12, 0))
     renderTab()
     expect(screen.getByRole('tab', { name: /Ven/ })).toHaveAttribute('aria-selected', 'true')
   })
 
-  it('rouvre sur le jour persisté', () => {
+  it('ouvre sur le jour en cours pendant le festival', () => {
+    vi.setSystemTime(new Date(2026, 8, 12, 15, 0))
+    renderTab()
+    expect(screen.getByRole('tab', { name: /Sam/ })).toHaveAttribute('aria-selected', 'true')
+  })
+
+  it('ouvre sur le jour de la veille avant 05:00', () => {
+    vi.setSystemTime(new Date(2026, 8, 13, 2, 0))
+    renderTab()
+    expect(screen.getByRole('tab', { name: /Sam/ })).toHaveAttribute('aria-selected', 'true')
+  })
+
+  it('rouvre sur le jour persisté hors festival', () => {
+    vi.setSystemTime(new Date(2026, 7, 20, 12, 0))
     localStorage.setItem('fdh26-program-day', 'sam')
     renderTab()
     expect(screen.getByRole('tab', { name: /Sam/ })).toHaveAttribute('aria-selected', 'true')
   })
 
+  it('rouvre sur le jour choisi dans la même journée', () => {
+    localStorage.setItem('fdh26-program-day', 'dim')
+    localStorage.setItem('fdh26-program-day-at', '2026-9-11')
+    renderTab()
+    expect(screen.getByRole('tab', { name: /Dim/ })).toHaveAttribute('aria-selected', 'true')
+  })
+
+  it('oublie le jour choisi la veille et revient au jour en cours', () => {
+    localStorage.setItem('fdh26-program-day', 'dim')
+    localStorage.setItem('fdh26-program-day-at', '2026-9-10')
+    renderTab()
+    expect(screen.getByRole('tab', { name: /Ven/ })).toHaveAttribute('aria-selected', 'true')
+  })
+
   it('retombe sur vendredi si la valeur stockée est invalide', () => {
+    vi.setSystemTime(new Date(2026, 7, 20, 12, 0))
     localStorage.setItem('fdh26-program-day', 'lundi')
     renderTab()
     expect(screen.getByRole('tab', { name: /Ven/ })).toHaveAttribute('aria-selected', 'true')
@@ -151,6 +192,7 @@ describe('ProgramTab — choix du jour', () => {
     fireEvent.click(screen.getByRole('tab', { name: /Dim/ }))
     expect(screen.getByRole('tab', { name: /Dim/ })).toHaveAttribute('aria-selected', 'true')
     expect(localStorage.getItem('fdh26-program-day')).toBe('dim')
+    expect(localStorage.getItem('fdh26-program-day-at')).toBe('2026-9-11')
   })
 
   it('affiche la pastille météo du jour quand un forecast existe', () => {
@@ -313,5 +355,96 @@ describe('ProgramTab — présence « j’y suis »', () => {
   it('ne propose rien hors groupe', () => {
     renderTab()
     expect(screen.queryByRole('button', { name: /je suis à/ })).toBeNull()
+  })
+})
+
+describe('ProgramTab — animations en continu', () => {
+  // Le Village du Monde tourne de 10:00 à 18:30 le samedi (fixture ci-dessus) :
+  // c'est une animation en continu, le Bal populaire un créneau classique.
+  beforeEach(() => {
+    localStorage.clear()
+    weatherDays = []
+    vi.setSystemTime(new Date(2026, 8, 12, 12, 0))
+  })
+
+  it('replie les animations en continu sous la grille horaire', () => {
+    renderTab()
+    expect(renderedTitles()).toEqual(['Bal populaire'])
+
+    const toggle = screen.getByRole('button', { name: 'En continu toute la journée (1)' })
+    expect(toggle).toHaveAttribute('aria-expanded', 'false')
+  })
+
+  it('déplie les animations en continu au clic', () => {
+    renderTab()
+    fireEvent.click(screen.getByRole('button', { name: 'En continu toute la journée (1)' }))
+
+    expect(renderedTitles()).toEqual(['Bal populaire', 'Le Village du Monde'])
+  })
+
+  it('déplie d’office quand la catégorie ne contient que du continu', () => {
+    renderTab()
+    fireEvent.click(screen.getByRole('button', { name: 'Ateliers' }))
+
+    expect(renderedTitles()).toEqual(['Le Village du Monde'])
+    expect(
+      screen.getByRole('button', { name: 'En continu toute la journée (1)' }),
+    ).toHaveAttribute('aria-expanded', 'true')
+  })
+
+  it('ne propose pas de repli quand le jour n’a aucune animation en continu', () => {
+    vi.setSystemTime(new Date(2026, 8, 11, 12, 0))
+    renderTab()
+    expect(screen.queryByRole('button', { name: /En continu/ })).not.toBeInTheDocument()
+  })
+})
+
+describe('ProgramTab — repère « Maintenant »', () => {
+  beforeEach(() => {
+    localStorage.clear()
+    weatherDays = []
+  })
+
+  it('place le repère devant le premier événement pas encore terminé', () => {
+    // 21:40 vendredi : l'ouverture et la nocturne du Village sont finies,
+    // MASSILIA (21:35 – 22:35) est en cours.
+    vi.setSystemTime(new Date(2026, 8, 11, 21, 40))
+    renderTab()
+
+    const marker = screen.getByText('Maintenant')
+    expect(marker.nextElementSibling).toHaveTextContent('MASSILIA')
+    // rien n'est retiré de la liste : on peut toujours remonter le fil du jour
+    expect(renderedTitles()).toHaveLength(events.filter((e) => e.day === 'ven').length)
+  })
+
+  it('n’affiche pas de repère avant le début de la journée', () => {
+    vi.setSystemTime(new Date(2026, 8, 11, 12, 0))
+    renderTab()
+    expect(screen.queryByText('Maintenant')).not.toBeInTheDocument()
+  })
+
+  it('n’affiche pas de repère sur un autre jour que le jour en cours', () => {
+    vi.setSystemTime(new Date(2026, 8, 11, 21, 40))
+    renderTab()
+    fireEvent.click(screen.getByRole('tab', { name: /Dim/ }))
+    expect(screen.queryByText('Maintenant')).not.toBeInTheDocument()
+  })
+
+  it('recale la liste sur « Maintenant » à chaque retour sur l’onglet', () => {
+    vi.setSystemTime(new Date(2026, 8, 11, 21, 40))
+    const spy = vi.spyOn(Element.prototype, 'scrollIntoView')
+    const { rerender } = renderTab()
+    expect(spy).toHaveBeenCalledTimes(1)
+
+    rerender(
+      <ProgramTab
+        favorites={new Set<string>()}
+        onToggleFavorite={vi.fn()}
+        groupApi={fakeGroupApi()}
+        scrollToken={1}
+      />,
+    )
+    expect(spy).toHaveBeenCalledTimes(2)
+    spy.mockRestore()
   })
 })

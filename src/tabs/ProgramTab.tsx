@@ -1,6 +1,14 @@
-import { useState } from 'react'
+import { Fragment, useEffect, useRef, useState } from 'react'
 import type { Category, Day, FestEvent } from '../types'
-import { byTime, CATEGORIES, DAYS, isEventOngoing } from '../lib/schedule'
+import {
+  byTime,
+  CATEGORIES,
+  currentFestivalDay,
+  DAYS,
+  isAllDay,
+  isEventOngoing,
+  isPast,
+} from '../lib/schedule'
 import { describeWeatherCode } from '../lib/weather'
 import { useWeather } from '../hooks/useWeather'
 import { useNow } from '../hooks/useNow'
@@ -16,33 +24,89 @@ const events = eventsData as FestEvent[]
 const CHIP_CATEGORIES = CATEGORIES.filter((c) => events.some((e) => e.category === c.key))
 
 const DAY_STORAGE_KEY = 'fdh26-program-day'
+const DAY_PICKED_AT_KEY = 'fdh26-program-day-at'
 
-function loadStoredDay(): Day {
+function localDateKey(now: number): string {
+  const d = new Date(now)
+  return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`
+}
+
+// Sur place, rouvrir le programme sur le jour en cours vaut mieux que rouvrir
+// sur le jour consulté la veille — sauf si on a soi-même choisi un autre jour
+// dans la même journée (on prépare son dimanche le vendredi soir).
+function loadStoredDay(now: number): Day {
   const stored = localStorage.getItem(DAY_STORAGE_KEY)
-  return DAYS.some((d) => d.key === stored) ? (stored as Day) : 'ven'
+  const picked = DAYS.some((d) => d.key === stored) ? (stored as Day) : null
+  const today = currentFestivalDay(now)
+  if (today && localStorage.getItem(DAY_PICKED_AT_KEY) !== localDateKey(now)) {
+    return today
+  }
+  return picked ?? today ?? 'ven'
 }
 
 interface ProgramTabProps {
   favorites: Set<string>
   onToggleFavorite: (id: string) => void
   groupApi: GroupApi
+  /** Change à chaque clic sur l'onglet Programme : redéclenche le scroll vers « maintenant ». */
+  scrollToken: number
 }
 
-function ProgramGrid({ favorites, onToggleFavorite, groupApi }: ProgramTabProps) {
-  const [day, setDay] = useState<Day>(loadStoredDay)
+function ProgramGrid({ favorites, onToggleFavorite, groupApi, scrollToken }: ProgramTabProps) {
+  const [day, setDay] = useState<Day>(() => loadStoredDay(Date.now()))
   const [category, setCategory] = useState<Category | 'all'>('all')
+  const [allDayOpen, setAllDayOpen] = useState(false)
   const { days: weatherDays } = useWeather()
   const now = useNow()
+  const nowRef = useRef<HTMLParagraphElement | null>(null)
 
   function selectDay(d: Day) {
     setDay(d)
     localStorage.setItem(DAY_STORAGE_KEY, d)
+    localStorage.setItem(DAY_PICKED_AT_KEY, localDateKey(Date.now()))
   }
 
   const dayEvents = events.filter((e) => e.day === day)
   const list = dayEvents
     .filter((e) => category === 'all' || e.category === category)
     .sort(byTime)
+
+  // Les animations en continu (12h – 20h…) ouvrent la journée et noieraient le
+  // concert d'une heure qui commence maintenant : on les regroupe à la fin.
+  const timed = list.filter((e) => !isAllDay(e))
+  const allDay = list.filter((e) => isAllDay(e))
+  const showAllDay = allDayOpen || timed.length === 0
+
+  // Premier événement pas encore terminé : tout ce qui est au-dessus est passé.
+  const nowIndex = currentFestivalDay(now) === day ? timed.findIndex((e) => !isPast(e, now)) : -1
+  const showNowMarker = nowIndex > 0
+
+  useEffect(() => {
+    nowRef.current?.scrollIntoView({ block: 'start' })
+    // Au (re)montage de l'onglet et à chaque clic sur « Programme » alors qu'on
+    // y est déjà ; pas à chaque minute, pour ne pas voler le scroll en lecture.
+  }, [scrollToken, day, category])
+
+  function renderCard(e: FestEvent) {
+    const isHere = groupApi.myEventId === e.id
+    return (
+      <EventCard
+        key={e.id}
+        event={e}
+        isFavorite={favorites.has(e.id)}
+        onToggleFavorite={onToggleFavorite}
+        friends={groupApi.friendsByEvent.get(e.id)}
+        presence={
+          groupApi.group !== null && isEventOngoing(e, now)
+            ? {
+                here: isHere,
+                onToggle: () => groupApi.checkIn(isHere ? null : e.id),
+              }
+            : null
+        }
+      />
+    )
+  }
 
   return (
     <section aria-label="Programme">
@@ -102,27 +166,31 @@ function ProgramGrid({ favorites, onToggleFavorite, groupApi }: ProgramTabProps)
       </p>
 
       <div className="card-list">
-        {list.map((e) => {
-          const isHere = groupApi.myEventId === e.id
-          return (
-            <EventCard
-              key={e.id}
-              event={e}
-              isFavorite={favorites.has(e.id)}
-              onToggleFavorite={onToggleFavorite}
-              friends={groupApi.friendsByEvent.get(e.id)}
-              presence={
-                groupApi.group !== null && isEventOngoing(e, now)
-                  ? {
-                      here: isHere,
-                      onToggle: () => groupApi.checkIn(isHere ? null : e.id),
-                    }
-                  : null
-              }
-            />
-          )
-        })}
+        {timed.map((e, i) => (
+          <Fragment key={e.id}>
+            {showNowMarker && i === nowIndex && (
+              <p className="now-marker" ref={nowRef}>
+                Maintenant
+              </p>
+            )}
+            {renderCard(e)}
+          </Fragment>
+        ))}
       </div>
+
+      {allDay.length > 0 && (
+        <div className="allday-block">
+          <button
+            type="button"
+            className="allday-toggle"
+            aria-expanded={showAllDay}
+            onClick={() => setAllDayOpen((v) => !v)}
+          >
+            En continu toute la journée ({allDay.length})
+          </button>
+          {showAllDay && <div className="card-list">{allDay.map(renderCard)}</div>}
+        </div>
+      )}
     </section>
   )
 }

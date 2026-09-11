@@ -1,11 +1,14 @@
 import { describe, expect, it } from 'vitest'
 import {
   byTime,
+  currentFestivalDay,
+  eventDoneAt,
   eventEndDate,
   eventStartDate,
   formatRange,
   isAllDay,
   isEventOngoing,
+  isPast,
   timeMinutes,
 } from './schedule'
 import type { Day, FestEvent } from '../types'
@@ -191,5 +194,58 @@ describe('isEventOngoing', () => {
     const night = makeEvent({ day: 'ven', start: '00:40', end: '01:40' })
     expect(isEventOngoing(night, new Date(2026, 8, 12, 1, 0).getTime())).toBe(true)
     expect(isEventOngoing(night, new Date(2026, 8, 11, 1, 0).getTime())).toBe(false)
+  })
+})
+
+describe('eventDoneAt / isPast', () => {
+  it('utilise l’horaire de fin publié', () => {
+    const e = makeEvent({ day: 'sam', start: '21:00', end: '22:00' })
+    expect(eventDoneAt(e)).toBe(new Date(2026, 8, 12, 22, 0).getTime())
+  })
+
+  it('retient début + 1 h sans horaire de fin', () => {
+    const e = makeEvent({ day: 'sam', start: '21:00', end: null })
+    expect(eventDoneAt(e)).toBe(new Date(2026, 8, 12, 22, 0).getTime())
+  })
+
+  it('n’est pas passé pendant l’événement', () => {
+    const e = makeEvent({ day: 'sam', start: '21:00', end: '22:00' })
+    expect(isPast(e, new Date(2026, 8, 12, 21, 30).getTime())).toBe(false)
+  })
+
+  it('est passé dès la dernière minute écoulée', () => {
+    const e = makeEvent({ day: 'sam', start: '21:00', end: '22:00' })
+    expect(isPast(e, new Date(2026, 8, 12, 22, 0).getTime())).toBe(true)
+  })
+
+  it('n’est pas passé pour un set qui déborde après minuit', () => {
+    const e = makeEvent({ day: 'sam', start: '23:00', end: '01:00' })
+    expect(isPast(e, new Date(2026, 8, 13, 0, 30).getTime())).toBe(false)
+  })
+})
+
+describe('currentFestivalDay', () => {
+  it('reconnaît chaque jour du festival', () => {
+    expect(currentFestivalDay(new Date(2026, 8, 11, 14, 0).getTime())).toBe('ven')
+    expect(currentFestivalDay(new Date(2026, 8, 12, 14, 0).getTime())).toBe('sam')
+    expect(currentFestivalDay(new Date(2026, 8, 13, 14, 0).getTime())).toBe('dim')
+  })
+
+  it('rattache la fin de nuit au jour de grille précédent', () => {
+    expect(currentFestivalDay(new Date(2026, 8, 12, 2, 30).getTime())).toBe('ven')
+  })
+
+  it('bascule sur le jour suivant à 05:00', () => {
+    expect(currentFestivalDay(new Date(2026, 8, 12, 5, 0).getTime())).toBe('sam')
+  })
+
+  it('retourne null hors festival', () => {
+    expect(currentFestivalDay(new Date(2026, 8, 14, 12, 0).getTime())).toBeNull()
+    expect(currentFestivalDay(new Date(2026, 7, 11, 12, 0).getTime())).toBeNull()
+    expect(currentFestivalDay(new Date(2025, 8, 11, 12, 0).getTime())).toBeNull()
+  })
+
+  it('ne compte pas la nuit du dernier soir comme un jour de plus', () => {
+    expect(currentFestivalDay(new Date(2026, 8, 14, 2, 0).getTime())).toBe('dim')
   })
 })

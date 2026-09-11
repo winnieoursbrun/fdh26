@@ -143,6 +143,8 @@ describe('App — badge favoris et auto-scroll de la timeline', () => {
     const spy = vi.spyOn(Element.prototype, 'scrollIntoView')
 
     render(<App />)
+    // l'onglet Programme peut lui aussi se recaler sur « maintenant » au montage
+    spy.mockClear()
     fireEvent.click(tabButton('Ma timeline'))
     expect(spy).toHaveBeenCalledTimes(1)
 

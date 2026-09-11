@@ -454,6 +454,52 @@ p {
   --cat-ink: #141414;
 }
 
+/* Repère « Maintenant » dans le programme du jour : la liste s'ouvre dessus. */
+.now-marker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 2px 0 -2px;
+  font-family: var(--display);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--red);
+  scroll-margin-top: 10px;
+}
+
+.now-marker::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: var(--red);
+  border-radius: 2px;
+}
+
+/* Animations en continu (stands, expos…) : repliées sous la grille horaire. */
+.allday-block {
+  margin-top: 18px;
+}
+
+.allday-toggle {
+  width: 100%;
+  padding: 9px 14px;
+  border: 2px dashed var(--line);
+  border-radius: 999px;
+  background: transparent;
+  font-family: var(--display);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.allday-toggle[aria-expanded='true'] {
+  margin-bottom: 12px;
+  color: var(--ink);
+}
+
 /* ---------- Cartes événement ---------- */
 .card-list {
   display: flex;
