@@ -629,22 +629,6 @@
     "copyright": null
   },
   {
-    "id": "inflation-concentration-censure-diversite-quel-a-ven-1620",
-    "title": "Inflation, Concentration, Censure, Diversité : quel avenir pour la musique ?",
-    "artist": null,
-    "day": "ven",
-    "start": "16:20",
-    "end": "17:20",
-    "venue": "Espace Jack Ralite",
-    "category": "debat",
-    "subtype": null,
-    "description": "Le spectacle dispose à la Fête d’un espace dédié. Depuis 2018, il porte le nom de Jack Ralite, disparu l’année précédente. Cette affiche multiple proposée par l’Espace Jack Ralite est un engagement clair dans un contexte noir de menaces. Des villes, départements, régions, et le gouvernement en première ligne, pratiquent des coupes budgétaires sauvages, qui impactent l’univers fragile du spectacle vivant. Lors des festivals d’été, de multiples inquiétudes se sont fait entendre, et le public a été invité à signer une pétition réclamant un budget de la culture porté à 1 % du budget national. Cet espace est aussi un écho de ces colères.",
-    "recommendations": null,
-    "speakers": null,
-    "image": "z66d987f521241f6717d09fe2.jpg",
-    "copyright": null
-  },
-  {
     "id": "redonnons-du-sens-a-notre-travail-dans-la-suite-ven-1630",
     "title": "Redonnons du sens à notre travail dans la suite des EGSPT que méne la Fédération des Services Publics",
     "artist": null,
@@ -5141,6 +5125,24 @@
       "Amira Bouziri"
     ],
     "image": "z66d194009471a53a30a72d8e.jpg",
+    "copyright": null
+  },
+  {
+    "id": "rencontre-avec-tomek-et-sophie-caillat-dim-1340",
+    "title": "Rencontre avec Tomek et Sophie Caillat",
+    "artist": null,
+    "day": "dim",
+    "start": "13:40",
+    "end": "14:00",
+    "venue": "Village du Livre - Studio Livre",
+    "category": "conference",
+    "subtype": null,
+    "description": "Pour Voyage au pays des ultrariches (Éditions du Faubourg) animée par Julien Camy",
+    "recommendations": null,
+    "speakers": [
+      "Julien Camy"
+    ],
+    "image": "z66d18e399471a53a30a72d74.jpg",
     "copyright": null
   },
   {

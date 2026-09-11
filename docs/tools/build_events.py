@@ -38,6 +38,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 EVENTS_OUT = os.path.join(ROOT, 'src', 'data', 'events.json')
 VENUES_OUT = os.path.join(ROOT, 'src', 'data', 'venues.json')
 IMAGES_OUT = os.path.join(ROOT, 'docs', 'tools', 'event-images.json')
+# Les points relevés sur le terrain (un lieu peut en compter plusieurs) : c'est la
+# seule source de coordonnées GPS de l'app, le flux n'étant pas joignable hors ligne.
+PLACES_OUT = os.path.join(ROOT, 'src', 'data', 'places.json')
 
 FEED_URL = 'https://static.humanite.chapi.to/data.json'
 
@@ -435,6 +438,8 @@ def main():
         json.dumps(venues, ensure_ascii=False, indent=2) + '\n')
     io.open(IMAGES_OUT, 'w', encoding='utf-8').write(json.dumps(
         sorted({e['image'] for e in events if e['image']}), ensure_ascii=False, indent=2) + '\n')
+    io.open(PLACES_OUT, 'w', encoding='utf-8').write(
+        json.dumps(placements, ensure_ascii=False, indent=2) + '\n')
 
     per_day = collections.Counter(e['day'] for e in events)
     per_category = collections.Counter(e['category'] for e in events)
@@ -442,7 +447,7 @@ def main():
     print('  par jour     : ' + ', '.join(f'{d}={per_day[d]}' for d in DAY_INDEX))
     print('  par catégorie: ' + ', '.join(f'{c}={n}' for c, n in per_category.most_common()))
     print(f'{len(venues)} lieux ({len(placements)} points relevés) -> '
-          f'{os.path.relpath(VENUES_OUT, ROOT)}')
+          f'{os.path.relpath(VENUES_OUT, ROOT)} + {os.path.relpath(PLACES_OUT, ROOT)}')
     for reason, count in skipped.items():
         print(f'  ignorés ({reason}) : {count}', file=sys.stderr)
 

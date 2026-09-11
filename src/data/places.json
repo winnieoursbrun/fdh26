@@ -1,0 +1,345 @@
+[
+  {
+    "num": 1,
+    "name": "Scène Angela Davis",
+    "group": "programmation",
+    "lat": 48.60703168525572,
+    "lng": 2.3472158841186967
+  },
+  {
+    "num": 2,
+    "name": "Scène Joséphine Baker",
+    "group": "programmation",
+    "lat": 48.60180613559757,
+    "lng": 2.3392341102540684
+  },
+  {
+    "num": 3,
+    "name": "Scène Zebrock - Nina Simone",
+    "group": "programmation",
+    "lat": 48.60705513372932,
+    "lng": 2.3423043003373607
+  },
+  {
+    "num": 5,
+    "name": "Agora",
+    "group": "programmation",
+    "lat": 48.604744562427754,
+    "lng": 2.3430091429626714
+  },
+  {
+    "num": 6,
+    "name": "Village du Monde",
+    "group": "programmation",
+    "lat": 48.60831422596817,
+    "lng": 2.3446076777985354
+  },
+  {
+    "num": 7,
+    "name": "Espace Jack Ralite",
+    "group": "programmation",
+    "lat": 48.604049524583985,
+    "lng": 2.339072260254426
+  },
+  {
+    "num": 9,
+    "name": "Forum Social",
+    "group": "programmation",
+    "lat": 48.60495467893432,
+    "lng": 2.3406162498146728
+  },
+  {
+    "num": 10,
+    "name": "Village des Médias Indépendants",
+    "group": "programmation",
+    "lat": 48.604497444921776,
+    "lng": 2.3419028036381633
+  },
+  {
+    "num": 11,
+    "name": "Village du Livre",
+    "group": "programmation",
+    "lat": 48.60549603564144,
+    "lng": 2.3425660141300284
+  },
+  {
+    "num": 12,
+    "name": "Village des Territoires Solidaires",
+    "group": "programmation",
+    "lat": 48.60468832782067,
+    "lng": 2.341207710969627
+  },
+  {
+    "num": 13,
+    "name": "Les Ami.e.s de l'Humanité",
+    "group": "programmation",
+    "lat": 48.603381109970826,
+    "lng": 2.3411262100740657
+  },
+  {
+    "num": 14,
+    "name": "Espace Sciences et Numérique",
+    "group": "programmation",
+    "lat": 48.606045140590254,
+    "lng": 2.3417641870303783
+  },
+  {
+    "num": 15,
+    "name": "Village famille",
+    "group": "programmation",
+    "lat": 48.608534149630515,
+    "lng": 2.34359537237836
+  },
+  {
+    "num": 17,
+    "name": "Espace Sport",
+    "group": "programmation",
+    "lat": 48.60306391924345,
+    "lng": 2.3385804928779237
+  },
+  {
+    "num": 17,
+    "name": "Espace Sport",
+    "group": "programmation",
+    "lat": 48.6030326729535,
+    "lng": 2.3382880992973867
+  },
+  {
+    "num": 19,
+    "name": "Place de l'Etat de Palestine",
+    "group": "programmation",
+    "lat": 48.60775302336572,
+    "lng": 2.3445268159690897
+  },
+  {
+    "num": 20,
+    "name": "Consignes et casiers",
+    "group": "accueil",
+    "lat": 48.60870843037887,
+    "lng": 2.3457885322587515
+  },
+  {
+    "num": 20,
+    "name": "Consignes et casiers",
+    "group": "accueil",
+    "lat": 48.60257540335692,
+    "lng": 2.3374711916481488
+  },
+  {
+    "num": 20,
+    "name": "Consignes et casiers",
+    "group": "accueil",
+    "lat": 48.60191868173251,
+    "lng": 2.337885320928649
+  },
+  {
+    "num": 21,
+    "name": "Enfants trouvés",
+    "group": "accueil",
+    "lat": 48.60434640111919,
+    "lng": 2.342663559679238
+  },
+  {
+    "num": 22,
+    "name": "Infirmerie centrale",
+    "group": "accueil",
+    "lat": 48.6038640705672,
+    "lng": 2.3423643941902696
+  },
+  {
+    "num": 23,
+    "name": "Objets trouvés",
+    "group": "accueil",
+    "lat": 48.60430795892316,
+    "lng": 2.342351844052729
+  },
+  {
+    "num": 24,
+    "name": "Plateforme PMR/PSH",
+    "group": "accueil",
+    "lat": 48.607729009022734,
+    "lng": 2.346679650288621
+  },
+  {
+    "num": 24,
+    "name": "Plateforme PMR/PSH",
+    "group": "accueil",
+    "lat": 48.6023018221629,
+    "lng": 2.3393112244750967
+  },
+  {
+    "num": 25,
+    "name": "Point Info",
+    "group": "accueil",
+    "lat": 48.60419572098962,
+    "lng": 2.342538829767875
+  },
+  {
+    "num": 26,
+    "name": "Poste de secours avancé",
+    "group": "accueil",
+    "lat": 48.60800619340273,
+    "lng": 2.346817309665852
+  },
+  {
+    "num": 26,
+    "name": "Poste de secours avancé",
+    "group": "accueil",
+    "lat": 48.60825622169031,
+    "lng": 2.3456211657543804
+  },
+  {
+    "num": 26,
+    "name": "Poste de secours avancé",
+    "group": "accueil",
+    "lat": 48.60742159204818,
+    "lng": 2.3424690696521964
+  },
+  {
+    "num": 26,
+    "name": "Poste de secours avancé",
+    "group": "accueil",
+    "lat": 48.601801317784606,
+    "lng": 2.338593684482703
+  },
+  {
+    "num": 27,
+    "name": "Espace Prévention",
+    "group": "bienetre",
+    "lat": 48.60488543879171,
+    "lng": 2.342056235161209
+  },
+  {
+    "num": 28,
+    "name": "Espace prévention et réduction des risques",
+    "group": "bienetre",
+    "lat": 48.602476963162985,
+    "lng": 2.337920299155911
+  },
+  {
+    "num": 29,
+    "name": "L'Escale",
+    "group": "bienetre",
+    "lat": 48.604965324586885,
+    "lng": 2.3417846134343847
+  },
+  {
+    "num": 30,
+    "name": "Point d'eau",
+    "group": "bienetre",
+    "lat": 48.608771279269035,
+    "lng": 2.343837732687689
+  },
+  {
+    "num": 30,
+    "name": "Point d'eau",
+    "group": "bienetre",
+    "lat": 48.60619876,
+    "lng": 2.343708873
+  },
+  {
+    "num": 30,
+    "name": "Point d'eau",
+    "group": "bienetre",
+    "lat": 48.60511728403617,
+    "lng": 2.341888489638933
+  },
+  {
+    "num": 30,
+    "name": "Point d'eau",
+    "group": "bienetre",
+    "lat": 48.604533550579504,
+    "lng": 2.34205561295974
+  },
+  {
+    "num": 30,
+    "name": "Point d'eau",
+    "group": "bienetre",
+    "lat": 48.60450030696836,
+    "lng": 2.339461861475286
+  },
+  {
+    "num": 30,
+    "name": "Point d'eau",
+    "group": "bienetre",
+    "lat": 48.60320072344169,
+    "lng": 2.3381771518588437
+  },
+  {
+    "num": 31,
+    "name": "Sanitaires",
+    "group": "bienetre",
+    "lat": 48.60135108650391,
+    "lng": 2.338363753351217
+  },
+  {
+    "num": 31,
+    "name": "Sanitaires",
+    "group": "bienetre",
+    "lat": 48.60316194369571,
+    "lng": 2.3390554756592508
+  },
+  {
+    "num": 31,
+    "name": "Sanitaires",
+    "group": "bienetre",
+    "lat": 48.60616136372562,
+    "lng": 2.341232148640273
+  },
+  {
+    "num": 31,
+    "name": "Sanitaires",
+    "group": "bienetre",
+    "lat": 48.605634765,
+    "lng": 2.343521118
+  },
+  {
+    "num": 31,
+    "name": "Sanitaires",
+    "group": "bienetre",
+    "lat": 48.60887993057153,
+    "lng": 2.3442879367840987
+  },
+  {
+    "num": 31,
+    "name": "Sanitaires",
+    "group": "bienetre",
+    "lat": 48.6084224785686,
+    "lng": 2.346205977582798
+  },
+  {
+    "num": 31,
+    "name": "Sanitaires",
+    "group": "bienetre",
+    "lat": 48.602807602,
+    "lng": 2.335689068
+  },
+  {
+    "num": 31,
+    "name": "Sanitaires",
+    "group": "bienetre",
+    "lat": 48.60237942009729,
+    "lng": 2.3395632109867393
+  },
+  {
+    "num": 32,
+    "name": "Urinoirs féminins",
+    "group": "bienetre",
+    "lat": 48.60683809492053,
+    "lng": 2.344721809228446
+  },
+  {
+    "num": 32,
+    "name": "Urinoirs féminins",
+    "group": "bienetre",
+    "lat": 48.602681862701075,
+    "lng": 2.337706200824101
+  },
+  {
+    "num": 33,
+    "name": "Boutique de l'Humanité",
+    "group": "vente",
+    "lat": 48.604611881320295,
+    "lng": 2.3425595964609727
+  }
+]
