@@ -5,9 +5,9 @@ import {
   CATEGORIES,
   currentFestivalDay,
   DAYS,
+  eventStartDate,
   isAllDay,
   isEventOngoing,
-  isPast,
 } from '../lib/schedule'
 import { describeWeatherCode } from '../lib/weather'
 import { useWeather } from '../hooks/useWeather'
@@ -77,8 +77,13 @@ function ProgramGrid({ favorites, onToggleFavorite, groupApi, scrollToken }: Pro
   const allDay = list.filter((e) => isAllDay(e))
   const showAllDay = allDayOpen || timed.length === 0
 
-  // Premier événement pas encore terminé : tout ce qui est au-dessus est passé.
-  const nowIndex = currentFestivalDay(now) === day ? timed.findIndex((e) => !isPast(e, now)) : -1
+  // Premier événement qui n'a pas encore commencé : en dessous, tout est à
+  // venir. Ce qui se joue en ce moment est juste au-dessus du repère, gardé à
+  // l'écran par le scroll-margin de `.now-marker`.
+  const nowIndex =
+    currentFestivalDay(now) === day
+      ? timed.findIndex((e) => eventStartDate(e).getTime() > now)
+      : -1
   const showNowMarker = nowIndex > 0
 
   useEffect(() => {

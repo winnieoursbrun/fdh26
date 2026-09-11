@@ -405,16 +405,26 @@ describe('ProgramTab — repère « Maintenant »', () => {
     weatherDays = []
   })
 
-  it('place le repère devant le premier événement pas encore terminé', () => {
-    // 21:40 vendredi : l'ouverture et la nocturne du Village sont finies,
-    // MASSILIA (21:35 – 22:35) est en cours.
-    vi.setSystemTime(new Date(2026, 8, 11, 21, 40))
+  it('place le repère devant le premier événement pas encore commencé', () => {
+    // 21:00 vendredi : l'ouverture est finie, la nocturne du Village court
+    // encore, MASSILIA (21:35) est le prochain à démarrer.
+    vi.setSystemTime(new Date(2026, 8, 11, 21, 0))
     renderTab()
 
     const marker = screen.getByText('Maintenant')
     expect(marker.nextElementSibling).toHaveTextContent('MASSILIA')
     // rien n'est retiré de la liste : on peut toujours remonter le fil du jour
     expect(renderedTitles()).toHaveLength(events.filter((e) => e.day === 'ven').length)
+  })
+
+  it('laisse au-dessus du repère l’événement en cours', () => {
+    // 21:40 : MASSILIA a commencé, le prochain départ est le DJ set de 00:40.
+    vi.setSystemTime(new Date(2026, 8, 11, 21, 40))
+    renderTab()
+
+    const marker = screen.getByText('Maintenant')
+    expect(marker.nextElementSibling).toHaveTextContent('DJ Set Nocturne')
+    expect(marker.previousElementSibling).toHaveTextContent('MASSILIA')
   })
 
   it('n’affiche pas de repère avant le début de la journée', () => {

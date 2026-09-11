@@ -466,7 +466,9 @@ p {
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--red);
-  scroll-margin-top: 10px;
+  /* la liste se recale ici : on laisse de la place au-dessus pour garder à
+     l'écran ce qui est déjà en cours. */
+  scroll-margin-top: 30vh;
 }
 
 .now-marker::after {
